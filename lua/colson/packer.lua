@@ -23,4 +23,6 @@ return require('packer').startup(function(use)
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground') 
+	use('nvim-lua/plenary.nvim')
+	use('ThePrimeagen/harpoon')
 end)
