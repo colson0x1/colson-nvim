@@ -1,4 +1,4 @@
-function SetRosePineColorScheme(color)
+function SetColorScheme(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
@@ -6,4 +6,4 @@ function SetRosePineColorScheme(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-SetRosePineColorScheme()
+SetColorScheme()
