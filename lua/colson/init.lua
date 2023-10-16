@@ -1,2 +1,2 @@
 require("colson.remap")
-print('hello from colson')
+require("colson.set")
