@@ -1,8 +1,8 @@
 # Neovim Configuration by COLSON!
 
-Welcome to my Neovim (nvim) configuration! This docs will guide you through the key bindings, features, and the usefulness of my setup. This configuration is aimed at providing a highly productive and efficient Neovim experience.
+Welcome to my Neovim (nvim) configuration! This documentation will guide you through the key bindings, features, and the usefulness of my setup. This configuration is aimed at providing a highly productive and efficient Neovim experience.
 
-Cool Thing: I will keep adding more features so this repo will be lively! 🔥
+Cool Thing: I will keep adding more features, so this repository will remain lively! 🔥
 
 ## Table of Contents
 1. [Key Bindings](#key-bindings)
@@ -18,12 +18,12 @@ Cool Thing: I will keep adding more features so this repo will be lively! 🔥
 - `<leader>svwm`: Stop Vim-With-Me collaborative editing session.
 - `<leader>p`: Delete selected text in visual mode.
 - `<leader>y`: Yank text to system clipboard.
-- `<leader>Y`: Yank the entire line to system clipboard.
+- `<leader>Y`: Yank the entire line to the system clipboard.
 - `<leader>d`: Delete text without clobbering the register.
 - `<C-c>`: Exit insert mode.
 - `<leader>f`: Format code using LSP (Language Server Protocol).
-- `<C-k>` and `<C-j>`: Navigate through quickfix list.
-- `<leader>k>` and `<leader>j>`: Navigate through location list.
+- `<C-k>` and `<C-j>`: Navigate through the quickfix list.
+- `<leader>k>` and `<leader>j>`: Navigate through the location list.
 - `<leader>s`: Search and replace with confirmation.
 - `<leader>x`: Make the current file executable.
 - `<leader>vpp`: Open Packer configuration file.
@@ -31,7 +31,7 @@ Cool Thing: I will keep adding more features so this repo will be lively! 🔥
 
 ### Normal Mode Key Bindings
 - `J` and `K`: Reorder lines in visual mode.
-- `J`: Join lines and move cursor to the end.
+- `J`: Join lines and move the cursor to the end.
 - `<C-d>` and `<C-u>`: Scroll down/up, keeping the cursor in place.
 - `n` and `N`: Jump to the next/previous search result, centering the screen.
 - `Q`: Disable Ex mode (no operation).
@@ -84,6 +84,11 @@ Cool Thing: I will keep adding more features so this repo will be lively! 🔥
 
 ### LSP Integration
 - Seamless integration with the Language Server Protocol for advanced code analysis and editing.
+
+### Formatting and Linting
+- Automatic code formatting with Prettier.
+- Linting with ESLint for better code quality.
+- Trigger code formatting on `:w` (write) actions.
 
 ## Usage<a name="usage"></a>
 
