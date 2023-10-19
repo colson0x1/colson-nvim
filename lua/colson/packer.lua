@@ -22,6 +22,10 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+  -- Formatting and Linting
+  use('jose-elias-alvarez/null-ls.nvim') 
+  use('jayp0521/mason-null-ls.nvim')
+
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use('nvim-treesitter/playground') 
 	use('nvim-lua/plenary.nvim')
