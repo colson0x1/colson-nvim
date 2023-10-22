@@ -7,7 +7,18 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	-- IDE Theme (Enable Only One)
+	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
+	-- @ JetBrains IDE Theme
+	--[[
+	use({
+		"doums/darcula",
+		as = "darcula",
+		config = function()
+			vim.cmd("colorscheme darcula")
+		end,
+	})
+  --]]
+
 	-- @ Catppuccin Theme
 	--[[
 	use({
@@ -17,13 +28,14 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme catppuccin")
 		end,
 	})
-  ]]
-	--
+  --]]
+
+	-- @ Rose Pine Theme
 	use({
-		"doums/darcula",
-		as = "darcula",
+		"rose-pine/neovim",
+		as = "rose-pine",
 		config = function()
-			vim.cmd("colorscheme darcula")
+			vim.cmd("colorscheme rose-pine")
 		end,
 	})
 
