@@ -6,6 +6,10 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
+
+	-- IDE Theme (Enable Only One)
+	-- @ Catppuccin Theme
+	--[[
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -13,8 +17,15 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme catppuccin")
 		end,
 	})
-
-	use("andweeb/presence.nvim")
+  ]]
+	--
+	use({
+		"doums/darcula",
+		as = "darcula",
+		config = function()
+			vim.cmd("colorscheme darcula")
+		end,
+	})
 
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -61,8 +72,8 @@ return require("packer").startup(function(use)
 	})
 
 	use("nvim-tree/nvim-tree.lua")
-
 	use("numToStr/Comment.nvim")
-
 	use("kyazdani42/nvim-web-devicons")
+
+	use("andweeb/presence.nvim")
 end)

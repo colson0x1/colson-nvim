@@ -23,5 +23,5 @@ presence.setup({
 	plugin_manager_text = "Managing plugins",
 	reading_text = "%s",
 	workspace_text = "%s",
-	-- line_number_text    = "Line %s out of %s",
+	-- line_number_text = "Line %s out of %s",
 })
