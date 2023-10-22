@@ -7,38 +7,6 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
-	-- @ JetBrains IDE Theme
-	--[[
-	use({
-		"doums/darcula",
-		as = "darcula",
-		config = function()
-			vim.cmd("colorscheme darcula")
-		end,
-	})
-  --]]
-
-	-- @ Catppuccin Theme
-	--[[
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function()
-			vim.cmd("colorscheme catppuccin")
-		end,
-	})
-  --]]
-
-	-- @ Rose Pine Theme
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end,
-	})
-
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.4",
@@ -88,4 +56,47 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	use("andweeb/presence.nvim")
+
+	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
+	-- @ Tokyo Night Theme
+	use({
+		"folke/tokyonight.nvim",
+		as = "tokyonight",
+		config = function()
+			vim.cmd("colorscheme tokyonight")
+		end,
+	})
+
+	-- @ Catppuccin Theme
+	--[[
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		config = function()
+			vim.cmd("colorscheme catppuccin")
+		end,
+	})
+  --]]
+
+	-- @ Rose Pine Theme
+	--[[
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	})
+  --]]
+
+	-- @ JetBrains IDE Theme
+	--[[
+	use({
+		"doums/darcula",
+		as = "darcula",
+		config = function()
+			vim.cmd("colorscheme darcula")
+		end,
+	})
+  --]]
 end)
