@@ -4,6 +4,8 @@ Welcome to my Neovim (nvim) configuration! This comprehensive guide will walk yo
 
 **Please Note**: This documentation will cover all the plugins, key bindings, and themes, but feel free to customize and tailor the configuration to your liking.
 
+![nvim IDE colson](https://i.imgur.com/10sJNPJ.png)
+
 **Cool Thing**: I will keep adding more features and plugins, so this repository will remain lively! 🔥
 
 ## Table of Contents
@@ -35,6 +37,20 @@ Welcome to my Neovim (nvim) configuration! This comprehensive guide will walk yo
 ## Introduction<a name="introduction"></a>
 
 This Neovim configuration is a powerhouse of productivity enhancements and aesthetics. I've put together a selection of plugins, key bindings, and themes that cater to a wide range of programming and text-editing needs. Whether you're a developer, a writer, or anyone in need of a versatile text editor, this setup has got you covered.
+
+![colson nvim](https://i.imgur.com/yphli9e.png)
+
+![colson nvim](https://i.imgur.com/ULq4jNp.png)
+
+![colson nvim](https://i.imgur.com/PMUhbQC.png)
+
+![colson nvim](https://i.imgur.com/hXArysH.png)
+
+![colson nvim](https://i.imgur.com/ulMC4IJ.png)
+
+![colson nvim](https://i.imgur.com/UB0osd5.png)
+
+![colson nvim](https://i.imgur.com/O9IpfyV.png)
 
 ## Installation<a name="installation"></a>
 
@@ -147,5 +163,16 @@ You can choose from several beautiful themes to customize your Neovim experience
    ```
 
 My configuration also supports other themes like **Catppuccin**, **Rose Pine**, and **JetBrains IDE Theme**, though they are currently commented out. You can enable these themes by uncommenting the respective configuration blocks located at the bottom in the `packer.lua` file.
+
+![colson nvim](https://i.imgur.com/3a7HR6X.png)
+
+![colson nvim](https://i.imgur.com/WYT8wcG.png)
+
+![colson nvim](https://i.imgur.com/kjXd12x.png)
+
+![colson nvim](https://i.imgur.com/y0ynRkc.png)
+
+![colson nvim](https://i.imgur.com/UfAYd7w.png)
+
 
 Now you're ready to embark on your coding journey with Neovim, utilizing this highly customizable and powerful configuration. Enjoy an enhanced coding experience! 🚀
