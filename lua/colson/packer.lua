@@ -14,6 +14,8 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	use("christoomey/vim-tmux-navigator")
+
 	-- Formatting and Linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
