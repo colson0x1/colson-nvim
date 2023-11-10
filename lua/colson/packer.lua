@@ -1,6 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
@@ -61,6 +58,7 @@ return require("packer").startup(function(use)
 
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 	-- @ Tokyo Night Theme
+	--[[
 	use({
 		"folke/tokyonight.nvim",
 		as = "tokyonight",
@@ -68,6 +66,7 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme tokyonight")
 		end,
 	})
+  --]]
 
 	-- @ Catppuccin Theme
 	--[[
@@ -92,7 +91,6 @@ return require("packer").startup(function(use)
   --]]
 
 	-- @ JetBrains IDE Theme
-	--[[
 	use({
 		"doums/darcula",
 		as = "darcula",
@@ -100,5 +98,4 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme darcula")
 		end,
 	})
-  --]]
 end)
