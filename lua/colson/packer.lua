@@ -13,10 +13,27 @@ return require("packer").startup(function(use)
 
 	use("christoomey/vim-tmux-navigator")
 
-	-- Install live-server using NODE
-	-- sudo npm i -g live-server
-	-- Start server- :LiveServerStart
-	-- Stop server- :LiveServerStop
+	-- Auto Save
+	use({
+		"pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({
+				enabled = true,
+				write_all_buffers = true,
+				on_off_commands = true,
+				events = { "InsertLeave", "FocusLost", "BufEnter", "VimLeavePre" },
+				debounce_delay = 3000,
+			})
+		end,
+	})
+
+	--[[ 
+    @ Install live-server using NODE
+	  sudo npm i -g live-server
+	  Start server- :LiveServerStart
+	  Stop server- :LiveServerStop
+  ]]
+	--
 	use({
 		"barrett-ruth/live-server.nvim",
 		config = function()
