@@ -13,6 +13,23 @@ return require("packer").startup(function(use)
 
 	use("christoomey/vim-tmux-navigator")
 
+	-- Install live-server using NODE
+	-- sudo npm i -g live-server
+	-- Start server- :LiveServerStart
+	-- Stop server- :LiveServerStop
+	use({
+		"barrett-ruth/live-server.nvim",
+		config = function()
+			require("live-server").setup({
+				port = 3000,
+				log = false,
+				index = "index.html", -- Specify the default index file
+				htmllint = false,
+				open_browser = false, -- Automatically open the browser when starting the server
+			})
+		end,
+	})
+
 	-- Formatting and Linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
