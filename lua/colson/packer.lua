@@ -12,8 +12,10 @@ return require("packer").startup(function(use)
 	})
 
 	use("christoomey/vim-tmux-navigator")
+	use("leafOfTree/vim-matchtag")
 
 	-- Auto Save
+	--[[
 	use({
 		"pocco81/auto-save.nvim",
 		config = function()
@@ -26,6 +28,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+  --]]
 
 	--[[ 
     @ Install live-server using NODE
