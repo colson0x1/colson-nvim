@@ -13,6 +13,8 @@ return require("packer").startup(function(use)
 
 	use("christoomey/vim-tmux-navigator")
 	use("leafOfTree/vim-matchtag")
+	-- Displays color code
+	use("norcalli/nvim-colorizer.lua")
 
 	-- Auto Save
 	--[[
