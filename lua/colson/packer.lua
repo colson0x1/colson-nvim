@@ -17,20 +17,7 @@ return require("packer").startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Auto Save
-	--[[
-	use({
-		"pocco81/auto-save.nvim",
-		config = function()
-			require("auto-save").setup({
-				enabled = true,
-				write_all_buffers = true,
-				on_off_commands = true,
-				events = { "InsertLeave", "FocusLost", "BufEnter", "VimLeavePre" },
-				debounce_delay = 3000,
-			})
-		end,
-	})
-  --]]
+	use("0x00-ketsu/autosave.nvim")
 
 	--[[ 
     @ Install live-server using NODE
