@@ -83,6 +83,21 @@ return require("packer").startup(function(use)
 	use("andweeb/presence.nvim")
 
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
+
+	-- @ Github Themes
+	use({ "projekt0n/github-nvim-theme" })
+
+	-- @ JetBrains IDE Theme
+	--[[
+	use({
+		"doums/darcula",
+		as = "darcula",
+		config = function()
+			vim.cmd("colorscheme darcula")
+		end,
+	})
+  --]]
+
 	-- @ Tokyo Night Theme
 	--[[
 	use({
@@ -115,13 +130,4 @@ return require("packer").startup(function(use)
 		end,
 	})
   --]]
-
-	-- @ JetBrains IDE Theme
-	use({
-		"doums/darcula",
-		as = "darcula",
-		config = function()
-			vim.cmd("colorscheme darcula")
-		end,
-	})
 end)
