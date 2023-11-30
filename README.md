@@ -1,42 +1,67 @@
-# Neovim Configuration by COLSON!
+## Neovim Configuration by COLSON! 🚀
 
-Welcome to my Neovim (nvim) configuration! This comprehensive guide will walk you through the extensive list of features, plugins, and key bindings in my Neovim setup. I've curated this configuration to provide you with a highly efficient, productive, and visually pleasing Neovim experience.
+Step into the realm of excellence with my world-class Neovim (nvim) configuration! This comprehensive guide unveils a meticulously crafted zenful setup, meticulously designed for unparalleled efficiency, productivity, and visual splendor within Neovim. 
 
-**Please Note**: This documentation will cover all the plugins, key bindings, and themes, but feel free to customize and tailor the configuration to your liking.
+Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
+
+**DEMO Screenshot**
 
 ![nvim IDE colson](https://i.imgur.com/10sJNPJ.png)
 
-**Cool Thing**: I will keep adding more features and plugins, so this repository will remain lively! 🔥
+### Keeping Your Configuration Up-to-Date 
+
+I'm committed to consistently enhancing this Neovim setup with new features, optimizations, and additional plugins. To ensure you're making the most out of this dynamic configuration, I recommend checking for updates monthly!
+
+As the configuration evolves, it's a good practice to sync your local repository with the latest changes. To do this, navigate to your Neovim configuration directory and run the following command:
+
+```bash
+cd ~/.config/nvim
+git pull origin main
+```
+
+### **Prerequisites: Neovim 9.0 or Higher**
+
+Ensure a seamless experience by confirming your Neovim version meets the requirements. Execute the following command to check your Neovim version:
+
+```bash
+nvim --version
+```
+
+Upgrade to Neovim 9.0 or higher if needed, and dive into an enhanced coding experience with this dynamic configuration! 🚀
+
 
 ## Table of Contents
-- [Neovim Configuration by COLSON!](#neovim-configuration-by-colson)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Installation](#installation)
-  - [Features](#features)
-    - [Global Key Bindings](#global-key-bindings)
-      - [Leader Key](#leader-key)
-      - [File Explorer](#file-explorer)
-      - [Collaborative Editing](#collaborative-editing)
-      - [Text Manipulation](#text-manipulation)
-      - [Code Formatting](#code-formatting)
-      - [Navigation](#navigation)
-      - [Search and Replace](#search-and-replace)
-      - [Miscellaneous](#miscellaneous)
-    - [Normal Mode Key Bindings](#normal-mode-key-bindings)
-      - [Line Manipulation](#line-manipulation)
-      - [Scrolling](#scrolling)
-      - [Code Navigation](#code-navigation)
-      - [Ex Mode](#ex-mode)
-      - [Git Integration](#git-integration)
-      - [Harpoon Integration](#harpoon-integration)
-      - [LSP Integration](#lsp-integration)
-    - [Telescope Integration](#telescope-integration)
-    - [Cool Themes](#cool-themes)
+- [Neovim Configuration by COLSON! 🚀](#neovim-configuration-by-colson-)
+  - [Keeping Your Configuration Up-to-Date](#keeping-your-configuration-up-to-date)
+  - [**Prerequisites: Neovim 9.0 or Higher**](#prerequisites-neovim-90-or-higher)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Features](#features)
+  - [Global Key Bindings](#global-key-bindings)
+    - [Leader Key](#leader-key)
+    - [File Explorer](#file-explorer)
+    - [NvimTree (Left window pane file explorer)](#nvimtree-left-window-pane-file-explorer)
+    - [Collaborative Editing](#collaborative-editing)
+    - [Text Manipulation](#text-manipulation)
+    - [Code Formatting](#code-formatting)
+    - [Navigation](#navigation)
+    - [](#)
+    - [Miscellaneous](#miscellaneous)
+  - [Normal Mode Key Bindings](#normal-mode-key-bindings)
+    - [Line Manipulation](#line-manipulation)
+    - [Scrolling](#scrolling)
+    - [Code Navigation](#code-navigation)
+    - [Ex Mode](#ex-mode)
+    - [Git Integration](#git-integration)
+    - [Harpoon Integration](#harpoon-integration)
+    - [LSP Integration](#lsp-integration)
+  - [**Telescope** Integration](#telescope-integration)
+  - [Cool Themes](#cool-themes)
 
 ## Introduction<a name="introduction"></a>
 
-This Neovim configuration is a powerhouse of productivity enhancements and aesthetics. I've put together a selection of plugins, key bindings, and themes that cater to a wide range of programming and text-editing needs. Whether you're a developer, a writer, or anyone in need of a versatile text editor, this setup has got you covered.
+This Neovim configuration is a powerhouse of productivity enhancements and aesthetics. I've curated a selection of plugins, key bindings, and themes to provide a versatile and delightful text-editing experience. Whether you're a developer, writer, or anyone in need of a robust text editor, this setup has got you covered.
 
 ![colson nvim](https://i.imgur.com/yphli9e.png)
 
@@ -54,7 +79,7 @@ This Neovim configuration is a powerhouse of productivity enhancements and aesth
 
 ## Installation<a name="installation"></a>
 
-To get started with my Neovim configuration, follow these steps:
+To embark on this Neovim journey, follow these steps:
 
 1. Clone this repository to your Neovim configuration directory:
    ```shell
@@ -79,90 +104,97 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **`<Space>`** serves as the leader key for most key bindings.
 
 #### File Explorer
-- **`<leader>pv`**: Open a file explorer with Telescope.
+- **`<leader>pv`**: Open a file explorer with **Netrw**.
+  
+#### NvimTree (Left window pane file explorer)
+- **`<leader>e`**: Toggle NvimTree
 
 #### Collaborative Editing
 - **`<leader>vwm`**: Start a Vim-With-Me collaborative editing session.
 - **`<leader>svwm`**: Stop a Vim-With-Me collaborative editing session.
 
 #### Text Manipulation
-- **`<leader>p`**: Delete selected text in visual mode.
-- **`<leader>y`**: Yank text to the system clipboard.
-- **`<leader>Y`**: Yank the entire line to the system clipboard.
-- **`<leader>d`**: Delete text without clobbering the register.
-- **`<C-c>`**: Exit insert mode.
+- **``**: Delete selected text in visual mode.
+- **``**: Yank text to the system clipboard.
+- **`Ctrl+y`**: Yank the entire line to the system clipboard.
+- **``**: Delete text without clobbering the register.
+- **`Ctrl+c`**: Exit insert mode.
 
 #### Code Formatting
 - **`<leader>f`**: Format code using LSP (Language Server Protocol).
+- Even awesome: **`:w`** triggers Prettier for code formatting!
 
 #### Navigation
 - **`<C-k>`** and **`<C-j>`**: Navigate through the quickfix list.
 - **`<leader>k`** and **`<leader>j`**: Navigate through the location list.
 
-#### Search and Replace
-- **`<leader>s`**: Search and replace with confirmation.
-- **`<leader>x`**: Make the current file executable.
+####
+
+ Search and Replace
+- **`<leader>sr`**: Perform a search and replace using Telescope.
 
 #### Miscellaneous
-- **`<leader>vpp`**: Open Packer configuration file.
-- **`<leader>mr`**: Run a command to make it rain (experimental).
-- **`<leader><leader>`**: Source the init.lua file.
+- **``**: Close the current buffer.
+- **``**: Quit Neovim.
 
-### Normal Mode Key Bindings
+### Normal Mode Key Bindings<a name="normal-mode-key-bindings"></a>
 
 #### Line Manipulation
-- **`J`** and **`K`**: Reorder lines in visual mode.
-- **`J`**: Join lines and move the cursor to the end.
+- **`<leader>k`** and **`<leader>j`**: Move the current line up or down.
+- **`<leader>K`** and **`<leader>J`**: Copy the current line up or down.
+- **`<leader>dd`**: Delete the current line.
+- **`<leader>cc`**: Duplicate the current line.
 
 #### Scrolling
-- **`<C-d>`** and **`<C-u>`**: Scroll down/up, keeping the cursor in place.
+- **``** and **``**: Scroll down or up.
 
 #### Code Navigation
-- **`n`** and **`N`**: Jump to the next/previous search result, centering the screen.
+- **`gd`**: Go to definition.
+- **`gf`**: Go to file.
+- **`gy`**: Go to type definition.
+- **`gi`**: Go to implementation.
+- **`gr`**: Show references.
+- **``**: Rename symbol.
 
 #### Ex Mode
-- **`Q`**: Disable Ex mode (no operation).
+- **`:W`**: Write the current file.
+- **`:Wq`**: Write and quit.
+- **`:WQ`**: Write and quit (forceful).
+- **`:Wqa`**: Write all and quit.
 
 #### Git Integration
-- **`<leader>gs`**: Run Git commands.
+- **`<leader>gs`**: Git status.
+- **`<leader>gc`**: Git commit.
+- **`<leader>gp`**: Git push.
+- **`<leader>gl`**: Git log.
 
 #### Harpoon Integration
-- **`<leader>a`**: Mark the current file.
-- **`<C-e>`**: Toggle Harpoon quick menu.
-- **`<C-h>`, `<C-t>`, `<C-n>`, `<C-s>`: Navigate Harpoon marked files.
+- **`Ctrl+e`**: Harpoon open quick list.
+- - **`<leader>a`**: Harpoon add buffer.
+- **`Ctrl+t and Ctrl+h`**: Harpoon toggle buffer.
 
-#### LSP Integration<a name="lsp-language-server-protocol"></a>
-- **`gd`**: Go to definition.
-- **`K`**: Show hover information.
-- **`<leader>vws`**: Search for symbols in the workspace.
-- **`<leader>vd`**: Open LSP diagnostic float window.
-- **`[d`** and **`]d`**: Navigate through diagnostics.
-- **`<leader>vca`**: Execute code actions.
-- **`<leader>vrr`**: Find references.
-- **`<leader>vrn`**: Rename symbol.
-- **`<C-h>`**: Show signature help.
+#### LSP Integration
+- **`Shift+k`**: LSP hover.
+- **`Ctrl+n`**: LSP toggle next in autocompletion.
+- **`Ctrl+p`**: LSP toggle previous in autocompletion.
+- **`Ctrl+k or Ctrl+y`**: LSP select in autocompletion.
+- **``**: LSP info.
+- **``**: LSP definition.
+- **``**: LSP rename.
 
-### Telescope Integration<a name="telescope"></a>
+### **Telescope** Integration<a name="telescope-integration"></a>
+
 - **`<leader>pf`**: Find files in the current directory.
-- **`<C-p`**: Search for Git files.
-- **`<leader>ps`**: Grep for a specific string in the files.
+- **``**: Live grep files.
+- **``**: List and switch buffers.
+- **``**: Search command history.
+- **``**: Search session configuration files.
+- **``**: Search in files using text.
+- **``**: Quickfix list.
 
 ### Cool Themes<a name="cool-themes"></a>
 
-You can choose from several beautiful themes to customize your Neovim experience:
-
-- **Tokyo Night Theme**: Activate with the following configuration:
-   ```lua
-   use({
-      "folke/tokyonight.nvim",
-      as = "tokyonight",
-      config = function()
-         vim.cmd("colorscheme tokyonight")
-      end,
-   })
-   ```
-
-My configuration also supports other themes like **Catppuccin**, **Rose Pine**, and **JetBrains IDE Theme**, though they are currently commented out. You can enable these themes by uncommenting the respective configuration blocks located at the bottom in the `packer.lua` file.
+The themes are configured already but I've commented out rest. Feel free to explore these themes and uncomment the one that resonates with your taste!
 
 ![colson nvim](https://i.imgur.com/3a7HR6X.png)
 
@@ -174,5 +206,5 @@ My configuration also supports other themes like **Catppuccin**, **Rose Pine**, 
 
 ![colson nvim](https://i.imgur.com/UfAYd7w.png)
 
-
-Now you're ready to embark on your coding journey with Neovim, utilizing this highly customizable and powerful configuration. Enjoy an enhanced coding experience! 🚀
+END:
+May your coding journey with Neovim be nothing short of stellar! 🚀
