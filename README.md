@@ -6,7 +6,7 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 **DEMO Screenshot**
 
-![nvim IDE colson](https://i.imgur.com/10sJNPJ.png)
+![nvim IDE colson](https://i.imgur.com/PhNfQ2g.png)
 
 ### Keeping Your Configuration Up-to-Date 
 
@@ -57,7 +57,12 @@ Upgrade to Neovim 9.0 or higher if needed, and dive into an enhanced coding expe
     - [Harpoon Integration](#harpoon-integration)
     - [LSP Integration](#lsp-integration)
   - [**Telescope** Integration](#telescope-integration)
-  - [Cool Themes](#cool-themes)
+  - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
+    - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+    - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
+    - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
+    - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
+    - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
 
 ## Introduction<a name="introduction"></a>
 
@@ -192,9 +197,18 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **``**: Search in files using text.
 - **``**: Quickfix list.
 
-### Cool Themes<a name="cool-themes"></a>
+### Cool Pre-Configured Themes<a name="cool-themes"></a>
 
 The themes are configured already but I've commented out rest. Feel free to explore these themes and uncomment the one that resonates with your taste!
+
+Preconfigured themes:
+#### **@ Github Themes** - Has flavors
+#### **@ Jetbrains IDE Theme**
+#### **@ Tokyo Night Theme** - Has flavors
+#### **@ Catppuccin Theme** - Has flavors
+#### **@ Rose Pine Theme** - Has flavors
+
+![colson nvim](https://i.imgur.com/b8CtR0m.png)
 
 ![colson nvim](https://i.imgur.com/3a7HR6X.png)
 
