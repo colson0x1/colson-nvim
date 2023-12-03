@@ -16,6 +16,12 @@ return require("packer").startup(function(use)
 	-- Displays color code
 	use("norcalli/nvim-colorizer.lua")
 
+	-- HTTP REST Client / TEST API
+	use({
+		"rest-nvim/rest.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
 	-- Auto Save
 	use("0x00-ketsu/autosave.nvim")
 
