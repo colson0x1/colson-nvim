@@ -19,7 +19,7 @@ cd ~/.config/nvim
 git pull origin main
 ```
 
-### **Prerequisites: Neovim 9.0 or Higher**
+### **Prerequisites: Neovim 0.9.0 or Higher**
 
 Ensure a seamless experience by confirming your Neovim version meets the requirements. Execute the following command to check your Neovim version:
 
@@ -27,13 +27,13 @@ Ensure a seamless experience by confirming your Neovim version meets the require
 nvim --version
 ```
 
-Upgrade to Neovim 9.0 or higher if needed, and dive into an enhanced coding experience with this dynamic configuration! 🚀
+Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding experience with this dynamic configuration! 🚀
 
 
 ## Table of Contents
 - [Neovim Configuration by COLSON! 🚀](#neovim-configuration-by-colson-)
   - [Keeping Your Configuration Up-to-Date](#keeping-your-configuration-up-to-date)
-  - [**Prerequisites: Neovim 9.0 or Higher**](#prerequisites-neovim-90-or-higher)
+  - [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Installation](#installation)
@@ -190,7 +190,7 @@ Now, you're all set to unleash the power of this Neovim configuration!
 ### **Telescope** Integration<a name="telescope-integration"></a>
 
 - **`<leader>pf`**: Find files in the current directory.
-- **``**: Live grep files.
+- **`<leader>ps`**: Live grep files.
 - **``**: List and switch buffers.
 - **``**: Search command history.
 - **``**: Search session configuration files.
