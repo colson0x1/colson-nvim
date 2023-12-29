@@ -36,6 +36,13 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
+
+	if client.name == "jdtls" then
+		vim.api.nvim_buf_set_option(bufnr, "formatprg", "eclipse_jdtls")
+		vim.api.nvim_buf_set_option(bufnr, "formatoptions", "tcqrn1")
+		vim.api.nvim_buf_set_option(bufnr, "tabstop", 4)
+		vim.api.nvim_buf_set_option(bufnr, "shiftwidth", 4)
+	end
 end)
 
 require("mason").setup({})
@@ -43,10 +50,18 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"tsserver",
 		"eslint",
-		"html",
-		"cssls",
+		"graphql",
 		"tailwindcss",
+		"jsonls",
+		"cssls",
+		"html",
+		"emmet_language_server",
 		"lua_ls",
+		"jdtls",
+		"gopls",
+		"remark_ls",
+		"prismals",
+		"sqlls",
 	},
 	handlers = {
 		lsp.default_setup,
@@ -88,3 +103,12 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 	}),
 })
+
+-- @ Java
+-- local lspconfig = require("lspconfig")
+--
+-- lspconfig.jdtls.setup({
+-- 	cmd = { "jdtls" },
+-- 	filetypes = { "java" },
+-- 	root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build"),
+-- })
