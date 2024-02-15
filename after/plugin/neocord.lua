@@ -22,7 +22,27 @@ neocord.setup({
 	git_commit_text = "Committing changes", -- Format string rendered when committing changes in git (either string or function(filename: string): string)
 	plugin_manager_text = "Managing plugins", -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
 	reading_text = "%s", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
-	workspace_text = "%s", -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+	-- Workspace - Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+	workspace_text = function(_, filename)
+		local root_directory = vim.fn.getcwd()
+		local relative_path = vim.fn.fnamemodify(filename, ":~:.")
+		local relative_parts = vim.fn.split(relative_path, "/")
+
+		-- Exclude the root directory and filename from the subdirectories
+		local filename_part = table.remove(relative_parts, #relative_parts)
+		if filename_part == vim.fn.fnamemodify(root_directory, ":t") then
+			-- Nested subdirectories
+			filename_part = table.remove(relative_parts, #relative_parts)
+		end
+
+		-- Customize the format: "root dir → sub dirs"
+		return string.format(
+			"%s → " .. "/" .. "%s",
+			vim.fn.fnamemodify(root_directory, ":t"),
+			table.concat(relative_parts, "/")
+		)
+	end,
+
 	line_number_text = "Line %s out of %s", -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 	terminal_text = "Using Terminal", -- Format string rendered when in terminal mode.
 })
