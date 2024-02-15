@@ -88,7 +88,9 @@ return require("packer").startup(function(use)
 	use("numToStr/Comment.nvim")
 	use("kyazdani42/nvim-web-devicons")
 
-	use("andweeb/presence.nvim")
+	-- Modern Discord Presence with VSCODE Icons
+	use("IogaMaster/neocord")
+	-- use("andweeb/presence.nvim")
 
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
