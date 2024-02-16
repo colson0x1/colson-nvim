@@ -96,6 +96,22 @@ return require("packer").startup(function(use)
 	-- use("andweeb/presence.nvim")
 
 	use({ "derektata/lorem.nvim" })
+	--[[
+	-- Image Preview
+  -- Install Chafa in your machine for it to work inside nvim 
+  -- $ git clone https://github.com/hpjansson/chafa.git
+  -- $ cd chafa
+  -- $ ./autogen.sh
+  -- $ make
+  -- $ sudo make install
+  --]]
+	use({
+		"princejoogie/chafa.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"m00qek/baleia.nvim",
+		},
+	})
 
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
