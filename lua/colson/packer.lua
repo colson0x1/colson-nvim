@@ -92,6 +92,8 @@ return require("packer").startup(function(use)
 	use("IogaMaster/neocord")
 	-- use("andweeb/presence.nvim")
 
+	use({ "derektata/lorem.nvim" })
+
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
 	-- @ Github Themes
