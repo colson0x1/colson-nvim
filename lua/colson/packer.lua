@@ -61,6 +61,9 @@ return require("packer").startup(function(use)
 
 	use("mattn/emmet-vim")
 
+	-- JSX/TSX Comment
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
