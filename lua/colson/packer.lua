@@ -45,6 +45,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Tabs Bufferline
+	use({
+		"akinsho/bufferline.nvim",
+		tag = "*",
+		requires = "nvim-tree/nvim-web-devicons",
+	})
+
 	-- Formatting and Linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
