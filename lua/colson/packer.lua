@@ -120,6 +120,12 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- Lualine
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
+
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
 	-- @ Github Themes
