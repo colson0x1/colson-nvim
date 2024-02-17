@@ -75,6 +75,8 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Harpoon Integration](#harpoon-integration)
     - [LSP Integration](#lsp-integration)
   - [**Telescope** Integration](#telescope-integration)
+- [NEW UPDATES](#new-updates)
+- [**Bufferline**](#bufferline)
   - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
     - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
     - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -218,6 +220,21 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **``**: Search session configuration files.
 - **``**: Search in files using text.
 - **``**: Quickfix list.
+
+NOTE: <leader> is SPACE
+
+## NEW UPDATES
+
+## **Bufferline**
+- **`<leader>h`**: Goes to next tab.
+- **`<leader>g`**: Goes to prev tab.
+- **`<leader>btl`**: Move tab left.
+- **`<leader>btr`**: Move tab right.
+- **`<leader>`bd**: Delete current tab.
+- **`<leader>`bcl**: Delete all tabs on left hand side.
+- **`<leader>`bcr**: Delete all tabs on right hand side.
+- **`<leader>`abc**: Close all tabs except currently opened one.
+- **`<leader>`**:
 
 ### Cool Pre-Configured Themes<a name="cool-themes"></a>
 

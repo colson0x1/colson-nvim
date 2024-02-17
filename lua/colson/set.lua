@@ -35,14 +35,29 @@ vim.g.skip_ts_context_commentstring_module = true
 
 -- /* Bufferline Tabs */
 -- Switching buffers
-vim.api.nvim_set_keymap("n", "<leader>b", ":bprev<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>B", ":bnext<CR>", { noremap = true, silent = true })
+--[[
+vim.api.nvim_set_keymap("n", "<leader>B", ":bprev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bf", ":bfirst<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>bl", ":blast<CR>", { noremap = true, silent = true })
+--]]
 
--- Closing tabs
-vim.api.nvim_set_keymap("n", "<leader>td", ":tabclose<CR>", { noremap = true, silent = true })
+-- Goes to next tab
+vim.api.nvim_set_keymap("n", "<leader>h", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+-- Goes to prev tab
+vim.api.nvim_set_keymap("n", "<leader>g", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
--- Closing current buffer
+-- Move tab left
+vim.api.nvim_set_keymap("n", "<leader>btl", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
+-- Move tab right
+vim.api.nvim_set_keymap("n", "<leader>btr", ":BufferLineMovePrev<CR>", { noremap = true, silent = true })
+
+-- Delete current tab
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true })
+-- Deletes all tabs on left hand side
+vim.api.nvim_set_keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
+-- Deletes all tabs on right hand side
+vim.api.nvim_set_keymap("n", "<leader>bcr", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
+-- Close all tabs except currently opened one
+vim.api.nvim_set_keymap("n", "<leader>abc", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true })
