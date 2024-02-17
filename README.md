@@ -1,4 +1,12 @@
-## Neovim Configuration by COLSON! 🚀
+<div align="center">
+<h1>
+Neovim Configuration by COLSON! 🚀
+</h1>
+
+
+[![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
+
+</div>
 
 Step into the realm of excellence with my world-class Neovim (nvim) configuration! This comprehensive guide unveils a meticulously crafted zenful setup, meticulously designed for unparalleled efficiency, productivity, and visual splendor within Neovim. 
 
@@ -6,9 +14,17 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 **DEMO Screenshot**
 
-![nvim IDE colson](https://i.imgur.com/PhNfQ2g.png)
+## ✨ New Updated Look (COLSON NVIM)
 
-### Keeping Your Configuration Up-to-Date 
+![colson nvim](https://i.imgur.com/CdT7TxM.png)
+
+![colson nvim](https://i.imgur.com/vq02oU1.png)
+
+## 🔥 Discord Presence for Neovim
+![colson nvim](https://i.imgur.com/2vCNJ0w.png)
+
+
+## ❕ Keeping Your Configuration Up-to-Date 
 
 I'm committed to consistently enhancing this Neovim setup with new features, optimizations, and additional plugins. To ensure you're making the most out of this dynamic configuration, I recommend checking for updates monthly!
 
@@ -19,7 +35,7 @@ cd ~/.config/nvim
 git pull origin main
 ```
 
-### **Prerequisites: Neovim 0.9.0 or Higher**
+## **Prerequisites: Neovim 0.9.0 or Higher**
 
 Ensure a seamless experience by confirming your Neovim version meets the requirements. Execute the following command to check your Neovim version:
 
@@ -31,11 +47,13 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 
 
 ## Table of Contents
-- [Neovim Configuration by COLSON! 🚀](#neovim-configuration-by-colson-)
-  - [Keeping Your Configuration Up-to-Date](#keeping-your-configuration-up-to-date)
-  - [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
+- [✨ New Updated Look (COLSON NVIM)](#-new-updated-look-colson-nvim)
+- [🔥 Discord Presence for Neovim](#-discord-presence-for-neovim)
+- [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
+- [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
+  - [💎 Old Look (COLSON NVIM)](#-old-look-colson-nvim)
 - [Installation](#installation)
 - [Features](#features)
   - [Global Key Bindings](#global-key-bindings)
@@ -67,6 +85,10 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 ## Introduction<a name="introduction"></a>
 
 This Neovim configuration is a powerhouse of productivity enhancements and aesthetics. I've curated a selection of plugins, key bindings, and themes to provide a versatile and delightful text-editing experience. Whether you're a developer, writer, or anyone in need of a robust text editor, this setup has got you covered.
+
+### 💎 Old Look (COLSON NVIM)
+
+![nvim IDE colson](https://i.imgur.com/PhNfQ2g.png)
 
 ![colson nvim](https://i.imgur.com/yphli9e.png)
 
