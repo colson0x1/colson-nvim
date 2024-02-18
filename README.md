@@ -75,9 +75,16 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Harpoon Integration](#harpoon-integration)
     - [LSP Integration](#lsp-integration)
   - [**Telescope** Integration](#telescope-integration)
-- [NEW UPDATES](#new-updates)
-- [**Bufferline**](#bufferline)
-  - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
+- [🔥 NEW UPDATES](#-new-updates)
+  - [**Bufferline**](#bufferline)
+  - [**JSX/TSX Commenting**](#jsxtsx-commenting)
+  - [**Discord Presence**](#discord-presence)
+  - [Emmet (For HTML/JSX Autocompletion)](#emmet-for-htmljsx-autocompletion)
+  - [Tailwind CSS IntelliSense](#tailwind-css-intellisense)
+  - [Gen Lorem Ipsum](#gen-lorem-ipsum)
+  - [Code Fold](#code-fold)
+  - [Live Server](#live-server)
+- [Cool Pre-Configured Themes](#cool-pre-configured-themes)
     - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
     - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
     - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
@@ -221,22 +228,72 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **``**: Search in files using text.
 - **``**: Quickfix list.
 
-NOTE: <leader> is SPACE
+NOTE: **``<leader>``** is **SPACE**
 
-## NEW UPDATES
+## 🔥 NEW UPDATES
 
-## **Bufferline**
+### **Bufferline**
 - **`<leader>h`**: Goes to next tab.
 - **`<leader>g`**: Goes to prev tab.
 - **`<leader>btl`**: Move tab left.
 - **`<leader>btr`**: Move tab right.
-- **`<leader>`bd**: Delete current tab.
-- **`<leader>`bcl**: Delete all tabs on left hand side.
-- **`<leader>`bcr**: Delete all tabs on right hand side.
-- **`<leader>`abc**: Close all tabs except currently opened one.
-- **`<leader>`**:
+- **`<leader>bd`**: Delete current tab.
+- **`<leader>bcl`**: Delete all tabs on left hand side.
+- **`<leader>bcr`**: Delete all tabs on right hand side.
+- **`<leader>abc`**: Close all tabs except currently opened one.
 
-### Cool Pre-Configured Themes<a name="cool-themes"></a>
+### **JSX/TSX Commenting**
+- **`<leader>gcc`**: Comment JS/TS code or JSX/TSX Components rendered in return.
+
+### **Discord Presence**
+- Open discord first and then, open your workspace from terminal: `nvim .`
+  
+### Emmet (For HTML/JSX Autocompletion)
+- **`!<Ctrl+k>`** To generate HTML standard boilerplate
+- **`.app-header<Ctrl+k>`**: Creates `div` with `classname` of `app-header`.
+- **`#root<Ctrl+k>`**: Creates `div` with `id` of `root`.
+- **`.flex.color-blue-600`**: Creates `div` with `classnames` - `flex color-blue-600`.
+- **`div<Ctrl+k>`**: Creates `div` element.
+- **`nav>ul>li*2<Ctrl+k>`**: Creates 
+  ```js
+  <nav>
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </nav>
+  ```
+- **`p+span<Ctrl+k>**: Creates
+  ```js
+  <p></p>
+  <span></span>
+  ```
+- **`.className<Ctrl+k>`**: Creates `div` with `prop` `className` which can be useful for styling with css modules, tailwind or mixing with style components.
+
+### Tailwind CSS IntelliSense
+- Use **`<Ctrl+k>`** to select when you use tailwind: Ex when you type `text-` in `className='text-'`, you get autocompletion!
+- Use **`<Ctrl+k`** to select in autocompletion.
+- Use **`<Ctrl+n`** to go to next in the occurrence.
+- Use **`<Ctrl+p`** to go to prev in occurrence.
+
+### Gen Lorem Ipsum
+- To generate lorem ipsum paragraph: In normal mode, type `:Lorem`
+- To generate specified constraint of words: `:Lorem 10` which generates 10 words.
+
+### Code Fold
+- To use code folding: First go to `Visual Line Mode` using `Shift+v`.
+  After that use `j` or `k` to select block of code.
+  Now use: `zf` to fold code.
+  To unfold the code, go to the code fold line and use: `zo` to open the code fold.
+
+### Live Server
+- First install live server globally: `npm install live-server`
+- Now inside `Neovim`: Go to `index.html` and on `Normal Mode`, type:
+  `:LiveServerStart` to start the server and `:LiveServerStop` to stop the server.
+
+---
+
+## Cool Pre-Configured Themes<a name="cool-themes"></a>
 
 The themes are configured already but I've commented out rest. Feel free to explore these themes and uncomment the one that resonates with your taste!
 
