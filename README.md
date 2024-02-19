@@ -214,19 +214,11 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **`Ctrl+n`**: LSP toggle next in autocompletion.
 - **`Ctrl+p`**: LSP toggle previous in autocompletion.
 - **`Ctrl+k or Ctrl+y`**: LSP select in autocompletion.
-- **``**: LSP info.
-- **``**: LSP definition.
-- **``**: LSP rename.
 
 ### **Telescope** Integration<a name="telescope-integration"></a>
 
 - **`<leader>pf`**: Find files in the current directory.
 - **`<leader>ps`**: Live grep files.
-- **``**: List and switch buffers.
-- **``**: Search command history.
-- **``**: Search session configuration files.
-- **``**: Search in files using text.
-- **``**: Quickfix list.
 
 NOTE: **``<leader>``** is **SPACE**
 
@@ -287,7 +279,7 @@ NOTE: **``<leader>``** is **SPACE**
   To unfold the code, go to the code fold line and use: `zo` to open the code fold.
 
 ### Live Server
-- First install live server globally: `npm install live-server`
+- First install live server globally: `sudo npm install -g live-server`
 - Now inside `Neovim`: Go to `index.html` and on `Normal Mode`, type:
   `:LiveServerStart` to start the server and `:LiveServerStop` to stop the server.
 
