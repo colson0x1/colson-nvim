@@ -1,9 +1,9 @@
-local setup, neocord = pcall(require, "neocord")
+local setup, nvim_presence = pcall(require, "neocord")
 if not setup then
 	return
 end
 
-neocord.setup({
+nvim_presence.setup({
 	-- General options
 	logo = "auto", -- "auto" or url
 	logo_tooltip = "NVIM", -- nil or string
