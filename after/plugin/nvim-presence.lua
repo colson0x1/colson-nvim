@@ -6,7 +6,7 @@ end
 nvim_presence.setup({
 	-- General options
 	logo = "auto", -- "auto" or url
-	logo_tooltip = "NVIM", -- nil or string
+	logo_tooltip = "Neovim configured by COLSON", -- nil or string
 	main_image = "language", -- "language" or "logo"
 	client_id = "1157438221865717891", -- Use your own Discord application client id (not recommended)
 	log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
