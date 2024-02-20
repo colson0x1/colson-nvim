@@ -77,7 +77,9 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [**Telescope** Integration](#telescope-integration)
 - [🔥 NEW UPDATES](#-new-updates)
   - [**Bufferline**](#bufferline)
-  - [**JSX/TSX Commenting**](#jsxtsx-commenting)
+  - [**JSX/TSX \& Other Languages Commenting**](#jsxtsx--other-languages-commenting)
+    - [**@ Commenting in Normal Mode**](#-commenting-in-normal-mode)
+    - [**@ Commenting in Visual Mode**](#-commenting-in-visual-mode)
   - [**Discord Presence**](#discord-presence)
   - [Emmet (For HTML/JSX Autocompletion)](#emmet-for-htmljsx-autocompletion)
   - [Tailwind CSS IntelliSense](#tailwind-css-intellisense)
@@ -234,8 +236,21 @@ NOTE: **``<leader>``** is **SPACE**
 - **`<leader>bcr`**: Delete all tabs on right hand side.
 - **`<leader>abc`**: Close all tabs except currently opened one.
 
-### **JSX/TSX Commenting**
-- **`<leader>gcc`**: Comment JS/TS code or JSX/TSX Components rendered in return.
+### **JSX/TSX & Other Languages Commenting**
+
+#### **@ Commenting in Normal Mode**
+- **`gcc`** - Toggles the current line using `linewise` comment.
+- **`gbc`** - Toggles the current line using `blockwise` comment.
+- **`[count]gcc`** - Toggles the number of line given as a prefix count
+  using `linewise` comment.
+- **`[count]gbc`** - Toggles the number of line given as a prefix count
+  using `blockwise` comment.
+- **`gc[count]{motion}`** - Toggles the region using `linewise` comment.
+- **`gb[count]{motion}`** - Toggles the region using `blockwise` comment 
+  
+#### **@ Commenting in Visual Mode**
+- **`gc`** - Toggles the region using `linewise` comment.
+- **`gb`** - toggles the region using `blockwise` comment.
 
 ### **Discord Presence**
 - Open discord first and then, open your workspace from terminal: `nvim .`
