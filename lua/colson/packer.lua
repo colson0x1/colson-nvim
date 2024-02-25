@@ -46,11 +46,14 @@ return require("packer").startup(function(use)
 	})
 
 	-- Tabs Bufferline
+	-- Uncomment to Enable Tab based File Buffer
+	--[[
 	use({
 		"akinsho/bufferline.nvim",
 		tag = "*",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
+  --]]
 
 	-- Formatting and Linting
 	use("jose-elias-alvarez/null-ls.nvim")
