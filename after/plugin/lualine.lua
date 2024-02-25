@@ -129,7 +129,22 @@ ins_left({
 })
 
 ins_left({
+	--[[
 	"filename",
+	cond = conditions.buffer_not_empty,
+	color = { fg = colors.magenta, gui = "bold" },
+  --]]
+
+	function()
+		local file_path = vim.fn.expand("%:p:h")
+		local root_path = vim.fn.getcwd()
+
+		if file_path == root_path then
+			return vim.fn.expand("%:t")
+		else
+			return vim.fn.expand("%:~:.:h") .. "/" .. vim.fn.expand("%:t")
+		end
+	end,
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
@@ -179,6 +194,7 @@ ins_left({
 	color = { fg = "#ffffff", gui = "bold" },
   --]]
 
+	--[[
 	function()
 		local msg = "No Active Lsp"
 		local bufnr = vim.fn.bufnr("%")
@@ -203,6 +219,7 @@ ins_left({
 	end,
 	icon = " LSP:",
 	color = { fg = "#ffffff", gui = "bold" },
+  --]]
 })
 
 -- Add components to right sections
