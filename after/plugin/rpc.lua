@@ -1,12 +1,12 @@
-local setup, nvim_presence = pcall(require, "neocord")
+local setup, rpc = pcall(require, "neocord")
 if not setup then
 	return
 end
 
-nvim_presence.setup({
+rpc.setup({
 	-- General options
 	logo = "auto", -- "auto" or url
-	logo_tooltip = "Neovim configured by COLSON", -- nil or string
+	logo_tooltip = "Neovim configured by COLSON (.cols)", -- nil or string
 	main_image = "language", -- "language" or "logo"
 	client_id = "1157438221865717891", -- Use your own Discord application client id (not recommended)
 	log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
