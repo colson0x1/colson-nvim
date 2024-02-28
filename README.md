@@ -15,13 +15,17 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 ## ✨ New Updated Zenful Look (COLSON NVIM)
 
-![colson nvim](https://i.imgur.com/0fOU3Dr.png)
+![colson nvim](https://i.imgur.com/Y368s9t.png)
 
-![colson nvim](https://i.imgur.com/PaQ6zck.png)
+![colson nvim](https://i.imgur.com/sT4qFYP.png)
 
-![colson nvim](https://i.imgur.com/XZUIZN2.png)
+![colson nvim](https://i.imgur.com/zwFDWbi.png)
 
-![colson nvim](https://i.imgur.com/Bux8fZt.png)
+![colson nvim](https://i.imgur.com/YVuv1vm.png)
+
+![colson nvim](https://i.imgur.com/2rHJo2k.png)
+
+![colson nvim](https://i.imgur.com/SXgMvUM.png)
 
 ## 🔥 Discord Presence for Neovim
 
