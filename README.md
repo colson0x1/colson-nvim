@@ -15,17 +15,15 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 ## ✨ New Updated Zenful Look (COLSON NVIM)
 
-![colson nvim](https://i.imgur.com/Y368s9t.png)
+![colson nvim](https://i.imgur.com/zPUZ8lo.png)
 
-![colson nvim](https://i.imgur.com/sT4qFYP.png)
+![colson nvim](https://i.imgur.com/ZssRfKy.png)
 
-![colson nvim](https://i.imgur.com/zwFDWbi.png)
+![colson nvim](https://i.imgur.com/uCgbasi.png)
 
-![colson nvim](https://i.imgur.com/YVuv1vm.png)
+![colson nvim](https://i.imgur.com/r4kWoOM.png)
 
-![colson nvim](https://i.imgur.com/2rHJo2k.png)
-
-![colson nvim](https://i.imgur.com/SXgMvUM.png)
+![colson nvim](https://i.imgur.com/cpzqjmT.png)
 
 ## 🔥 Discord Presence for Neovim
 
@@ -54,7 +52,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 
 ## Table of Contents
 
-- [✨ New Updated Look (COLSON NVIM)](#-new-updated-look-colson-nvim)
+- [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
 - [🔥 Discord Presence for Neovim](#-discord-presence-for-neovim)
 - [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
 - [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
@@ -65,7 +63,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 - [Features](#features)
   - [Global Key Bindings](#global-key-bindings)
     - [Leader Key](#leader-key)
-    - [File Explorer](#file-explorer)
+    - [Netrw: File Explorer](#netrw-file-explorer)
     - [NvimTree (Left window pane file explorer)](#nvimtree-left-window-pane-file-explorer)
     - [Collaborative Editing](#collaborative-editing)
     - [Text Manipulation](#text-manipulation)
@@ -82,6 +80,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Harpoon Integration](#harpoon-integration)
     - [LSP Integration](#lsp-integration)
   - [**Telescope** Integration](#telescope-integration)
+  - [TELESCOPE GREP Search](#telescope-grep-search)
 - [🔥 NEW UPDATES](#-new-updates)
   - [**Bufferline**](#bufferline)
   - [**JSX/TSX \& Other Languages Commenting**](#jsxtsx--other-languages-commenting)
@@ -94,11 +93,11 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Code Fold](#code-fold)
   - [Live Server](#live-server)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
-  - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
-  - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+    - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+    - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
+    - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
+    - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
+    - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
 
 ## Introduction<a name="introduction"></a>
 
@@ -143,6 +142,8 @@ To embark on this Neovim journey, follow these steps:
 
 Now, you're all set to unleash the power of this Neovim configuration!
 
+![colson nvim](https://i.imgur.com/YffIPC6.png)
+
 ## Features<a name="features"></a>
 
 ### Global Key Bindings<a name="global-key-bindings"></a>
@@ -151,13 +152,17 @@ Now, you're all set to unleash the power of this Neovim configuration!
 
 - **`<Space>`** serves as the leader key for most key bindings.
 
-#### File Explorer
+#### Netrw: File Explorer
+
+![colson nvim netrw](https://i.imgur.com/cpzqjmT.png)
 
 - **`<leader>pv`**: Open a file explorer with **Netrw**.
 
 #### NvimTree (Left window pane file explorer)
 
 - **`<leader>e`**: Toggle NvimTree
+
+![colson nvim nvimtree](https://i.imgur.com/zPUZ8lo.png)
 
 #### Collaborative Editing
 
@@ -244,14 +249,33 @@ Search and Replace
 
 ### **Telescope** Integration<a name="telescope-integration"></a>
 
+![colson nvim telescope](https://i.imgur.com/TFnI6L3.png)
+
+![colson nvim telescope](https://i.imgur.com/8zvfiNr.png)
+
+![colson nvim telescope](https://i.imgur.com/uCgbasi.png)
+
+![colson nvim telescope](https://i.imgur.com/n0fMcPh.png)
+
 - **`<leader>pf`**: Find files in the current directory.
-- **`<leader>ps`**: Live grep files.
 
 NOTE: **`<leader>`** is **SPACE**
+
+### TELESCOPE GREP Search
+
+Search by keyword in files!
+
+![colson nvim telescope grep search](https://i.imgur.com/lzTtolO.png)
+
+![colson nvim telescope grep search](https://i.imgur.com/LebP7Up.png)
+
+- **`<leader>ps`**: Live grep files.
 
 ## 🔥 NEW UPDATES
 
 ### **Bufferline**
+
+![colson nvim bufferline](https://i.imgur.com/vq02oU1.png)
 
 To enable bufferline (Tab based file buffer like VSCode), Go to:
 `$ ~/.config/nvim`
@@ -371,3 +395,5 @@ Preconfigured themes:
 
 END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
+
+Peace! 🕊
