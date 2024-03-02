@@ -92,6 +92,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Gen Lorem Ipsum](#gen-lorem-ipsum)
   - [Code Fold](#code-fold)
   - [Live Server](#live-server)
+- [System Clipboard Copy](#system-clipboard-copy)
 - [🚀 React Snippets Autocompletion](#-react-snippets-autocompletion)
   - [🔥 React Snippets Guide](#-react-snippets-guide)
     - [Functional Components](#functional-components)
@@ -368,6 +369,11 @@ Now you're good to go!
 - Now inside `Neovim`: Go to `index.html` and on `Normal Mode`, type:
   `:LiveServerStart` to start the server and `:LiveServerStop` to stop the server.
 
+## System Clipboard Copy
+
+- NORMAL OR VISUAL MODE: **`<leader>y`** - Copies to system clipboard.
+- NORMAL MODE: **`<leader>Y`** - Copies text from cursor to the end of the line to the system clipboard.
+
 ## 🚀 React Snippets Autocompletion
 
 For this to work, the main package depends upon this dependency `Ultisnips`
@@ -427,40 +433,42 @@ Yay, finally now we should be able to use `React Snippets`!
 > Use **`<Ctrl+l>`** after you type the trigger code!
 
 #### Functional Components
-| Trigger Code | What it does |
-| -------- | ---------------------------------------- |
-| `fce` | `Function Component Export` |
-| `fcde` | `Function Component Default Export` |
-| `sfce` | `Simple Function Component Export` |
-| `sfcde` | `Simple Function Component Default Export` |
-| `useS` | `useState` |
-| `useE` | `useEffect` |
-| `useEA` | `useEffect async` |
-| `useC` | `useContext` |
-| `useRed` | `useReducer` |
-| `useCB` | `useCallback` |
-| `useM` | `useMemo` |
-| `useR` | `useRef` |
-| `useI` | `useImperativeHandle` |
-| `useL` | `useLayoutEffect` |
-| `useDV` | `useDebugValue` |
-| `useT` | `useTransition` |
+
+| Trigger Code | What it does                               |
+| ------------ | ------------------------------------------ |
+| `fce`        | `Function Component Export`                |
+| `fcde`       | `Function Component Default Export`        |
+| `sfce`       | `Simple Function Component Export`         |
+| `sfcde`      | `Simple Function Component Default Export` |
+| `useS`       | `useState`                                 |
+| `useE`       | `useEffect`                                |
+| `useEA`      | `useEffect async`                          |
+| `useC`       | `useContext`                               |
+| `useRed`     | `useReducer`                               |
+| `useCB`      | `useCallback`                              |
+| `useM`       | `useMemo`                                  |
+| `useR`       | `useRef`                                   |
+| `useI`       | `useImperativeHandle`                      |
+| `useL`       | `useLayoutEffect`                          |
+| `useDV`      | `useDebugValue`                            |
+| `useT`       | `useTransition`                            |
 
 #### Class Components
-| Trigger Code | What it does |
-| -------- | ---------------------------------------- |
-| `rce` | `React Class Component Export` |
-| `rcep` | `React Class Export with Prop interface` |
-| `rceps` | `React Class Export with Props and State` |
-| `rcc` | `React Class Component` |
-| `rcon` | `React Class Constructor` |
-| `spt` | `Static PropTypes` |
-| `sdp` | `Static Default Props` |
-| `sdpt` | `Static Default Props Typed` |
-| `cdm` | `Component Did Mount` |
-| `cdu` | `Component Did Update` |
-| `cdc` | `Component Did Catch` |
-| `cwum` | `Component Will Unmount` |
+
+| Trigger Code | What it does                              |
+| ------------ | ----------------------------------------- |
+| `rce`        | `React Class Component Export`            |
+| `rcep`       | `React Class Export with Prop interface`  |
+| `rceps`      | `React Class Export with Props and State` |
+| `rcc`        | `React Class Component`                   |
+| `rcon`       | `React Class Constructor`                 |
+| `spt`        | `Static PropTypes`                        |
+| `sdp`        | `Static Default Props`                    |
+| `sdpt`       | `Static Default Props Typed`              |
+| `cdm`        | `Component Did Mount`                     |
+| `cdu`        | `Component Did Update`                    |
+| `cdc`        | `Component Did Catch`                     |
+| `cwum`       | `Component Will Unmount`                  |
 
 #### General Redux + Redux Toolkit
 
