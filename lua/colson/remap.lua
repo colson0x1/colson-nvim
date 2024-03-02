@@ -20,8 +20,12 @@ end)
 -- awsm remap :)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+-- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+-- vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- Map <leader>y in normal and visual modes to "+y
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- Map <leader>Y in normal mode to yank from cursor to end of line to system clipboard
+vim.keymap.set("n", "<leader>Y", [[:y$<CR>]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
