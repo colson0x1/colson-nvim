@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- UltiSnips trigger configuration
+vim.g.UltiSnipsExpandTrigger = "<C-l>"

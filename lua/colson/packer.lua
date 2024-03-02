@@ -55,6 +55,26 @@ return require("packer").startup(function(use)
 	})
   --]]
 
+	-- @ React Snippets
+	--[[
+	use({
+		"epilande/vim-react-snippets",
+		requires = {
+			{ "epilande/vim-es2015-snippets" },
+			{ "SirVer/ultisnips" },
+		},
+		fs = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	})
+  --]]
+
+	use({
+		"mlaursen/vim-react-snippets",
+		requires = {
+			{ "SirVer/ultisnips" },
+		},
+		fs = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	})
+
 	-- Formatting and Linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
