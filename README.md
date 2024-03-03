@@ -92,7 +92,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Gen Lorem Ipsum](#gen-lorem-ipsum)
   - [Code Fold](#code-fold)
   - [Live Server](#live-server)
-- [System Clipboard Copy](#system-clipboard-copy)
+  - [System Clipboard Copy](#system-clipboard-copy)
 - [🚀 React Snippets Autocompletion](#-react-snippets-autocompletion)
   - [🔥 React Snippets Guide](#-react-snippets-guide)
     - [Functional Components](#functional-components)
@@ -369,7 +369,15 @@ Now you're good to go!
 - Now inside `Neovim`: Go to `index.html` and on `Normal Mode`, type:
   `:LiveServerStart` to start the server and `:LiveServerStop` to stop the server.
 
-## System Clipboard Copy
+### System Clipboard Copy
+
+First install `xclip` on your machine in order for the configurations to work:
+
+```
+$ sudo pacman -S xclip
+```
+
+Then open any workspace with `nvim .` in `Tmux` environment. Now you're ready to go!
 
 - NORMAL OR VISUAL MODE: **`<leader>y`** - Copies to system clipboard.
 - NORMAL MODE: **`<leader>Y`** - Copies text from cursor to the end of the line to the system clipboard.
