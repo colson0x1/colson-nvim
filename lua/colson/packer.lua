@@ -16,6 +16,9 @@ return require("packer").startup(function(use)
 	-- Displays color code
 	use("norcalli/nvim-colorizer.lua")
 
+	-- Rainbow Parenthesis
+	use("HiPhish/nvim-ts-rainbow2")
+
 	-- HTTP REST Client / TEST API
 	use({
 		"rest-nvim/rest.nvim",
