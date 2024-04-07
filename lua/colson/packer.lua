@@ -20,10 +20,10 @@ return require("packer").startup(function(use)
 	use("HiPhish/nvim-ts-rainbow2")
 
 	-- HTTP REST Client / TEST API
-	use({
+	--[[ use({
 		"rest-nvim/rest.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-	})
+	}) ]]
 
 	-- Auto Save
 	use("0x00-ketsu/autosave.nvim")
