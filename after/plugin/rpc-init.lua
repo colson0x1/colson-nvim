@@ -5,7 +5,7 @@ end
 
 require("presence").setup({
 	auto_update = true,
-	neovim_image_text = "NVIM",
+	neovim_image_text = "Neovim made by (.cols)",
 	main_image = "file",
 	client_id = "793271441293967371",
 	log_level = nil,
@@ -47,7 +47,11 @@ require("presence").setup({
 		end
 
 		-- Customize the format: "root dir → sub dirs"
-		return string.format("%s → %s", vim.fn.fnamemodify(root_directory, ":t"), table.concat(relative_parts, "/"))
+		return string.format(
+			"%s → " .. "/" .. "%s",
+			vim.fn.fnamemodify(root_directory, ":t"),
+			table.concat(relative_parts, "/")
+		)
 	end,
 
 	line_number_text = function(line_number, line_count)
