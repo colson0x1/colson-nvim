@@ -51,6 +51,7 @@ nvim_treesitter_config.setup({
 	autotag = { enable = true },
 
 	-- Rainbow Parenthesis
+	--[[
 	rainbow = {
 		enable = true,
 		-- list of languages you want to disable the plugin for
@@ -60,4 +61,5 @@ nvim_treesitter_config.setup({
 		-- Highlight the entire buffer all at once
 		strategy = require("ts-rainbow").strategy.global,
 	},
+  --]]
 })
