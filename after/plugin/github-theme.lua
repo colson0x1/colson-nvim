@@ -34,7 +34,8 @@ github_theme.setup({
 		darken = { -- Darken floating windows and sidebar-like windows
 			floats = false,
 			sidebars = {
-				enabled = true,
+				-- enabled = true,
+				enable = true,
 				list = {}, -- Apply dark background to specific windows
 			},
 		},
