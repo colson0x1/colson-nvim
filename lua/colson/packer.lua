@@ -120,6 +120,12 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- Blazing fast TypeScript Engine
+	use({
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	})
+
 	use("nvim-tree/nvim-tree.lua")
 	use("numToStr/Comment.nvim")
 	use("kyazdani42/nvim-web-devicons")
