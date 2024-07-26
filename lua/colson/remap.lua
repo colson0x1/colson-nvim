@@ -54,3 +54,23 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- UltiSnips trigger configuration
 vim.g.UltiSnipsExpandTrigger = "<C-l>"
+
+-- sorts and removes unused imports
+vim.keymap.set("n", "<leader>oi", ":TSToolsOrganizeImports<CR>")
+vim.keymap.set("n", "<leader>soi", ":TSToolsOrganizeImports<CR>")
+-- sorts imports
+vim.keymap.set("n", "<leader>si", ":TSToolsSortImports<CR>")
+-- removes unused imports
+vim.keymap.set("n", "<leader>ui", ":TSToolsRemoveUnusedImports<CR>")
+vim.keymap.set("n", "<leader>ri", ":TSToolsRemoveUnusedImports<CR>")
+-- adds imports for all statements that lack one and can be imported
+vim.keymap.set("n", "<leader>ai", ":TSToolsAddMissingImports<CR>")
+-- fixes all fixable errors
+vim.keymap.set("n", "<leader>fe", ":TSToolsFixAll<CR>")
+-- goes to source definition (available since TS v4.7)
+vim.keymap.set("n", "<leader>d", ":TSToolsGoToSourceDefinition<CR>")
+-- allow to rename current file and apply changes to connected files
+vim.keymap.set("n", "<leader>rf", ":TSToolsRenameFile<CR>")
+vim.keymap.set("n", "<leader>rn", ":TSToolsRenameFile<CR>")
+-- find files that reference the current file (available since TS v4.2)
+vim.keymap.set("n", "<leader>fr", ":TSToolsFileReferences<CR>")
