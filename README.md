@@ -4,7 +4,7 @@ FullStack Neovim IDE by COLSON! 🚀
 </h1>
 <h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
 <h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
-<h2>🎯 Blazingly Fast as compared to WebStorm and VSCode 🔥</h2>
+<h2>🎯 Blazingly Fast as compared to VSCode and WebStorm 🔥</h2>
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
 
@@ -17,6 +17,24 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 **DEMO Screenshot**
 
 ## ✨ New Updated Zenful Look (COLSON NVIM)
+
+## @ Neovim on Arch Linux
+
+### Latest Fresh Look, July 2024 :)
+
+![colson nvim](https://camo.githubusercontent.com/f3483c209874c38d58ebbdc960f9219c05ba8099cf8422e5ddcd47c0ee2c6cb3/68747470733a2f2f692e696d6775722e636f6d2f333363686c55702e706e67)
+
+![colson nvim](https://camo.githubusercontent.com/5c4cc76f4d149f2461e9d940bcdf1e525608a9bfe4051a369a725d276554816d/68747470733a2f2f692e696d6775722e636f6d2f755557666753302e706e67)
+
+![colson nvim](https://camo.githubusercontent.com/f0a88816cb1dad274d216215ca20bcdb0028b6e85c36fd4dcbdd24a3a88e58bc/68747470733a2f2f692e696d6775722e636f6d2f437a67434449742e706e67)
+
+![colson nvim](https://camo.githubusercontent.com/44df6b18f09ec8eaaefae6c7d0522397b4153ce745d17ef59ffdfba4b9d24106/68747470733a2f2f692e696d6775722e636f6d2f6446474b4668442e706e67)
+
+---
+
+## @ Neovim on macOS
+
+### 2023/Early 2024 Look
 
 ![colson nvim](https://i.imgur.com/zPUZ8lo.png)
 
@@ -256,6 +274,7 @@ Search and Replace
 - **`Ctrl+n`**: LSP toggle next in autocompletion.
 - **`Ctrl+p`**: LSP toggle previous in autocompletion.
 - **`Ctrl+k or Ctrl+y`**: LSP select in autocompletion.
+- View Diagnostic Errors: **`<leader>dd` or `<leader>sd` or `<leader>vd`**
 
 ### **Telescope** Integration<a name="telescope-integration"></a>
 
