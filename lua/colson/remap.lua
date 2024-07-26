@@ -70,6 +70,7 @@ vim.keymap.set("n", "<leader>fe", ":TSToolsFixAll<CR>")
 -- goes to source definition (available since TS v4.7)
 vim.keymap.set("n", "<leader>d", ":TSToolsGoToSourceDefinition<CR>")
 -- allow to rename current file and apply changes to connected files
+vim.keymap.set("n", "<leader>rr", ":TSToolsRenameFile<CR>")
 vim.keymap.set("n", "<leader>rf", ":TSToolsRenameFile<CR>")
 vim.keymap.set("n", "<leader>rn", ":TSToolsRenameFile<CR>")
 -- find files that reference the current file (available since TS v4.2)
