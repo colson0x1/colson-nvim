@@ -1,7 +1,10 @@
 <div align="center">
 <h1>
-Neovim Configuration by COLSON! 🚀
+FullStack Neovim IDE by COLSON! 🚀
 </h1>
+<h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
+<h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
+<h2>:: Blazingly Fast as compared to WebStorm and VSCode 🔥</h2>
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
 
@@ -98,12 +101,13 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Functional Components](#functional-components)
     - [Class Components](#class-components)
     - [General Redux + Redux Toolkit](#general-redux--redux-toolkit)
+- [🎯 TypeScript/JavaScript Engine: Cool Features](#-typescriptjavascript-engine-cool-features)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-    - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-    - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-    - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
-    - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
-    - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
+  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
+  - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
+  - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
 
 ## Introduction<a name="introduction"></a>
 
@@ -488,6 +492,17 @@ Yay, finally now we should be able to use `React Snippets`!
 | `ecs`        | `export createSlice`     |
 | `cpr`        | `create prepare reducer` |
 | `cat`        | `createAsyncThunk`       |
+
+### 🎯 TypeScript/JavaScript Engine: Cool Features
+
+- **@ sorts and removes unused imports: `<leader>oi` or `<leader>soi`**
+- **@ sorts imports: `<leader>si`**
+- **@ removes unused imports: `<leader>ui` or `<leader>ri`**
+- **@ adds imports for all statements that lack one and can be imported: `<leader>ai`**
+- **@ fixes all fixable errors: `<leader>fe`**
+- **@ goes to source definition (available since TS v4.7): `<leader>d`**
+- **@ allow to rename current file and apply changes to connected files: `<leader>rn` or `<leader>rf`**
+- **@ find files that reference the current file (available since TS v4.2): `<leader>fr`**
 
 ---
 
