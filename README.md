@@ -4,7 +4,7 @@ FullStack Neovim IDE by COLSON! 🚀
 </h1>
 <h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
 <h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
-<h2>:: Blazingly Fast as compared to WebStorm and VSCode 🔥</h2>
+<h2>🎯 Blazingly Fast as compared to WebStorm and VSCode 🔥</h2>
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
 
@@ -501,7 +501,7 @@ Yay, finally now we should be able to use `React Snippets`!
 - **@ adds imports for all statements that lack one and can be imported: `<leader>ai`**
 - **@ fixes all fixable errors: `<leader>fe`**
 - **@ goes to source definition (available since TS v4.7): `<leader>d`**
-- **@ allow to rename current file and apply changes to connected files: `<leader>rn` or `<leader>rf`**
+- **@ allow to rename current file and apply changes to connected files: `<leader>rr` or `<leader>rn` or `<leader>rf`**
 - **@ find files that reference the current file (available since TS v4.2): `<leader>fr`**
 
 ---
