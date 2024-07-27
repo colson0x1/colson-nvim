@@ -27,17 +27,32 @@ lsp.on_attach(function(client, bufnr)
 	end
 end)
 
--- Custom hover handler
-vim.lsp.handlers["textDocument/hover"] = function(_, result, ct, config)
+-- Enhanced hover handler
+vim.lsp.handlers["textDocument/hover"] = function(_, result, _, config)
 	if not (result and result.contents) then
 		return
 	end
+
 	vim.lsp.util.open_floating_preview(
 		vim.lsp.util.convert_input_to_markdown_lines(result.contents),
 		"markdown",
-		config
+		vim.tbl_extend("force", config or {}, {
+			border = "rounded",
+		})
 	)
 end
+
+-- Enhanced diagnostic configuration
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "●",
+		source = "if_many",
+	},
+	signs = true,
+	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+})
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
