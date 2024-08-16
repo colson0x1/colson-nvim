@@ -8,6 +8,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#47c8ff ]])
 
 nvimtree.setup({
+	view = {
+		side = "right",
+	},
 	renderer = {
 		icons = {
 			glyphs = {
