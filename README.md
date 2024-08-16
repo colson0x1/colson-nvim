@@ -96,12 +96,13 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Leader Key](#leader-key)
     - [Netrw: File Explorer](#netrw-file-explorer)
     - [NvimTree (Right window pane file explorer)](#nvimtree-right-window-pane-file-explorer)
+    - [Save all files](#save-files)
+    - [Save All Files and Exit Neovim](#save-and-exit-nvim)
     - [Collaborative Editing](#collaborative-editing)
     - [Text Manipulation](#text-manipulation)
     - [Code Formatting](#code-formatting)
     - [Navigation](#navigation)
     - [Search and Replace](#search-and-replace)
-    - [Miscellaneous](#miscellaneous)
   - [Normal Mode Key Bindings](#normal-mode-key-bindings)
     - [Line Manipulation](#line-manipulation)
     - [Scrolling](#scrolling)
@@ -178,6 +179,11 @@ To embark on this Neovim journey, follow these steps:
 
 3. Launch Neovim and run `:PackerSync` to install and update plugins.
 
+4. Install JetBrainsMono Nerd Font:
+   - Install the regular JetBrains Mono version to support Unicode and Programming Languages Icons in the Neovim IDE!
+     <br />
+     https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+
 Now, you're all set to unleash the power of this Neovim configuration!
 
 ![colson nvim](https://i.imgur.com/YffIPC6.png)
@@ -206,7 +212,13 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **`<leader>-`** - Decrease the NvimTree (or current window) width by 5 columns.
 - **`<leader>fp`** - Manually set the width of the Project Pane.
 
+##### Save Files
+
 **`<leader>w`** - Save all open files.
+
+##### Save and Exit Nvim
+
+**`<leader>q`**: - Exit Neovim
 
 **NEW Look!**
 
@@ -244,11 +256,6 @@ Now, you're all set to unleash the power of this Neovim configuration!
 Search and Replace
 
 - **`<leader>sr`**: Perform a search and replace using Telescope.
-
-#### Miscellaneous
-
-- **``**: Close the current buffer.
-- **``**: Quit Neovim.
 
 ### Normal Mode Key Bindings<a name="normal-mode-key-bindings"></a>
 
