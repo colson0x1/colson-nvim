@@ -75,3 +75,16 @@ vim.keymap.set("n", "<leader>rf", ":TSToolsRenameFile<CR>")
 vim.keymap.set("n", "<leader>rn", ":TSToolsRenameFile<CR>")
 -- find files that reference the current file (available since TS v4.2)
 vim.keymap.set("n", "<leader>fr", ":TSToolsFileReferences<CR>")
+
+-- NVIMTREE Project/Window Pane Resize
+-- Increase the NvimTree (or current window) width by 5 columns
+vim.api.nvim_set_keymap("n", "<leader>+", ":vertical resize +5<CR>", { noremap = true, silent = true })
+-- Decrease the NvimTree (or current window) width by 5 columns
+vim.api.nvim_set_keymap("n", "<leader>-", ":vertical resize -5<CR>", { noremap = true, silent = true })
+-- Check the current width of the window
+vim.api.nvim_set_keymap("n", "<leader>ww", ":echo winwidth(0)<CR>", { noremap = true, silent = true })
+-- Trigger the :vertical resize command to manually adjust the width
+vim.api.nvim_set_keymap("n", "<leader>fp", ":vertical resize ", { noremap = true, silent = false })
+
+-- Save (write) all open files with a keybinding using :wall
+vim.api.nvim_set_keymap("n", "<leader>w", ":wall<CR>", { noremap = true, silent = true })
