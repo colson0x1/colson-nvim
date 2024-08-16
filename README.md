@@ -95,12 +95,12 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Global Key Bindings](#global-key-bindings)
     - [Leader Key](#leader-key)
     - [Netrw: File Explorer](#netrw-file-explorer)
-    - [NvimTree (Left window pane file explorer)](#nvimtree-left-window-pane-file-explorer)
+    - [NvimTree (Right window pane file explorer)](#nvimtree-right-window-pane-file-explorer)
     - [Collaborative Editing](#collaborative-editing)
     - [Text Manipulation](#text-manipulation)
     - [Code Formatting](#code-formatting)
     - [Navigation](#navigation)
-    - [](#)
+    - [Search and Replace](#search-and-replace)
     - [Miscellaneous](#miscellaneous)
   - [Normal Mode Key Bindings](#normal-mode-key-bindings)
     - [Line Manipulation](#line-manipulation)
@@ -196,9 +196,23 @@ Now, you're all set to unleash the power of this Neovim configuration!
 
 - **`<leader>pv`**: Open a file explorer with **Netrw**.
 
-#### NvimTree (Left window pane file explorer)
+#### NvimTree (Right window pane file explorer)
 
 - **`<leader>e`**: Toggle NvimTree
+
+**NOTE: Make sure NvimTree is Opened!**
+
+- **`<leader>+`** - Increase the NvimTree (or current window) width by 5 columns.
+- **`<leader>-`** - Decrease the NvimTree (or current window) width by 5 columns.
+- **`<leader>fp`** - Manually set the width of the Project Pane.
+
+**`<leader>w`** - Save all open files.
+
+**NEW Look!**
+
+![colson nvim nvimtree](https://i.imgur.com/SjKzoUx.png)
+
+**Old Look**
 
 ![colson nvim nvimtree](https://i.imgur.com/zPUZ8lo.png)
 
@@ -225,7 +239,7 @@ Now, you're all set to unleash the power of this Neovim configuration!
 - **`<C-k>`** and **`<C-j>`**: Navigate through the quickfix list.
 - **`<leader>k`** and **`<leader>j`**: Navigate through the location list.
 
-####
+#### Search and Replace
 
 Search and Replace
 
