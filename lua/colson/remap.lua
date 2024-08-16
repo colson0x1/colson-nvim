@@ -88,3 +88,6 @@ vim.api.nvim_set_keymap("n", "<leader>fp", ":vertical resize ", { noremap = true
 
 -- Save (write) all open files with a keybinding using :wall
 vim.api.nvim_set_keymap("n", "<leader>w", ":wall<CR>", { noremap = true, silent = true })
+
+-- Save all files and quit Neovim with a keybinding
+vim.api.nvim_set_keymap("n", "<leader>q", ":wqa<CR>", { noremap = true, silent = true })
