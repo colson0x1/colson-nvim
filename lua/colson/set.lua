@@ -61,3 +61,10 @@ vim.api.nvim_set_keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", { norema
 vim.api.nvim_set_keymap("n", "<leader>bcr", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
 -- Close all tabs except currently opened one
 vim.api.nvim_set_keymap("n", "<leader>abc", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true })
+
+-- Indent Line
+vim.g.indentLine_enabled = 1
+vim.g.indentLine_char = "│"
+vim.g.indentLine_fileTypeExclude = { "help", "dashboard", "packer", "NvimTree" }
+vim.g.indentLine_showFirstIndentLevel = 1
+vim.g.indentLine_setColors = 1

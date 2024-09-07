@@ -158,6 +158,11 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
+	-- Indent line
+	use({
+		"Yggdroot/indentLine",
+	})
+
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
 	-- @ Github Themes
