@@ -134,7 +134,17 @@ return require("packer").startup(function(use)
 	use("IogaMaster/neocord")
 	-- use("andweeb/presence.nvim")
 
-	use({ "derektata/lorem.nvim" })
+	-- use({ "derektata/lorem.nvim" })
+	use({
+		"derektata/lorem.nvim",
+		config = function()
+			require("lorem").setup({
+				sentenceLength = "mixed",
+				comma_chance = 0.3,
+				max_commas_per_sentence = 2,
+			})
+		end,
+	})
 	--[[
 	-- Image Preview
   -- Install Chafa in your machine for it to work inside nvim 
