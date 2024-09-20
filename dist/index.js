@@ -7,7 +7,6 @@ const greetUser = () => {
   \x1b[1;34m@ Introducing \x1b[38;5;32mCOLSON NVIM 💎\x1b[0m
   \x1b[1;35mBlazingly Fast Fullstack Code Editor/IDE for Software Engineers 🚀\x1b[0m
   \x1b[38;5;214mAuthor: Colson\x1b[0m
-  \x1b[38;5;214mVersion: colson-nvim@1.0.0\x1b[0m
 
   \x1b[1;37mVisit the official repository for more information:
   https://github.com/colson0x1/nvim\x1b[0m
