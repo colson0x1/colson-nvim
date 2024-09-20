@@ -14,9 +14,32 @@ Step into the realm of excellence with my world-class Neovim (nvim) configuratio
 Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
 
 ## Installation through NPM
+
+Ensure `Neovim (v >= 0.9.0)` and `Node` are installed on your machine!
+
 ```shell
 $ npx colson-nvim
+$ cd ~/.config/nvim
+$ nvim .
 ```
+
+Navigate to `lua/colson/packer.lua`  
+Execute this command in normal mode!
+
+```
+:so
+:PackerSync
+```
+
+Restart **Neovim** in your desired workspace!
+
+```
+nvim .
+```
+
+#### `NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!
+
+That's the beginning of the new world. A beginning of new experience, journey packed with challenges, integrated with tools used in daily lives, boosting productivity, enhancing engineers performance!
 
 **DEMO Screenshot**
 
