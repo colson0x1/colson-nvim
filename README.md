@@ -206,7 +206,7 @@ To embark on this Neovim journey, follow these steps:
 1. Clone this repository to your Neovim configuration directory:
 
    ```shell
-   git clone https://github.com/colson0x1/nvim ~/.config/nvim
+   git clone https://github.com/colson0x1/colson-nvim ~/.config/nvim
    ```
 
 2. Install Packer.nvim for managing plugins:
