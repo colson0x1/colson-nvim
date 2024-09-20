@@ -11,7 +11,7 @@ const greetUser = (): void => {
   \x1b[38;5;214mAuthor: Colson\x1b[0m
 
   \x1b[1;37mVisit the official repository for more information:
-  https://github.com/colson0x1/nvim\x1b[0m
+  https://github.com/colson0x1/colson-nvim\x1b[0m
 
   \x1b[1;33mEmpowering Software Engineers with cutting-edge tools for a transformative coding experience! \x1b[0m
   `;
