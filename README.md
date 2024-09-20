@@ -1,7 +1,6 @@
 <div align="center">
-<h1>
-FullStack Neovim IDE by COLSON! 🚀
-</h1>
+<h1>Colson Nvim (colson-nvim npm) 💎</h1>
+<h2>FullStack Neovim IDE by COLSON! 🚀 </h2>
 <h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
 <h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
 <h2>🎯 Blazingly Fast as compared to VSCode and WebStorm 🔥</h2>
@@ -13,6 +12,11 @@ FullStack Neovim IDE by COLSON! 🚀
 Step into the realm of excellence with my world-class Neovim (nvim) configuration! This comprehensive guide unveils a meticulously crafted zenful setup, meticulously designed for unparalleled efficiency, productivity, and visual splendor within Neovim.
 
 Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
+
+## Installation through NPM
+```shell
+$ npx colson-nvim
+```
 
 **DEMO Screenshot**
 
