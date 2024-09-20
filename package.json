@@ -1,0 +1,48 @@
+{
+  "name": "colson-nvim",
+  "version": "1.0.0",
+  "description": "Colson Nvim: Neovim Code Editor/IDE for Software Engineers",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "node dist/index.js"
+  },
+  "bin": {
+    "install-nvim-config": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colson0x1/colson-nvim.git"
+  },
+  "keywords": [
+    "colson-nvim",
+    "nvim",
+    "neovim",
+    "neovim ide",
+    "fullstack neovim ide",
+    "neovim code editor",
+    "fullstack neovim code editor",
+    "neovim typescript",
+    "neovim javascript",
+    "code editor",
+    "ide",
+    "typescript ide",
+    "fullstack ide",
+    "neovim config",
+    "neovim configuration",
+    "typescript neovim configuration"
+  ],
+  "author": "COLSON",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colson0x1/colson-nvim/issues"
+  },
+  "homepage": "https://github.com/colson0x1/colson-nvim#readme",
+  "dependencies": {
+    "execa": "^9.4.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
