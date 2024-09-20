@@ -8,7 +8,8 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "clean": "del ./dist/*",
+    "build": "npm run clean && tsc",
     "postinstall": "node dist/index.js"
   },
   "bin": {
