@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "Colson Nvim: Neovim Code Editor/IDE for Software Engineers",
   "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "postinstall": "node dist/index.js"
   },
   "bin": {
+    "colson-nvim": "./dist/index.js",
     "exec": "./dist/index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colson0x1/colson-nvim.git"

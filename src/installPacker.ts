@@ -1,7 +1,7 @@
-import { execa } from 'execa'; // Use named import
+import { execa } from 'execa';
 import path from 'path';
 import fs from 'fs-extra';
-import { getHomeDirectory } from './utils';
+import { getHomeDirectory } from './utils.js';
 
 const PACKER_INSTALL_COMMAND =
   'git clone --depth 1 https://github.com/wbthomason/packer.nvim';
