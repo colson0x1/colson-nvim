@@ -35,6 +35,14 @@ Restart **Neovim** in your desired workspace!
 
 ```
 nvim .
+
+If you've already installed this before then for the latest pull, do:
+```
+
+$ npx colson-nvim@latest
+
+```
+
 ```
 
 #### `NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!
