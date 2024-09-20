@@ -20,6 +20,12 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 ## @ Neovim on Arch Linux
 
+### New Modern Look, September 2024 💎
+
+![colsonn nvim](https://i.imgur.com/m5UvL88.png)
+
+![colson nvim](https://i.imgur.com/1Kvdttn.png)
+
 ### Latest Fresh Look, July 2024 :)
 
 ![colson nvim](https://i.imgur.com/7davwV7.png)
