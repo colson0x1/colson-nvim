@@ -122,7 +122,15 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 
 ## Table of Contents
 
+- [Installation through NPM](#installation-through-npm)
+  - [If you've already installed this before then for the latest pull, do:](#if-youve-already-installed-this-before-then-for-the-latest-pull-do)
+  - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
 - [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
+- [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
+  - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
+  - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
+- [@ Neovim on macOS](#-neovim-on-macos)
+  - [2023/Early 2024 Look](#2023early-2024-look)
 - [🔥 Discord Presence for Neovim](#-discord-presence-for-neovim)
 - [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
 - [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
@@ -135,8 +143,8 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Leader Key](#leader-key)
     - [Netrw: File Explorer](#netrw-file-explorer)
     - [NvimTree (Right window pane file explorer)](#nvimtree-right-window-pane-file-explorer)
-    - [Save all files](#save-files)
-    - [Save All Files and Exit Neovim](#save-and-exit-nvim)
+      - [Save Files](#save-files)
+      - [Save and Exit Nvim](#save-and-exit-nvim)
     - [Collaborative Editing](#collaborative-editing)
     - [Text Manipulation](#text-manipulation)
     - [Code Formatting](#code-formatting)
@@ -169,7 +177,8 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [Functional Components](#functional-components)
     - [Class Components](#class-components)
     - [General Redux + Redux Toolkit](#general-redux--redux-toolkit)
-- [🎯 TypeScript/JavaScript Engine: Cool Features](#-typescriptjavascript-engine-cool-features)
+  - [🎯 TypeScript/JavaScript Engine: Cool Features](#-typescriptjavascript-engine-cool-features)
+- [Git Diff View 😆](#git-diff-view-)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -592,6 +601,25 @@ Yay, finally now we should be able to use `React Snippets`!
 - **@ goes to source definition (available since TS v4.7): `<leader>d`**
 - **@ allow to rename current file and apply changes to connected files: `<leader>rr` or `<leader>rn` or `<leader>rf`**
 - **@ find files that reference the current file (available since TS v4.2): `<leader>fr`**
+
+---
+
+## Git Diff View 😆
+
+These keymaps facilitate easy navigation and management of diffs in your codebase!
+
+| Key Mapping      | Action                   |
+| ---------------- | ------------------------ |
+| **`<leader>do`** | Open diff view           |
+| **`<leader>dc`** | Close diff view          |
+| **`<leader>df`** | Toggle file panel        |
+| **`<leader>dh`** | Focus file panel         |
+| **`<leader>dr`** | Refresh files            |
+| **`<leader>dp`** | Previous file entry      |
+| **`<leader>dn`** | Next file entry          |
+| **`<leader>dt`** | Select entry             |
+| **`<leader>dh`** | Open file history panel  |
+| **`<leader>dl`** | Close file history panel |
 
 ---
 
