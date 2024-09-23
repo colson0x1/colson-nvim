@@ -69,6 +69,8 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 
 ![colson nvim](https://i.imgur.com/pijyyi5.png)
 
+![colson nvim](https://i.imgur.com/KmlEXho.png)
+
 ![colson nvim](https://i.imgur.com/uUWfgS0.png)
 
 ![colson nvim](https://i.imgur.com/33chlUp.png)
