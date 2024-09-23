@@ -68,3 +68,36 @@ vim.g.indentLine_char = "│"
 vim.g.indentLine_fileTypeExclude = { "help", "dashboard", "packer", "NvimTree" }
 vim.g.indentLine_showFirstIndentLevel = 1
 vim.g.indentLine_setColors = 1
+
+local cb = require("diffview.config").diffview_callback
+
+-- @ Diff -> General Diffview keymaps
+vim.api.nvim_set_keymap("n", "<leader>do", ":DiffviewOpen<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dc", ":DiffviewClose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>df", ":DiffviewToggleFiles<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFocusFiles<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dr", ":DiffviewRefreshFiles<CR>", { noremap = true, silent = true })
+
+-- @ Diff -> File panel navigation
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dp",
+	":lua require('diffview.config').diffview_callback('prev_entry')<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dn",
+	":lua require('diffview.config').diffview_callback('next_entry')<CR>",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>dt",
+	":lua require('diffview.config').diffview_callback('select_entry')<CR>",
+	{ noremap = true, silent = true }
+)
+
+-- @ Diff -> File history panel
+vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewClose<CR>", { noremap = true, silent = true })

@@ -28,6 +28,9 @@ return require("packer").startup(function(use)
 	-- Auto Save
 	use("0x00-ketsu/autosave.nvim")
 
+	-- Git Diff
+	use("sindrets/diffview.nvim")
+
 	--[[ 
     @ Install live-server using NODE
 	  sudo npm i -g live-server
@@ -135,7 +138,7 @@ return require("packer").startup(function(use)
 	-- use("andweeb/presence.nvim")
 
 	-- use({ "derektata/lorem.nvim" })
-	use({
+	--[[ use({
 		"derektata/lorem.nvim",
 		config = function()
 			require("lorem").setup({
@@ -144,7 +147,8 @@ return require("packer").startup(function(use)
 				max_commas_per_sentence = 2,
 			})
 		end,
-	})
+	}) ]]
+
 	--[[
 	-- Image Preview
   -- Install Chafa in your machine for it to work inside nvim 
