@@ -87,9 +87,11 @@ require("mason-lspconfig").setup({
 		-- "tsserver", -- Removed
 		"lua_ls",
 		"marksman",
+		"ast_grep",
 		"nginx_language_server",
 		"prismals",
 		"pyright",
+		"ruby_lsp",
 		"rust_analyzer",
 		"sqlls",
 		"solidity_ls",
@@ -97,9 +99,11 @@ require("mason-lspconfig").setup({
 		"tailwindcss",
 		"terraformls",
 		"tflint",
+		"tflint",
 		"biome",
 		"vuels",
 		"yamlls",
+		"pbls",
 	},
 	handlers = {
 		lsp.default_setup,
