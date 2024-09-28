@@ -31,6 +31,15 @@ return require("packer").startup(function(use)
 	-- Git Diff
 	use("sindrets/diffview.nvim")
 
+	-- Git Rebase Diff
+	use({
+		"yutkat/git-rebase-auto-diff.nvim",
+		ft = { "gitrebase" },
+		config = function()
+			require("git-rebase-auto-diff").setup()
+		end,
+	})
+
 	--[[ 
     @ Install live-server using NODE
 	  sudo npm i -g live-server
