@@ -70,7 +70,7 @@ vim.keymap.set("n", "<leader>fe", ":TSToolsFixAll<CR>")
 -- goes to source definition (available since TS v4.7)
 vim.keymap.set("n", "<leader>d", ":TSToolsGoToSourceDefinition<CR>")
 -- allow to rename current file and apply changes to connected files
-vim.keymap.set("n", "<leader>rr", ":TSToolsRenameFile<CR>")
+vim.keymap.set("n", "<leader>r", ":TSToolsRenameFile<CR>")
 vim.keymap.set("n", "<leader>rf", ":TSToolsRenameFile<CR>")
 vim.keymap.set("n", "<leader>rn", ":TSToolsRenameFile<CR>")
 -- find files that reference the current file (available since TS v4.2)
@@ -91,3 +91,20 @@ vim.api.nvim_set_keymap("n", "<leader>w", ":wall<CR>", { noremap = true, silent 
 
 -- Save all files and quit Neovim with a keybinding
 vim.api.nvim_set_keymap("n", "<leader>q", ":wqa<CR>", { noremap = true, silent = true })
+
+-- HTTP REST Client
+-- Keybindings for improved workflow
+vim.api.nvim_set_keymap("n", "<leader>rr", '<cmd>lua require("rest-nvim").run()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>rl",
+	'<cmd>lua require("rest-nvim").last()<CR>',
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>rp",
+	'<cmd>lua require("rest-nvim").preview()<CR>',
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap("n", "<leader>re", '<cmd>lua require("rest-nvim").env()<CR>', { noremap = true, silent = true })

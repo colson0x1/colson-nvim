@@ -22,7 +22,18 @@ return require("packer").startup(function(use)
 	-- HTTP REST Client / TEST API
 	--[[ use({
 		"rest-nvim/rest.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
+		requires = {
+			"nvim-lua/plenary.nvim", -- Required for rest.nvim
+			-- "j-hui/fidget.nvim", -- For showing request progress messages
+			-- "Lua-cURL/Lua-cURLv3", -- Optional: For handling advanced curl requests
+			-- "tami5/xml2lua", -- For parsing XML request bodies
+			-- "jubnzv/mimetypes", -- For detecting file MIME types in external body files
+			-- "miversen33/nvim-nio", -- For async execution in rest.nvim
+			"nvim-neotest/nvim-nio", -- Alternative for async execution in rest.nvim
+		},
+		config = function()
+			require("plugin.http-rest-client")
+		end,
 	}) ]]
 
 	-- Auto Save
@@ -97,7 +108,7 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
 	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
+	-- use("windwp/nvim-ts-autotag")
 
 	use("nvim-lua/plenary.nvim")
 	use("ThePrimeagen/harpoon")

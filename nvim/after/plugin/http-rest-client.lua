@@ -4,6 +4,27 @@ if not status then
 end
 
 rest.setup({
+	result_split_horizontal = false, -- Use vertical split for results, better for wide responses
+	skip_ssl_verification = false, -- Ensure SSL is verified, useful in production environments
+	encode_url = true, -- Automatically encode URLs to ensure proper formatting
+	env_file = ".env", -- Load environment variables from a .env file
+	custom_dynamic_variables = {}, -- Add your dynamic variable handling here
+	highlight = {
+		enabled = true,
+		timeout = 250, -- Longer timeout for better visual response feedback
+	},
+	result = {
+		show_url = true, -- Show URL of the request
+		show_http_info = true, -- Display status codes and HTTP version
+		show_headers = true, -- Display response headers for debugging
+		formatters = { "json", "html" }, -- Format JSON and HTML responses neatly
+	},
+	jump_to_request = true, -- Automatically jump to the request upon execution
+	yank_dry_run = true, -- Enable yank dry run for quick copy-paste actions in response data
+})
+
+-- Old configuration
+--[[ rest.setup({
 	-- Open request results in a horizontal split
 	result_split_horizontal = false,
 	-- Keep the http file buffer above|left when split horizontal|vertical
@@ -45,4 +66,4 @@ rest.setup({
 	custom_dynamic_variables = {},
 	yank_dry_run = true,
 	search_back = true,
-})
+}) ]]
