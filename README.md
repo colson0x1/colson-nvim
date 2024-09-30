@@ -57,19 +57,31 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 
 ![colsonn nvim](https://i.imgur.com/m5UvL88.png)
 
+![colson nvim](https://i.imgur.com/NZuX2Iv.png)
+
+![colson nvim](https://i.imgur.com/YAk1zK9.png)
+
 ![colson nvim](https://i.imgur.com/1Kvdttn.png)
 
-### Latest Fresh Look, July 2024 :)
-
 ![colson nvim](https://i.imgur.com/7davwV7.png)
+
+![colson nvim](https://i.imgur.com/WP1WOzQ.png)
+
+![colson nvim](https://i.imgur.com/kHBbyOg.png)
+
+![colson nvim](https://i.imgur.com/kp3R48u.png)
+
+![colson nvim](https://i.imgur.com/4I0Aio9.png)
+
+![colson nvim](https://i.imgur.com/lWLvmmD.png)
+
+### Latest Fresh Look, July 2024 :)
 
 ![colson nvim](https://i.imgur.com/7V5XbMg.png)
 
 ![colson nvim](https://i.imgur.com/Xc3GtfT.png)
 
 ![colson nvim](https://i.imgur.com/pijyyi5.png)
-
-![colson nvim](https://i.imgur.com/KmlEXho.png)
 
 ![colson nvim](https://i.imgur.com/uUWfgS0.png)
 
