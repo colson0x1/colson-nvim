@@ -193,6 +193,10 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [General Redux + Redux Toolkit](#general-redux--redux-toolkit)
   - [🎯 TypeScript/JavaScript Engine: Cool Features](#-typescriptjavascript-engine-cool-features)
 - [Git Diff View 😆](#git-diff-view-)
+- [🛰️ HTTP REST Client](#️-http-rest-client)
+  - [Keymaps](#keymaps)
+  - [Key Mapping Explanation](#key-mapping-explanation)
+- [Usage Example](#usage-example)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -613,7 +617,7 @@ Yay, finally now we should be able to use `React Snippets`!
 - **@ adds imports for all statements that lack one and can be imported: `<leader>ai`**
 - **@ fixes all fixable errors: `<leader>fe`**
 - **@ goes to source definition (available since TS v4.7): `<leader>d`**
-- **@ allow to rename current file and apply changes to connected files: `<leader>rr` or `<leader>rn` or `<leader>rf`**
+- **@ allow to rename current file and apply changes to connected files: `<leader>r` or `<leader>rn` or `<leader>rf`**
 - **@ find files that reference the current file (available since TS v4.2): `<leader>fr`**
 
 ---
@@ -634,6 +638,50 @@ These keymaps facilitate easy navigation and management of diffs in your codebas
 | **`<leader>dt`** | Select entry             |
 | **`<leader>dh`** | Open file history panel  |
 | **`<leader>dl`** | Close file history panel |
+
+---
+
+## 🛰️ HTTP REST Client
+
+### Keymaps
+
+| **Action**                   | **Key Mapping**  |
+| ---------------------------- | ---------------- |
+| Send HTTP request            | **`<leader>rr`** |
+| Preview HTTP request         | **`<leader>rp`** |
+| Re-run last HTTP request     | **`<leader>rl`** |
+| Toggle environment variables | **`<leader>re`** |
+
+### Key Mapping Explanation
+
+- **`<leader>rr`**: Sends the HTTP request located at the cursor position. Useful for quickly testing endpoints without leaving the editor.
+- **`<leader>rp`**: Previews the HTTP request that will be sent. This is beneficial for verifying the request structure and headers before execution.
+- **`<leader>rl`**: Re-runs the last executed HTTP request. This saves time when you need to test the same endpoint multiple times.
+- **`<leader>re`**: Toggles environment variables from a `.env` file, allowing you to manage configurations effectively.
+
+## Usage Example
+
+Here’s an example of how to use **HTTP REST Client** in your workflow:
+
+1. **Open a new buffer** in Neovim.
+2. **Write your HTTP request** in the format supported in either one of these extension - **`.http`** or **`.rest`** . For example:
+
+**API.http**
+
+```http
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+ "name": "Colson",
+ "currentYear": "2024",
+ "age": "25"
+}
+```
+
+3. **Place the cursor** anywhere within the request.
+4. Press `<leader>rr` to **send the request**.
+5. Check the response in a split window.
 
 ---
 
