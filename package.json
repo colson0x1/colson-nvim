@@ -1,7 +1,7 @@
 {
   "name": "colson-nvim",
   "version": "1.0.9",
-  "description": "Colson Nvim: Neovim Code Editor/IDE for Software Engineers",
+  "description": "Colson Nvim: Neovim Code Editor/IDE for Software Engineers!",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
