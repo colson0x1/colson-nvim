@@ -19,6 +19,9 @@ return require("packer").startup(function(use)
 	-- Rainbow Parenthesis
 	-- use("HiPhish/nvim-ts-rainbow2")
 
+	-- HTTP Client
+	use("BlackLight/nvim-http")
+
 	-- HTTP REST Client / TEST API
 	--[[ use({
 		"rest-nvim/rest.nvim",

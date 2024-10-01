@@ -101,3 +101,6 @@ vim.api.nvim_set_keymap(
 -- @ Diff -> File history panel
 vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewClose<CR>", { noremap = true, silent = true })
+
+-- Http Client
+vim.api.nvim_set_keymap("n", "<leader>api", ":Http<CR>", { noremap = true, silent = true })
