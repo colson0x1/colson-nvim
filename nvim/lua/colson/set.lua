@@ -104,6 +104,7 @@ vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewClose<CR>", { noremap = tru
 
 -- Http Client
 vim.api.nvim_set_keymap("n", "<leader>api", ":Http<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ter", ":HttpStop<CR>", { noremap = true, silent = true })
 
 -- Packer Sync
 vim.api.nvim_set_keymap("n", "<leader>po", ":PackerSync<CR>", { noremap = true, silent = true })
