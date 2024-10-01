@@ -17,6 +17,8 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 Ensure `Neovim (v >= 0.9.0)` and `Node` are installed on your machine!
 
+`NOTE`: Leader key for Neovim -> **SPACE**
+
 ```shell
 $ npx colson-nvim
 $ cd ~/.config/nvim
@@ -27,8 +29,7 @@ Navigate to `lua/colson/packer.lua`
 Execute this command in normal mode!
 
 ```
-:so
-:PackerSync
+<leader>pac
 ```
 
 Restart **Neovim** in your desired workspace!
@@ -66,6 +67,8 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 ![colson nvim](https://i.imgur.com/7davwV7.png)
 
 ![colson nvim](https://i.imgur.com/WP1WOzQ.png)
+
+![colson nvim](https://i.imgur.com/7dMcAux.png)
 
 ![colson nvim](https://i.imgur.com/kHBbyOg.png)
 
@@ -197,6 +200,11 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Keymaps](#keymaps)
   - [Key Mapping Explanation](#key-mapping-explanation)
 - [Usage Example](#usage-example)
+- [🪐 HTTP Client](#-http-client)
+  - [pynvim Bindings:](#pynvim-bindings)
+  - [requests Library:](#requests-library)
+  - [Execute Network Request](#execute-network-request)
+- [🔄 Syncing Packer Updates](#-syncing-packer-updates)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -684,6 +692,68 @@ Content-Type: application/json
 5. Check the response in a split window.
 
 ---
+
+## 🪐 HTTP Client
+
+This requires two dependencies: `pynvim` and `requests` library. Make sure these two dependencies are installed on your machine for it to work!
+
+### pynvim Bindings:
+
+- Install with `pip`:
+  ```bash
+  pip install pynvim
+  ```
+- On Arch-based distros:
+  ```bash
+  sudo pacman -S python-pynvim
+  ```
+- On Debian-based distros:
+  ```bash
+  sudo apt install python3-pynvim
+  ```
+- On Red Hat-based distros:
+  ```bash
+  sudo yum install python-pynvim
+  ```
+
+### requests Library:
+
+- Install with `pip`:
+  ```bash
+  pip install requests
+  ```
+- On Arch-based distros:
+  ```bash
+  sudo pacman -S python-requests
+  ```
+- On Debian-based distros:
+  ```bash
+  sudo apt install python3-requests
+  ```
+- On Red Hat-based distros:
+  ```bash
+  sudo yum install python-requests
+  ```
+
+### Execute Network Request
+
+Use the extension **`.http`** to run HTTP API Requests!
+
+1. Go to the `.http` file.
+2. Execute:
+
+**`<leader>api`** to initiate network request.
+
+## 🔄 Syncing Packer Updates
+
+1. Go to: `cd ~/.config/nvim`
+2. Open with nvim: `nvim .`
+3. Navigate to `lua/colson/packer.lua`
+4. Execute:
+
+**`<leader>pac`** to source + sync packer plugins!
+
+5. DONE :)
 
 ## Cool Pre-Configured Themes<a name="cool-themes"></a>
 
