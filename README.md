@@ -203,7 +203,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 - [🪐 HTTP Client](#-http-client)
   - [pynvim Bindings:](#pynvim-bindings)
   - [requests Library:](#requests-library)
-  - [Execute Network Request](#execute-network-request)
+  - [⚡ Execute Network Request](#-execute-network-request)
 - [🔄 Syncing Packer Updates](#-syncing-packer-updates)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
@@ -735,24 +735,21 @@ This requires two dependencies: `pynvim` and `requests` library. Make sure these
   sudo yum install python-requests
   ```
 
-### Execute Network Request
+### ⚡ Execute Network Request
 
 Use the extension **`.http`** to run HTTP API Requests!
 
 1. Go to the `.http` file.
-2. Execute:
+2. To initiate a network request, execute: **`<leader>api`**
 
-**`<leader>api`** to initiate network request.
+3. To terminate the current request, execute: **`<leader>ter`**
 
 ## 🔄 Syncing Packer Updates
 
 1. Go to: `cd ~/.config/nvim`
 2. Open with nvim: `nvim .`
 3. Navigate to `lua/colson/packer.lua`
-4. Execute:
-
-**`<leader>pac`** to source + sync packer plugins!
-
+4. Execute this to source + sync packer plugins: **`<leader>pac`**
 5. DONE :)
 
 ## Cool Pre-Configured Themes<a name="cool-themes"></a>
