@@ -174,8 +174,9 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 ## Table of Contents
 
 - [Installation through NPM](#installation-through-npm)
-  - [If you've already installed this before then for the latest pull, do:](#if-youve-already-installed-this-before-then-for-the-latest-pull-do)
-  - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
+  - [Important Dependency!](#important-dependency)
+    - [FOR the latest installation pull:](#for-the-latest-installation-pull)
+    - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
 - [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
 - [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
   - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
@@ -807,15 +808,15 @@ Use the extension **`.http`** to run HTTP API Requests!
 
 ## ✅ Git Merge Conflicts Resolver
 
-| Key Mapping  | Description                                                                                                 |
-| ------------ | ----------------------------------------------------------------------------------------------------------- |
-| `<leader>cs` | Stages the current conflict in the file, resolving it by accepting either the current or incoming change.   |
-| `<leader>cu` | Undoes the last staging action, allowing you to revert the last resolution step.                            |
-| `<leader>cn` | Jumps to the next conflict marker in the file, making it easier to navigate through multiple conflicts.     |
-| `<leader>cp` | Jumps to the previous conflict marker in the file, allowing backward navigation through conflicts.          |
-| `<leader>cO` | Displays an outline of all conflicts in the file, giving an overview of all unresolved sections.            |
-| `<leader>cq` | Closes the conflict resolution interface, returning to the normal editing mode without resolving conflicts. |
-| `<leader>ca` | Aborts the current merge or resolution process, discarding any changes made during the conflict resolution. |
+| Key Mapping  | Command                   | Action                                     |
+| ------------ | ------------------------- | ------------------------------------------ |
+| `<leader>co` | `GitConflictChooseOurs`   | Choose your changes (`ours`).              |
+| `<leader>ct` | `GitConflictChooseTheirs` | Choose incoming changes (`theirs`).        |
+| `<leader>cb` | `GitConflictChooseBoth`   | Include both sides (`both`).               |
+| `<leader>c0` | `GitConflictChooseNone`   | Discard both sides (`none`).               |
+| `<leader>cn` | `GitConflictNextConflict` | Jump to the next conflict.                 |
+| `<leader>cp` | `GitConflictPrevConflict` | Jump to the previous conflict.             |
+| `<leader>cs` | `GitConflictListQf`       | List all conflicts in the quickfix window. |
 
 ---
 
