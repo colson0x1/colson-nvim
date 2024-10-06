@@ -110,3 +110,12 @@ vim.api.nvim_set_keymap("n", "<leader>ter", ":HttpStop<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("n", "<leader>po", ":PackerSync<CR>", { noremap = true, silent = true })
 -- Source file + Packer Sync
 vim.api.nvim_set_keymap("n", "<leader>pac", ":so %<CR>:PackerSync<CR>", { noremap = true, silent = true })
+
+-- Git Merge
+vim.api.nvim_set_keymap("n", "<leader>co", "<cmd>GitConflictChooseOurs<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ct", "<cmd>GitConflictChooseTheirs<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cb", "<cmd>GitConflictChooseBoth<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c0", "<cmd>GitConflictChooseNone<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>GitConflictNextConflict<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>GitConflictPrevConflict<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cs", "<cmd>GitConflictListQf<CR>", { noremap = true, silent = true })
