@@ -205,6 +205,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [requests Library:](#requests-library)
   - [⚡ Execute Network Request](#-execute-network-request)
 - [🔄 Syncing Packer Updates](#-syncing-packer-updates)
+- [✅ Git Merge Conflicts Resolver](#-git-merge-conflicts-resolver)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -751,6 +752,20 @@ Use the extension **`.http`** to run HTTP API Requests!
 3. Navigate to `lua/colson/packer.lua`
 4. Execute this to source + sync packer plugins: **`<leader>pac`**
 5. DONE :)
+
+## ✅ Git Merge Conflicts Resolver
+
+| Key Mapping  | Description                                                                                                 |
+| ------------ | ----------------------------------------------------------------------------------------------------------- |
+| `<leader>cs` | Stages the current conflict in the file, resolving it by accepting either the current or incoming change.   |
+| `<leader>cu` | Undoes the last staging action, allowing you to revert the last resolution step.                            |
+| `<leader>cn` | Jumps to the next conflict marker in the file, making it easier to navigate through multiple conflicts.     |
+| `<leader>cp` | Jumps to the previous conflict marker in the file, allowing backward navigation through conflicts.          |
+| `<leader>cO` | Displays an outline of all conflicts in the file, giving an overview of all unresolved sections.            |
+| `<leader>cq` | Closes the conflict resolution interface, returning to the normal editing mode without resolving conflicts. |
+| `<leader>ca` | Aborts the current merge or resolution process, discarding any changes made during the conflict resolution. |
+
+---
 
 ## Cool Pre-Configured Themes<a name="cool-themes"></a>
 
