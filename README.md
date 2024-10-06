@@ -32,13 +32,47 @@ Execute this command in normal mode!
 <leader>pac
 ```
 
-Restart **Neovim** in your desired workspace!
+### Important Dependency!
+
+For this to work properly, many packages depends upon this dependency `Ultisnips`
+which requires `pynvim` installed on your machine.
+
+Here's detailed guide:
+
+- [Ultisnips Dependency Installation](#ultisnips-dependency-installation)
+
+Here's quick guide!!
+
+```shell
+$ sudo pacman -S base-devel cmake unzip
+$ sudo pacman -S python-pynvim
+```
+
+Now, make sure you're synced with my latest configuration!
+
+```shell
+$ cd ~/.config/nvim
+$ nvim .
+```
+
+Open `lua/colson/packer.lua`
+
+```
+<leader>pac
+```
+
+DONE!!
+This resolves the error when opening NVIM!
+
+COOL!
+
+Now, Restart **Neovim** in your desired workspace!
 
 ```
 nvim .
 ```
 
-#### If you've already installed this before then for the latest pull, do:
+#### FOR the latest installation pull:
 
 ```
 $ npx colson-nvim@latest
@@ -190,6 +224,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Live Server](#live-server)
   - [System Clipboard Copy](#system-clipboard-copy)
 - [🚀 React Snippets Autocompletion](#-react-snippets-autocompletion)
+  - [Ultisnips Dependency Installation](#ultisnips-dependency-installation)
   - [🔥 React Snippets Guide](#-react-snippets-guide)
     - [Functional Components](#functional-components)
     - [Class Components](#class-components)
@@ -513,6 +548,8 @@ Then open any workspace with `nvim .` in `Tmux` environment. Now you're ready to
 
 ## 🚀 React Snippets Autocompletion
 
+### Ultisnips Dependency Installation
+
 For this to work, the main package depends upon this dependency `Ultisnips`
 which requires `pynvim` installed on your machine.
 First, let's verify if `python3` support is enabled inside your `nvim` environment.
@@ -539,6 +576,21 @@ Here's how to do it:
 $ sudo pacman -S base-devel cmake unzip
 $ sudo pacman -S python-pynvim
 ```
+
+`NOTE`: Make sure to use the package manager based on your distribution!!
+
+- On Arch-based distros:
+  ```bash
+  sudo pacman -S <package-name>
+  ```
+- On Debian-based distros:
+  ```bash
+  sudo apt install <package-name>
+  ```
+- On Red Hat-based distros:
+  ```bash
+  sudo yum install <package-name>
+  ```
 
 Now, again open that `packer.lua` file and verify if we've got access to the `python3` inside `neovim` environment.
 This time, it should return `1` aka OKAY!
