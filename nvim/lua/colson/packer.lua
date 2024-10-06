@@ -45,6 +45,31 @@ return require("packer").startup(function(use)
 	-- Git Diff
 	use("sindrets/diffview.nvim")
 
+	-- Git Merge
+	use({
+		"akinsho/git-conflict.nvim",
+		tag = "*",
+		--[[ config = function()
+			require("git-merge-conflict")
+		end, ]]
+	})
+	-- For enhanced quickfix handling @ nvim-pqf
+	use({
+		"yorickpeterse/nvim-pqf",
+		config = function()
+			require("pqf").setup()
+			--[[ config = function()
+			require("pqf").setup({
+				signs = {
+					error = "E",
+					warning = "W",
+					info = "I",
+					hint = "H",
+				},
+			}) ]]
+		end,
+	})
+
 	-- Git Rebase Diff
 	use({
 		"yutkat/git-rebase-auto-diff.nvim",
