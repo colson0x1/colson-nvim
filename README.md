@@ -72,7 +72,7 @@ Now, Restart **Neovim** in your desired workspace!
 nvim .
 ```
 
-#### FOR the latest installation pull:
+#### FOR the latest installation pull, do:
 
 ```
 $ npx colson-nvim@latest
