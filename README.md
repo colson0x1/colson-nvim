@@ -13,6 +13,20 @@ Step into the realm of excellence with my world-class Neovim (nvim) configuratio
 
 Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
 
+![colson nvim npm](https://i.imgur.com/RcETNS3.png)
+
+![colson nvim npm](https://i.imgur.com/3PiJBBO.png)
+
+![colson nvim npm](https://i.imgur.com/gLLVppX.png)
+
+![colson nvim npm](https://i.imgur.com/L2aP14C.png)
+
+![colson nvim npm](https://i.imgur.com/fCjMvn4.png)
+
+![colson nvim npm](https://i.imgur.com/x08NThd.png)
+
+![colson nvim npm](https://i.imgur.com/38UFOp7.png)
+
 ## Installation through NPM
 
 Ensure `Neovim (v >= 0.9.0)` and `Node` are installed on your machine!
@@ -27,6 +41,28 @@ $ nvim .
 
 Navigate to `lua/colson/packer.lua`  
 Execute this command in normal mode!
+
+```
+:so
+:PackerSync
+```
+
+For the latest pull, do:
+
+```
+$ npx colson-nvim@latest
+```
+
+If its not the first time, then each time you do the latest pull, go to:
+
+```shell
+$ cd ~/.config/nvim
+$ nvim .
+```
+
+Navigate to `lua/colson/packer.lua`
+
+Then, in normal mode, do:
 
 ```
 <leader>pac
@@ -87,6 +123,62 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 ## ✨ New Updated Zenful Look (COLSON NVIM)
 
 ## @ Neovim on Arch Linux
+
+### 💎 NEW LOOK (Colson NVIM, December 5th, 2024)
+
+![colson nvim npm](https://i.imgur.com/3PiJBBO.png)
+
+![colson nvim npm](https://i.imgur.com/RcETNS3.png)
+
+![colson nvim npm](https://i.imgur.com/2GtP3Cr.png)
+
+![colson nvim npm](https://i.imgur.com/WImI5ju.png)
+
+![colson nvim npm](https://i.imgur.com/43qgLzP.png)
+
+![colson nvim npm](https://i.imgur.com/38UFOp7.png)
+
+![colson nvim npm](https://i.imgur.com/8sjLsBx.png)
+
+![colson nvim npm](https://i.imgur.com/OHRaSIu.png)
+
+![colson nvim npm](https://i.imgur.com/5oMjIwS.png)
+
+![colson nvim npm](https://i.imgur.com/TwjGqaZ.png)
+
+![colson nvim npm](https://i.imgur.com/Ul5EutQ.png)
+
+![colson nvim npm](https://i.imgur.com/gLLVppX.png)
+
+![colson nvim npm](https://i.imgur.com/6Ypo0Vj.png)
+
+![colson nvim npm](https://i.imgur.com/L2aP14C.png)
+
+![colson nvim npm](https://i.imgur.com/1CrOODl.png)
+
+![colson nvim npm](https://i.imgur.com/JIVjMiy.png)
+
+![colson nvim npm](https://i.imgur.com/BVLn5x5.png)
+
+![colson nvim npm](https://i.imgur.com/fCjMvn4.png)
+
+![colson nvim npm](https://i.imgur.com/yDP4Sde.png)
+
+![colson nvim npm](https://i.imgur.com/nUdNVTC.png)
+
+![colson nvim npm](https://i.imgur.com/TJEVab0.png)
+
+![colson nvim npm](https://i.imgur.com/BoLPmPl.png)
+
+![colson nvim npm](https://i.imgur.com/NkQ6Gkg.png)
+
+![colson nvim npm](https://i.imgur.com/x08NThd.png)
+
+![colson nvim npm](https://i.imgur.com/nkdXMib.png)
+
+![colson nvim npm](https://i.imgur.com/Eb0E26y.png)
+
+![colson nvim npm](https://i.imgur.com/x4MCfKM.png)
 
 ### New Modern Look, September 2024 💎
 
@@ -175,10 +267,11 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 
 - [Installation through NPM](#installation-through-npm)
   - [Important Dependency!](#important-dependency)
-    - [FOR the latest installation pull:](#for-the-latest-installation-pull)
+    - [FOR the latest installation pull, do:](#for-the-latest-installation-pull-do)
     - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
 - [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
 - [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
+  - [💎 NEW LOOK (Colson NVIM, December 5th, 2024)](#-new-look-colson-nvim-december-5th-2024)
   - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
   - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
 - [@ Neovim on macOS](#-neovim-on-macos)
