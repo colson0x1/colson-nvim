@@ -1,4 +1,5 @@
---mocha vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c:block,i:ver25,r-cr:hor20"
+-- vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

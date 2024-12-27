@@ -121,6 +121,8 @@ return require("packer").startup(function(use)
 	})
   --]]
 
+	use("nikvdp/ejs-syntax")
+
 	use({
 		"mlaursen/vim-react-snippets",
 		requires = {
