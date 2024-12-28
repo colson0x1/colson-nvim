@@ -13,18 +13,16 @@ vim.cmd([[
 ]])
 
 nvimtree.setup({
-	disable_netrw = false, -- Allow netrw to work
-	hijack_netrw = false, -- Don't hijack netrw windows
 	view = {
-		side = "right",
+		side = "right", -- Set nvim-tree to the left side
 		width = 30,
 	},
 	renderer = {
 		icons = {
 			glyphs = {
 				folder = {
-					arrow_closed = "", -- arrow when folder is closed
-					arrow_open = "", -- arrow when folder is open
+					arrow_closed = "➤", -- arrow when folder is closed
+					arrow_open = "▼", -- arrow when folder is open
 				},
 			},
 		},
@@ -39,10 +37,6 @@ nvimtree.setup({
 	diagnostics = {
 		enable = true,
 		show_on_dirs = false,
-	},
-	system_open = {
-		cmd = nil,
-		args = {},
 	},
 })
 
@@ -96,3 +90,6 @@ local function open_nvim_tree(data)
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+-- Add convenient keymap for toggling nvim-tree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
