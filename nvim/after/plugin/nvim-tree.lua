@@ -3,9 +3,9 @@ if not setup then
 	return
 end
 
--- Disable netrw completely
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- Remove the netrw disable commands to allow it to work alongside nvim-tree
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- Clear existing highlight groups before setting new ones
 vim.cmd([[
@@ -17,17 +17,18 @@ vim.cmd([[
 ]])
 
 nvimtree.setup({
+	disable_netrw = false, -- Allow netrw to work
+	hijack_netrw = false, -- Don't hijack netrw windows
 	view = {
 		side = "right",
-		-- Add width configuration to prevent potential conflicts
 		width = 30,
 	},
 	renderer = {
 		icons = {
 			glyphs = {
 				folder = {
-					arrow_closed = "", -- arrow when folder is closed
-					arrow_open = "", -- arrow when folder is open
+					arrow_closed = "", -- arrow when folder is closed
+					arrow_open = "", -- arrow when folder is open
 				},
 			},
 		},
@@ -39,12 +40,10 @@ nvimtree.setup({
 			},
 		},
 	},
-	-- Add diagnostics configuration
 	diagnostics = {
 		enable = true,
 		show_on_dirs = false,
 	},
-	-- Add system_open configuration
 	system_open = {
 		cmd = nil,
 		args = {},
