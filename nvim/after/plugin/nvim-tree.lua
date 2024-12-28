@@ -3,10 +3,6 @@ if not setup then
 	return
 end
 
--- Remove the netrw disable commands to allow it to work alongside nvim-tree
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-
 -- Clear existing highlight groups before setting new ones
 vim.cmd([[
   augroup NvimTreeHighlight
@@ -82,3 +78,21 @@ vim.api.nvim_create_autocmd("FileType", {
 		on_attach(ev.buf)
 	end,
 })
+
+-- Auto open nvim-tree when opening a directory
+local function open_nvim_tree(data)
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
+
+	if not directory then
+		return
+	end
+
+	-- change to the directory
+	vim.cmd.cd(data.file)
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
