@@ -118,6 +118,8 @@ $ npx colson-nvim@latest
 
 That's the beginning of the new world. A beginning of new experience, journey packed with challenges, integrated with tools used in daily lives, boosting productivity, enhancing engineers performance!
 
+## [goto: TABLE OF CONTENTS 🚀 ](#table-of-contents)
+
 **DEMO Screenshot**
 
 ## ✨ New Updated Zenful Look (COLSON NVIM)
@@ -312,6 +314,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
     - [**@ Commenting in Visual Mode**](#-commenting-in-visual-mode)
   - [**Discord Presence**](#discord-presence)
   - [Emmet (For HTML/JSX Autocompletion)](#emmet-for-htmljsx-autocompletion)
+    - [Normal Mode Tag Manipulation: tsx/jsx/html](#normal-mode-tag-manipulation-tsxjsxhtml)
   - [Tailwind CSS IntelliSense](#tailwind-css-intellisense)
   - [Gen Lorem Ipsum](#gen-lorem-ipsum)
   - [Code Fold](#code-fold)
@@ -335,6 +338,9 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [⚡ Execute Network Request](#-execute-network-request)
 - [🔄 Syncing Packer Updates](#-syncing-packer-updates)
 - [✅ Git Merge Conflicts Resolver](#-git-merge-conflicts-resolver)
+- [🔭 Telescope 🔥](#-telescope-)
+  - [Telescope Normal Mode Commands](#telescope-normal-mode-commands)
+  - [Telescope Insert Mode Commands](#telescope-insert-mode-commands)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -602,6 +608,14 @@ Now you're good to go!
   ```
 - **`.className<Ctrl+k>`**: Creates `div` with `prop` `className` which can be useful for styling with css modules, tailwind or mixing with style components.
 
+#### Normal Mode Tag Manipulation: tsx/jsx/html
+
+- `vit`: Selects everything **inside the tag**, excluding the tags themselves.
+- `vat`: Selects everything **including the tag** (inner and outer).
+- `cit`: Deletes everything inside the tag and starts insert mode.
+- `dit`: Deletes everything inside the tag without entering insert mode.
+- `dat`: Deletes the tag and its contents.
+
 ### Tailwind CSS IntelliSense
 
 - Use **`<Ctrl+k>`** to select when you use tailwind: Ex when you type `text-` in `className='text-'`, you get autocompletion!
@@ -664,7 +678,7 @@ Open `packer.lua` and in normal mode: Type
 
 If it returns 1, we're good to go else we need to install the dependencies to enable the support inside the neovim environment.
 
-Here's how to do it:
+Here's how to do it on **Arch Linux**:
 
 ```
 $ sudo pacman -S base-devel cmake unzip
@@ -673,7 +687,7 @@ $ sudo pacman -S python-pynvim
 
 `NOTE`: Make sure to use the package manager based on your distribution!!
 
-- On Arch-based distros:
+- On **Arch-based** distros:
   ```bash
   sudo pacman -S <package-name>
   ```
@@ -685,6 +699,13 @@ $ sudo pacman -S python-pynvim
   ```bash
   sudo yum install <package-name>
   ```
+
+**For macOS:**
+
+```bash
+brew install python3
+brew install pynvim
+```
 
 Now, again open that `packer.lua` file and verify if we've got access to the `python3` inside `neovim` environment.
 This time, it should return `1` aka OKAY!
@@ -703,9 +724,7 @@ Open `packer.lua`
 
 ```
 :so
-```
 
-```
 :PackerSync
 ```
 
@@ -910,6 +929,41 @@ Use the extension **`.http`** to run HTTP API Requests!
 | `<leader>cn` | `GitConflictNextConflict` | Jump to the next conflict.                 |
 | `<leader>cp` | `GitConflictPrevConflict` | Jump to the previous conflict.             |
 | `<leader>cs` | `GitConflictListQf`       | List all conflicts in the quickfix window. |
+
+---
+
+## 🔭 Telescope 🔥
+
+### Telescope Normal Mode Commands
+
+| Keymap                     | Mode        | Description                          |
+| -------------------------- | ----------- | ------------------------------------ |
+| `<leader>pf or <leader>ff` | Normal Mode | Find files in the project            |
+| `<leader>ps or <leader>fg` | Normal Mode | GREP Search: Search across all files |
+| `<leader>fb`               | Normal Mode | Switch between buffers               |
+| `<leader>fh`               | Normal Mode | Open help tags                       |
+| `<leader>fs`               | Normal Mode | Interactive string search            |
+| `<leader>fd`               | Normal Mode | View diagnostics for the workspace   |
+| `<leader>fw`               | Normal Mode | Search workspace symbols             |
+| `<leader>fr`               | Normal Mode | Find references to a symbol          |
+| `<leader>fi`               | Normal Mode | Locate implementations               |
+| `<leader>fc`               | Normal Mode | Quickly execute Neovim commands      |
+| `<leader>ft`               | Normal Mode | Explore syntax tree using Treesitter |
+| `<leader>gs`               | Normal Mode | View Git status                      |
+| `<leader>gc`               | Normal Mode | Browse Git commits                   |
+| `<leader>gb`               | Normal Mode | Switch Git branches                  |
+| `<leader>gf`               | Normal Mode | Locate files tracked by Git          |
+
+### Telescope Insert Mode Commands
+
+| Keymap  | Mode        | Description               |
+| ------- | ----------- | ------------------------- |
+| `<C-n>` | Insert Mode | Move to the next item     |
+| `<C-p>` | Insert Mode | Move to the previous item |
+| `<C-c>` | Insert Mode | Close Telescope window    |
+| `<CR>`  | Insert Mode | Select default item       |
+| `<C-x>` | Insert Mode | Select horizontally       |
+| `<C-v>` | Insert Mode | Select vertically         |
 
 ---
 
