@@ -228,7 +228,7 @@ return require("packer").startup(function(use)
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
 	-- @ Github Themes
-	use({ "projekt0n/github-nvim-theme" })
+	--[[ 	use({ "projekt0n/github-nvim-theme" }) ]]
 
 	-- @ JetBrains IDE Theme
 	--[[
@@ -264,7 +264,7 @@ return require("packer").startup(function(use)
   --]]
 
 	-- @ Rose Pine Theme
-	--[[
+
 	use({
 		"rose-pine/neovim",
 		as = "rose-pine",
@@ -272,5 +272,5 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme rose-pine")
 		end,
 	})
-  --]]
+	--
 end)

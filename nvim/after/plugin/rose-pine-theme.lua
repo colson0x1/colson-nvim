@@ -62,3 +62,11 @@ rose_pine.setup({
 
 -- Set colorscheme after options
 vim.cmd("colorscheme rose-pine")
+
+-- Set colorscheme after options
+vim.cmd("colorscheme rose-pine")
+-- Set custom highlights for color column
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#393552" }) -- Professional muted gray-purple
+-- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#2a273f" }) -- Minimal contrast
+-- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#494d64" }) -- Slight blue-gray
+-- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#564f8a" }) -- Warm muted accent
