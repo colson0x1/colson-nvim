@@ -271,6 +271,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Important Dependency!](#important-dependency)
     - [FOR the latest installation pull, do:](#for-the-latest-installation-pull-do)
     - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
+- [goto: TABLE OF CONTENTS 🚀 ](#goto-table-of-contents--)
 - [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
 - [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
   - [💎 NEW LOOK (Colson NVIM, December 5th, 2024)](#-new-look-colson-nvim-december-5th-2024)
@@ -341,6 +342,10 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 - [🔭 Telescope 🔥](#-telescope-)
   - [Telescope Normal Mode Commands](#telescope-normal-mode-commands)
   - [Telescope Insert Mode Commands](#telescope-insert-mode-commands)
+- [🤖 Augment Code – Enterprise Grade Configuration](#-augment-code--enterprise-grade-configuration)
+  - [Key Mappings](#key-mappings)
+  - [User Command Aliases](#user-command-aliases)
+  - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -482,7 +487,7 @@ Search and Replace
 
 #### Code Navigation
 
-- **`gd`**: Go to definition.
+- **`ds`** or **`gd`**: Go to definition (Normal Mode).
 - **`gf`**: Go to file.
 - **`gy`**: Go to type definition.
 - **`gi`**: Go to implementation.
@@ -964,6 +969,59 @@ Use the extension **`.http`** to run HTTP API Requests!
 | `<CR>`  | Insert Mode | Select default item       |
 | `<C-x>` | Insert Mode | Select horizontally       |
 | `<C-v>` | Insert Mode | Select vertically         |
+
+---
+
+## 🤖 Augment Code – Enterprise Grade Configuration
+
+Augment understands your codebase. I've configured and optimized for engineers working on large enterprise applications. The configuration provides:
+
+- **Precise workspace context:** Workspace folders are explicitly set (or auto‑updated) so that Augment’s AI engine has full knowledge of your codebase.
+- **Custom key mappings:** Quick keybindings for accepting AI suggestions, launching chat, and triggering enterprise workflows (e.g. code review and refactoring prompts).
+- **User command aliases:** Short command aliases to quickly invoke Augment functions from the command line.
+
+### Key Mappings
+
+| Mode   | Key Binding   | Command Executed                                                               | Description                                                      |
+| ------ | ------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Insert | `<C-y>`       | `call augment#Accept()`                                                        | Accept the current inline suggestion.                            |
+| Insert | `<CR>`        | `call augment#Accept("\n")`                                                    | Accept suggestion; if none, insert a newline.                    |
+| Normal | `<leader>as`  | `:Augment status`                                                              | Show Augment status (sign-in and workspace sync info).           |
+| Normal | `<leader>asi` | `:Augment signin`                                                              | Start the sign-in flow for Augment.                              |
+| Normal | `<leader>ao`  | `:Augment signout`                                                             | Sign out from Augment.                                           |
+| Normal | `<leader>ae`  | `:Augment enable`                                                              | Globally enable AI suggestions.                                  |
+| Normal | `<leader>ad`  | `:Augment disable`                                                             | Globally disable AI suggestions.                                 |
+| Normal | `<leader>al`  | `:Augment log`                                                                 | Open the Augment log for errors and debugging.                   |
+| Normal | `<leader>ac`  | `:Augment chat`                                                                | Start a chat session to ask questions about your codebase.       |
+| Normal | `<leader>an`  | `:Augment chat-new`                                                            | Begin a new chat conversation (clears previous context).         |
+| Normal | `<leader>at`  | `:Augment chat-toggle`                                                         | Toggle the visibility of the chat panel.                         |
+| Normal | `<leader>acp` | `:Augment chat Please review the current function for potential improvements.` | Send a code review prompt for the current function.              |
+| Normal | `<leader>acf` | `:Augment chat Suggest refactoring for this block of code.`                    | Request refactoring suggestions for the selected code block.     |
+| Visual | `<leader>ac`  | `:Augment chat`                                                                | Send selected text to Augment chat for context‑specific queries. |
+| Visual | `<leader>aq`  | `:Augment chat`                                                                | Alternative visual mapping to chat with the selected text.       |
+
+### User Command Aliases
+
+| Alias          | Executes Command      | Description                             |
+| -------------- | --------------------- | --------------------------------------- |
+| `:AStatus`     | `Augment status`      | Display Augment’s current status.       |
+| `:ASignin`     | `Augment signin`      | Launch the sign‑in process.             |
+| `:ASignout`    | `Augment signout`     | Sign out of Augment.                    |
+| `:AEnable`     | `Augment enable`      | Enable AI suggestions globally.         |
+| `:ADisable`    | `Augment disable`     | Disable AI suggestions globally.        |
+| `:ALog`        | `Augment log`         | View Augment’s log output.              |
+| `:AChat`       | `Augment chat`        | Open a chat session for code questions. |
+| `:AChatNew`    | `Augment chat-new`    | Start a new chat conversation.          |
+| `:AChatToggle` | `Augment chat-toggle` | Toggle the chat panel display.          |
+
+### Workspace Configuration & Auto-Update
+
+Optional since I've configured Augment to autodetect current working directory opened with **`$ nvim .`**.
+
+| Feature                  | Behavior                                                            | Description                                                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Workspace Folders        | `vim.g.augment_workspace_folders` set via `get_workspace_folders()` | Defines which project directories are indexed by Augment. Uses the `ENTERPRISE_WORKSPACES` env variable (colon-separated) or defaults to the current directory. |
+| Auto-Update on DirChange | `DirChanged` autocmd triggers `update_workspace()`                  | Automatically adds new workspace folders when you change directories in Neovim, ensuring up-to-date context.                                                    |
 
 ---
 
