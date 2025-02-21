@@ -108,3 +108,11 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>re", '<cmd>lua require("rest-nvim").env()<CR>', { noremap = true, silent = true })
+
+-- Jump to the symbol definition via LSP in normal mode
+vim.api.nvim_set_keymap(
+	"n",
+	"ds",
+	"<cmd>lua vim.lsp.buf.definition()<CR>",
+	{ noremap = true, silent = true, desc = "Goto Definition" }
+)

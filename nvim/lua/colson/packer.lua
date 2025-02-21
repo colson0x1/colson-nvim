@@ -214,6 +214,15 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- Augment
+	use({
+		"augmentcode/augment.vim",
+		config = function()
+			-- Load our dedicated Augment configuration
+			require("after.plugin.augment")
+		end,
+	})
+
 	-- Lualine
 	use({
 		"nvim-lualine/lualine.nvim",
