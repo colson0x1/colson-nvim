@@ -116,3 +116,12 @@ vim.api.nvim_set_keymap(
 	"<cmd>lua vim.lsp.buf.definition()<CR>",
 	{ noremap = true, silent = true, desc = "Goto Definition" }
 )
+
+local opts = { noremap = true, silent = true }
+-- Map <C-j> in insert mode to accept the Augment suggestion.
+vim.api.nvim_set_keymap(
+	"i",
+	"<C-j>",
+	"<cmd>call augment#Accept()<CR>",
+	vim.tbl_extend("force", opts, { desc = "Augment: Accept suggestion (Ctrl+j)" })
+)
