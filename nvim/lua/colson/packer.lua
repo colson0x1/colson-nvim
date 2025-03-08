@@ -223,6 +223,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Copilot
+	use({
+		"github/copilot.vim",
+		config = function()
+			require("after.plugin.copilot")
+		end,
+	})
+
 	-- Lualine
 	use({
 		"nvim-lualine/lualine.nvim",
