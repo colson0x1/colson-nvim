@@ -1030,7 +1030,7 @@ Optional since I've configured Augment to autodetect current working directory o
 
 ## 🤖 Github Copilot Integration
 
-Copilot for code completion and suggestions :)
+🚀 Copilot for code completion.
 
 | Mode   | Key Mapping            | Command/Action           | Description                        |
 | ------ | ---------------------- | ------------------------ | ---------------------------------- |
@@ -1038,7 +1038,7 @@ Copilot for code completion and suggestions :)
 | Normal | `<leader>cd`           | `:Copilot disable`       | Disable Copilot inline suggestions |
 | Normal | `<leader>ce`           | `:Copilot enable`        | Enable Copilot inline suggestions  |
 | Normal | `<leader>cso`          | `:Copilot signout`       | Sign out of GitHub Copilot         |
-| Normal | `<leader>cst`          | `:Copilot status`        | Check the Copilot status           |
+| Normal | `<leader>cs`           | `:Copilot status`        | Check the Copilot status           |
 | Insert | `<leader>j or Ctrl+j ` | `copilot#Accept("<CR>")` | Accept the current suggestion      |
 | Insert | `<leader>cn`           | `copilot#Next()`         | Cycle to the next suggestion       |
 | Insert | `<leader>cp`           | `copilot#Previous()`     | Cycle to the previous suggestion   |
