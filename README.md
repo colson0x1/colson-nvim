@@ -346,6 +346,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Key Mappings](#key-mappings)
   - [User Command Aliases](#user-command-aliases)
   - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
+- [🤖 Github Copilot Integration](#-github-copilot-integration)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
@@ -1024,6 +1025,25 @@ Optional since I've configured Augment to autodetect current working directory o
 | ------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Workspace Folders        | `vim.g.augment_workspace_folders` set via `get_workspace_folders()` | Defines which project directories are indexed by Augment. Uses the `ENTERPRISE_WORKSPACES` env variable (colon-separated) or defaults to the current directory. |
 | Auto-Update on DirChange | `DirChanged` autocmd triggers `update_workspace()`                  | Automatically adds new workspace folders when you change directories in Neovim, ensuring up-to-date context.                                                    |
+
+---
+
+## 🤖 Github Copilot Integration
+
+Copilot for code completion and suggestions :)
+
+| Mode   | Key Mapping            | Command/Action           | Description                        |
+| ------ | ---------------------- | ------------------------ | ---------------------------------- |
+| Normal | `<leader>csi`          | `:Copilot setup`         | Authenticate and enable Copilot    |
+| Normal | `<leader>cd`           | `:Copilot disable`       | Disable Copilot inline suggestions |
+| Normal | `<leader>ce`           | `:Copilot enable`        | Enable Copilot inline suggestions  |
+| Normal | `<leader>cso`          | `:Copilot signout`       | Sign out of GitHub Copilot         |
+| Normal | `<leader>cst`          | `:Copilot status`        | Check the Copilot status           |
+| Insert | `<leader>j or Ctrl+j ` | `copilot#Accept("<CR>")` | Accept the current suggestion      |
+| Insert | `<leader>cn`           | `copilot#Next()`         | Cycle to the next suggestion       |
+| Insert | `<leader>cp`           | `copilot#Previous()`     | Cycle to the previous suggestion   |
+
+Note: Either enable **Augment** or **Copilot**, not both at the same time!
 
 ---
 
