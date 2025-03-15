@@ -985,23 +985,23 @@ Augment understands your codebase. I've configured and optimized for engineers w
 
 🚀 Goto command: Use **`Ctrl+j`** to accept the suggested inline code completion!
 
-| Mode   | Key Binding      | Command Executed                                                               | Description                                                      |
-| ------ | ---------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| Insert | `<C-j> OR <C-y>` | `call augment#Accept()`                                                        | Accept the current inline suggestion.                            |
-| Insert | `<CR>`           | `call augment#Accept("\n")`                                                    | Accept suggestion; if none, insert a newline.                    |
-| Normal | `<leader>as`     | `:Augment status`                                                              | Show Augment status (sign-in and workspace sync info).           |
-| Normal | `<leader>asi`    | `:Augment signin`                                                              | Start the sign-in flow for Augment.                              |
-| Normal | `<leader>ao`     | `:Augment signout`                                                             | Sign out from Augment.                                           |
-| Normal | `<leader>ae`     | `:Augment enable`                                                              | Globally enable AI suggestions.                                  |
-| Normal | `<leader>ad`     | `:Augment disable`                                                             | Globally disable AI suggestions.                                 |
-| Normal | `<leader>al`     | `:Augment log`                                                                 | Open the Augment log for errors and debugging.                   |
-| Normal | `<leader>ac`     | `:Augment chat`                                                                | Start a chat session to ask questions about your codebase.       |
-| Normal | `<leader>an`     | `:Augment chat-new`                                                            | Begin a new chat conversation (clears previous context).         |
-| Normal | `<leader>at`     | `:Augment chat-toggle`                                                         | Toggle the visibility of the chat panel.                         |
-| Normal | `<leader>acp`    | `:Augment chat Please review the current function for potential improvements.` | Send a code review prompt for the current function.              |
-| Normal | `<leader>acf`    | `:Augment chat Suggest refactoring for this block of code.`                    | Request refactoring suggestions for the selected code block.     |
-| Visual | `<leader>ac`     | `:Augment chat`                                                                | Send selected text to Augment chat for context‑specific queries. |
-| Visual | `<leader>aq`     | `:Augment chat`                                                                | Alternative visual mapping to chat with the selected text.       |
+| Mode   | Key Binding   | Command Executed                                                               | Description                                                      |
+| ------ | ------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Insert | `<C-j> `      | `call augment#Accept()`                                                        | Accept the current inline suggestion.                            |
+| Insert | `<CR>`        | `call augment#Accept("\n")`                                                    | Accept suggestion; if none, insert a newline.                    |
+| Normal | `<leader>as`  | `:Augment status`                                                              | Show Augment status (sign-in and workspace sync info).           |
+| Normal | `<leader>asi` | `:Augment signin`                                                              | Start the sign-in flow for Augment.                              |
+| Normal | `<leader>ao`  | `:Augment signout`                                                             | Sign out from Augment.                                           |
+| Normal | `<leader>ae`  | `:Augment enable`                                                              | Globally enable AI suggestions.                                  |
+| Normal | `<leader>ad`  | `:Augment disable`                                                             | Globally disable AI suggestions.                                 |
+| Normal | `<leader>al`  | `:Augment log`                                                                 | Open the Augment log for errors and debugging.                   |
+| Normal | `<leader>ac`  | `:Augment chat`                                                                | Start a chat session to ask questions about your codebase.       |
+| Normal | `<leader>an`  | `:Augment chat-new`                                                            | Begin a new chat conversation (clears previous context).         |
+| Normal | `<leader>at`  | `:Augment chat-toggle`                                                         | Toggle the visibility of the chat panel.                         |
+| Normal | `<leader>acp` | `:Augment chat Please review the current function for potential improvements.` | Send a code review prompt for the current function.              |
+| Normal | `<leader>acf` | `:Augment chat Suggest refactoring for this block of code.`                    | Request refactoring suggestions for the selected code block.     |
+| Visual | `<leader>ac`  | `:Augment chat`                                                                | Send selected text to Augment chat for context‑specific queries. |
+| Visual | `<leader>aq`  | `:Augment chat`                                                                | Alternative visual mapping to chat with the selected text.       |
 
 ### User Command Aliases
 
@@ -1032,16 +1032,16 @@ Optional since I've configured Augment to autodetect current working directory o
 
 🚀 Copilot for code completion.
 
-| Mode   | Key Mapping            | Command/Action           | Description                        |
-| ------ | ---------------------- | ------------------------ | ---------------------------------- |
-| Normal | `<leader>csi`          | `:Copilot setup`         | Authenticate and enable Copilot    |
-| Normal | `<leader>cd`           | `:Copilot disable`       | Disable Copilot inline suggestions |
-| Normal | `<leader>ce`           | `:Copilot enable`        | Enable Copilot inline suggestions  |
-| Normal | `<leader>cso`          | `:Copilot signout`       | Sign out of GitHub Copilot         |
-| Normal | `<leader>cs`           | `:Copilot status`        | Check the Copilot status           |
-| Insert | `<leader>j or Ctrl+j ` | `copilot#Accept("<CR>")` | Accept the current suggestion      |
-| Insert | `<leader>cn`           | `copilot#Next()`         | Cycle to the next suggestion       |
-| Insert | `<leader>cp`           | `copilot#Previous()`     | Cycle to the previous suggestion   |
+| Mode   | Key Mapping   | Command/Action           | Description                        |
+| ------ | ------------- | ------------------------ | ---------------------------------- |
+| Normal | `<leader>csi` | `:Copilot setup`         | Authenticate and enable Copilot    |
+| Normal | `<leader>cd`  | `:Copilot disable`       | Disable Copilot inline suggestions |
+| Normal | `<leader>ce`  | `:Copilot enable`        | Enable Copilot inline suggestions  |
+| Normal | `<leader>cso` | `:Copilot signout`       | Sign out of GitHub Copilot         |
+| Normal | `<leader>cs`  | `:Copilot status`        | Check the Copilot status           |
+| Insert | `<leader>j  ` | `copilot#Accept("<CR>")` | Accept the current suggestion      |
+| Insert | `<leader>cn`  | `copilot#Next()`         | Cycle to the next suggestion       |
+| Insert | `<leader>cp`  | `copilot#Previous()`     | Cycle to the previous suggestion   |
 
 Note: Either enable **Augment** or **Copilot**, not both at the same time!
 
