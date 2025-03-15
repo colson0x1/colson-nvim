@@ -126,5 +126,5 @@ vim.schedule(function()
 	vim.api.nvim_set_keymap("i", "<C-j>", "<cmd>call augment#Accept()<CR>", opts)
 
 	-- Insert mode: Accept Augment suggestion
-	vim.api.nvim_set_keymap("i", "<Leader>j", "<cmd>call augment#Accept()<CR>", opts)
+	-- vim.api.nvim_set_keymap("i", "<Leader>j", "<cmd>call augment#Accept()<CR>", opts)
 end)
