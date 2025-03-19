@@ -281,12 +281,41 @@ return require("packer").startup(function(use)
   --]]
 
 	-- @ Rose Pine Theme
-
+	--[[
 	use({
 		"rose-pine/neovim",
 		as = "rose-pine",
 		config = function()
 			vim.cmd("colorscheme rose-pine")
+		end,
+	})
+  ]]
+
+	-- @ Moonfly Theme
+	--[[
+	use({
+		"bluz71/vim-moonfly-colors",
+		config = function()
+			require("after.plugin.moonfly-theme")
+		end,
+	})
+  ]]
+
+	-- @ Nord
+	--[[
+	use({
+		"shaunsingh/nord.nvim",
+		config = function()
+			require("after.plugin.nord-theme")
+		end,
+	})
+  ]]
+
+	-- @ One Dark Pro theme
+	use({
+		"navarasu/onedark.nvim",
+		config = function()
+			require("after.plugin.onedark-theme")
 		end,
 	})
 	--
