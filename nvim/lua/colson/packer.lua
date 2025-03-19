@@ -259,7 +259,6 @@ return require("packer").startup(function(use)
   --]]
 
 	-- @ Tokyo Night Theme
-	--[[
 	use({
 		"folke/tokyonight.nvim",
 		as = "tokyonight",
@@ -267,7 +266,6 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme tokyonight")
 		end,
 	})
-  --]]
 
 	-- @ Catppuccin Theme
 	--[[
@@ -312,11 +310,13 @@ return require("packer").startup(function(use)
   ]]
 
 	-- @ One Dark Pro theme
+	--[[
 	use({
 		"navarasu/onedark.nvim",
 		config = function()
 			require("after.plugin.onedark-theme")
 		end,
 	})
+  ]]
 	--
 end)
