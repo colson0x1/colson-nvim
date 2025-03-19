@@ -13,6 +13,8 @@ Step into the realm of excellence with my world-class Neovim (nvim) configuratio
 
 Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
 
+![colson nvim npm](https://i.imgur.com/rAAkACt.png)
+
 ![colson nvim npm](https://i.imgur.com/RcETNS3.png)
 
 ![colson nvim npm](https://i.imgur.com/3PiJBBO.png)
@@ -125,6 +127,10 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 ## ✨ New Updated Zenful Look (COLSON NVIM)
 
 ## @ Neovim on Arch Linux
+
+### 💎 NEW ZEN LOOK (Colson NVIM, March 19th, 2025)
+
+![colson nvim npm](https://i.imgur.com/rAAkACt.png)
 
 ### 💎 NEW LOOK (Colson NVIM, December 5th, 2024)
 
@@ -348,14 +354,14 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
 - [🤖 Github Copilot Integration](#-github-copilot-integration)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
+  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors) 💎
   - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
   - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
   - [**@ MoonFly Theme**](#-rose-pine-theme---has-flavors)
-  - [**@ Nord Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
   - [**@ One Dark Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
+  - [**@ Nord Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
 
 ## Introduction<a name="introduction"></a>
 
@@ -1056,15 +1062,21 @@ The themes are configured already but I've commented out rest. Feel free to expl
 
 Preconfigured themes:
 
-#### **@ Github Themes** - Has flavors
-
-#### **@ Jetbrains IDE Theme**
-
-#### **@ Tokyo Night Theme** - Has flavors
+#### **@ Tokyo Night Theme** - Has flavors 💎
 
 #### **@ Catppuccin Theme** - Has flavors
 
 #### **@ Rose Pine Theme** - Has flavors
+
+#### **@ Github Themes** - Has flavors
+
+#### **@ Jetbrains IDE Theme**
+
+#### **@ MoonFly Theme**
+
+#### **@ One Dark Theme** - Has flavors
+
+#### **@ Nord Theme** - Has flavors
 
 ![colson nvim](https://i.imgur.com/b8CtR0m.png)
 
@@ -1078,11 +1090,13 @@ Preconfigured themes:
 
 ![colson nvim](https://i.imgur.com/UfAYd7w.png)
 
-#### **@ MoonFly Theme**
+![colson nvim](https://i.imgur.com/CMJSu8Z.png)
 
-#### **@ Nord Theme** - Has flavors
+![colson nvim](https://i.imgur.com/gk9g7Xw.png)
 
-#### **@ One Dark Theme** - Has flavors
+![colson nvim](https://i.imgur.com/jBOksVC.png)
+
+![colson nvim](https://i.imgur.com/rAAkACt.png)
 
 END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
