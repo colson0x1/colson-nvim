@@ -354,14 +354,14 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
 - [🤖 Github Copilot Integration](#-github-copilot-integration)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors) 💎
+  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
   - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
-  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
   - [**@ MoonFly Theme**](#-rose-pine-theme---has-flavors)
   - [**@ One Dark Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
   - [**@ Nord Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
+  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors) 💎
 
 ## Introduction<a name="introduction"></a>
 
@@ -1062,23 +1062,11 @@ The themes are configured already but I've commented out rest. Feel free to expl
 
 Preconfigured themes:
 
-#### **@ Tokyo Night Theme** - Has flavors 💎
-
-#### **@ Catppuccin Theme** - Has flavors
-
-#### **@ Rose Pine Theme** - Has flavors
-
 #### **@ Github Themes** - Has flavors
 
-#### **@ Jetbrains IDE Theme**
-
-#### **@ MoonFly Theme**
-
-#### **@ One Dark Theme** - Has flavors
-
-#### **@ Nord Theme** - Has flavors
-
 ![colson nvim](https://i.imgur.com/b8CtR0m.png)
+
+#### **@ Catppuccin Theme** - Has flavors
 
 ![colson nvim](https://i.imgur.com/3a7HR6X.png)
 
@@ -1086,15 +1074,27 @@ Preconfigured themes:
 
 ![colson nvim](https://i.imgur.com/kjXd12x.png)
 
+#### **@ Rose Pine Theme** - Has flavors
+
 ![colson nvim](https://i.imgur.com/y0ynRkc.png)
+
+#### **@ Jetbrains IDE Theme**
 
 ![colson nvim](https://i.imgur.com/UfAYd7w.png)
 
+#### **@ MoonFly Theme**
+
 ![colson nvim](https://i.imgur.com/CMJSu8Z.png)
 
-![colson nvim](https://i.imgur.com/gk9g7Xw.png)
+#### **@ One Dark Theme** - Has flavors
+
+![colson nvim](https://i.imgur.com/TuYbDx0.png)
+
+#### **@ Nord Theme** - Has flavors
 
 ![colson nvim](https://i.imgur.com/jBOksVC.png)
+
+#### **@ Tokyo Night Theme** - Has flavors 💎
 
 ![colson nvim](https://i.imgur.com/rAAkACt.png)
 
