@@ -353,6 +353,9 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors)
   - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
   - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+  - [**@ MoonFly Theme**](#-rose-pine-theme---has-flavors)
+  - [**@ Nord Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
+  - [**@ One Dark Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
 
 ## Introduction<a name="introduction"></a>
 
@@ -1074,6 +1077,12 @@ Preconfigured themes:
 ![colson nvim](https://i.imgur.com/y0ynRkc.png)
 
 ![colson nvim](https://i.imgur.com/UfAYd7w.png)
+
+#### **@ MoonFly Theme**
+
+#### **@ Nord Theme** - Has flavors
+
+#### **@ One Dark Theme** - Has flavors
 
 END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
