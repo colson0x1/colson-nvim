@@ -7,7 +7,7 @@ rpc.setup({
 	-- General options
 	-- logo = "auto", -- "auto" or url
 	logo = "https://i.imgur.com/RIq2lwF.png", -- "auto" or url
-	logo_tooltip = "Neovim made by (.cols)", -- nil or string
+	logo_tooltip = "COLSON's NEOVIM IDE – Engineered Excellence", -- nil or string
 	main_image = "language", -- "language" or "logo"
 	client_id = "1157438221865717891", -- Use your own Discord application client id (not recommended)
 	log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
