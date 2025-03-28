@@ -5,7 +5,8 @@ end
 
 rpc.setup({
 	-- General options
-	logo = "auto", -- "auto" or url
+	-- logo = "auto", -- "auto" or url
+	logo = "https://i.imgur.com/RIq2lwF.png", -- "auto" or url
 	logo_tooltip = "Neovim made by (.cols)", -- nil or string
 	main_image = "language", -- "language" or "logo"
 	client_id = "1157438221865717891", -- Use your own Discord application client id (not recommended)
