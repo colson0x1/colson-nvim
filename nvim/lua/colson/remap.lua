@@ -128,3 +128,64 @@ vim.schedule(function()
 	-- Insert mode: Accept Augment suggestion
 	-- vim.api.nvim_set_keymap("i", "<Leader>j", "<cmd>call augment#Accept()<CR>", opts)
 end)
+
+-- @ RESTY HTTP API CLIENT
+-- Schedule key mappings to ensure they are set after all plugins load.
+vim.schedule(function()
+	local km = vim.keymap.set
+	-- Non-conflicting remaps using <leader>ap prefix.
+	km("n", "<leader>api", "<cmd>Resty run<CR>", { noremap = true, silent = true, desc = "[R]esty run request" })
+	km("n", "<leader>apo", "<cmd>Resty open<CR>", { noremap = true, silent = true, desc = "[R]esty open result pane" })
+	km("n", "<leader>apl", "<cmd>Resty last<CR>", { noremap = true, silent = true, desc = "[R]esty run last request" })
+	km(
+		"n",
+		"<leader>apf",
+		"<cmd>Resty favorite<CR>",
+		{ noremap = true, silent = true, desc = "[R]esty show favorites" }
+	)
+	km(
+"n",
+		"<leader>apm",
+		"<cmd>Resty favorite my favorite<CR>",
+		{ noremap = true, silent = true, desc = "[R]esty run favorite 'my favorite'" }
+	)
+	km("n", "<leader>aplgs", "<cmd>Resty logs<CR>", { noremap = true, silent = true, desc = "[R]esty edit logs file" })
+	km(
+		"n",
+		"<leader>aprc",
+		"<cmd>Resty cookies<CR>",
+		{ noremap = true, silent = true, desc = "[R]esty edit cookies file" }
+	)
+	km(
+		"n",
+		"<leader>apre",
+		"<cmd>Resty env show<CR>",
+		{ noremap = true, silent = true, desc = "[R]esty show env file" }
+	)
+	km(
+		"n",
+		"<leader>aprs",
+		"<cmd>Resty env select<CR>",
+		{ noremap = true, silent = true, desc = "[R]esty select env file" }
+	)
+	km(
+		"n",
+		"<leader>aprt",
+		"<cmd>Resty env set ",
+		{ noremap = true, silent = true, desc = "[R]esty set env file (append path)" }
+	)
+end)
+
+-- Define user commands for documented operations.
+vim.cmd([[
+  command! -nargs=? RestyRun execute "Resty run" <q-args>
+  command! -nargs=0 RestyLast execute "Resty last"
+  command! -nargs=0 RestyFavorite execute "Resty favorite"
+  command! -nargs=1 RestyFavoriteRun execute "Resty favorite " . <q-args>
+  command! -nargs=0 RestyOpen execute "Resty open"
+  command! -nargs=0 RestyLogs execute "Resty logs"
+  command! -nargs=0 RestyCookies execute "Resty cookies"
+  command! -nargs=0 RestyEnvShow execute "Resty env show"
+  command! -nargs=0 RestyEnvSelect execute "Resty env select"
+  command! -nargs=1 RestyEnvSet execute "Resty env set " . <q-args>
+]])
