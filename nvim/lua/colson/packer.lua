@@ -37,6 +37,20 @@ return require("packer").startup(function(use)
 		end,
 	}) ]]
 
+	-- @ RESTY HTTP REST Client
+	use({
+		"lima1909/resty.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		--[[ config = function()
+			require("after.plugin.http-rest-client")
+		end, ]]
+	})
+	-- RESTY Dependency
+	use({
+		"NTBBloodbath/rest.nvim",
+		requires = { "nvim-telescope/telescope.nvim" },
+	})
+
 	-- Auto Save
 	use("0x00-ketsu/autosave.nvim")
 
