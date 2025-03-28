@@ -280,6 +280,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 - [goto: TABLE OF CONTENTS 🚀 ](#goto-table-of-contents--)
 - [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
 - [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
+  - [💎 NEW ZEN LOOK (Colson NVIM, March 19th, 2025)](#-new-zen-look-colson-nvim-march-19th-2025)
   - [💎 NEW LOOK (Colson NVIM, December 5th, 2024)](#-new-look-colson-nvim-december-5th-2024)
   - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
   - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
@@ -327,7 +328,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Code Fold](#code-fold)
   - [Live Server](#live-server)
   - [System Clipboard Copy](#system-clipboard-copy)
-- [🚀 React Snippets Autocompletion](#-react-snippets-autocompletion)
+- [🎆 React Snippets Autocompletion](#-react-snippets-autocompletion)
   - [Ultisnips Dependency Installation](#ultisnips-dependency-installation)
   - [🔥 React Snippets Guide](#-react-snippets-guide)
     - [Functional Components](#functional-components)
@@ -353,15 +354,20 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [User Command Aliases](#user-command-aliases)
   - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
 - [🤖 Github Copilot Integration](#-github-copilot-integration)
+- [🚀 **HTTP REST Client for Engineers**](#-http-rest-client-for-engineers)
+  - [Features](#features-1)
+  - [Dependencies:](#dependencies)
+  - [HTTP File Syntax Overview](#http-file-syntax-overview)
+  - [**Commands \& Key Mappings Table**](#commands--key-mappings-table)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-  - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
-  - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
-  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-  - [**@ MoonFly Theme**](#-rose-pine-theme---has-flavors)
-  - [**@ One Dark Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
-  - [**@ Nord Theme** - Has flavors](#-rose-pine-stheme---has-flavors)
-  - [**@ Tokyo Night Theme** - Has flavors](#-tokyo-night-theme---has-flavors) 💎
+    - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+    - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
+    - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+    - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
+    - [**@ MoonFly Theme**](#-moonfly-theme)
+    - [**@ One Dark Theme** - Has flavors](#-one-dark-theme---has-flavors)
+    - [**@ Nord Theme** - Has flavors](#-nord-theme---has-flavors)
+    - [**@ Tokyo Night Theme** - Has flavors 💎](#-tokyo-night-theme---has-flavors-)
 
 ## Introduction<a name="introduction"></a>
 
@@ -669,7 +675,7 @@ Then open any workspace with `nvim .` in `Tmux` environment. Now you're ready to
 - NORMAL OR VISUAL MODE: **`<leader>y`** - Copies to system clipboard.
 - NORMAL MODE: **`<leader>Y`** - Copies text from cursor to the end of the line to the system clipboard.
 
-## 🚀 React Snippets Autocompletion
+## 🎆 React Snippets Autocompletion
 
 ### Ultisnips Dependency Installation
 
@@ -1053,6 +1059,90 @@ Optional since I've configured Augment to autodetect current working directory o
 | Insert | `<leader>cp`  | `copilot#Previous()`     | Cycle to the previous suggestion   |
 
 Note: Either enable **Augment** or **Copilot**, not both at the same time!
+
+---
+
+## 🚀 **HTTP REST Client for Engineers**
+
+I've integrated a high-performance, enterprise-grade HTTP REST client plugin for Neovim written entirely in Lua. This configuration is designed for large-scale web application microservices and large code bases—ideal for software engineers at major tech companies or startups.
+
+### Features
+
+- **Dynamic Environment Integration:**  
+  Automatically retrieves dynamic variables (such as service endpoints, auth tokens, and database URLs) from environment variables, shell commands (with caching), or input prompts.
+
+- **Inline Configuration Overrides:**  
+  Customize behavior on a per-request basis using inline `@cfg` directives in your HTTP files.
+
+- **Rich Response Views:**  
+  Display HTTP response details (body, headers, and additional HTTP info) with dedicated result pane settings.
+
+- **Advanced Scripting:**  
+  Execute inline Lua scripts as post-request hooks to process responses and set global variables.
+
+- **Extensive Logging:**  
+  Enterprise-grade debugging with verbose log levels for comprehensive troubleshooting.
+
+- **Telescope Integration:**  
+  Use Telescope to easily select and register dotenv files.
+
+**Supported Neovim Versions:**
+
+- Latest nightly
+- 0.10.x
+
+### Dependencies:
+
+- `curl` (mandatory)
+- `jq` (optional, recommended for JSON formatting)
+- `nvim-telescope/telescope.nvim` (optional, for dotenv selection)
+- `hrsh7th/nvim-cmp` (optional, for auto-completion)
+
+### HTTP File Syntax Overview
+
+When writing your HTTP request definitions (saved as `.http` or `.resty` files), you can leverage:
+
+- **Variable Declarations:**
+  - Global: `@[variable]=value`
+  - Dynamic (environment, shell command, prompt):
+    - `@hostname = {{$HOSTNAME}}`
+    - `@hostname = {{> ./myscript.sh}}` (non-cached)
+    - `@hostname = {{>> ./myscript.sh}}` (cached)
+    - `@hostname = {{:prompt}}`
+- **Configuration Variables:**  
+  Override defaults with:  
+  `@cfg.timeout = 2000`  
+  `@cfg.check_json_body = true`
+- **Request Definition:**  
+  Specify HTTP method, URL (e.g., using dynamic `{{hostname}}`), headers, and body.
+- **Inline Lua Scripting Hooks:**  
+  Use `# @lang=lua` above Lua script blocks to process responses.
+  ```http
+  # @lang=lua
+  > {%
+    local body = ctx.json_body()
+    if body.token then
+      ctx.set("login.token", body.token)
+    end
+  --%}
+  ```
+- **Favorites:**  
+  Mark requests with delimiters (e.g., `### #my favorite`) to easily recall them via Telescope.
+
+### **Commands & Key Mappings Table**
+
+| **User / Alias**            | **Command / Key Mapping**                         | **Description**                                                                                          |
+| --------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Run Request**             | `<leader>api` → `:Resty run`                      | Runs the HTTP request under the cursor or selected in visual mode.                                       |
+| **Open Result Pane**        | `<leader>apo` → `:Resty open`                     | Opens the response/result pane in a new window.                                                          |
+| **Run Last Request**        | `<leader>apl` → `:Resty last`                     | Re-runs the last successfully executed request.                                                          |
+| **Show Favorites**          | `<leader>apf` → `:Resty favorite`                 | Displays a Telescope view listing all requests marked as favorites.                                      |
+| **Run Specific Favorite**   | `<leader>apm` → `:Resty favorite my favorite`     | Runs the favorite request named "my favorite", regardless of cursor location.                            |
+| **Edit Logs File**          | `<leader>aplgs` or `<leader>apil` → `:Resty logs` | Opens the log file to review detailed execution logs.                                                    |
+| **Edit Cookies File**       | `<leader>aprc` → `:Resty cookies`                 | Opens the cookies file used for session management.                                                      |
+| **Show Environment File**   | `<leader>apre` → `:Resty env show`                | Displays the dotenv file currently registered with the active HTTP file.                                 |
+| **Select Environment File** | `<leader>aprs` → `:Resty env select`              | Launches a Telescope view to select and register a dotenv file.                                          |
+| **Set Environment File**    | `<leader>aprt` → `:Resty env set {path}`          | Registers a specific dotenv file for the current HTTP file by appending the file path after the command. |
 
 ---
 
