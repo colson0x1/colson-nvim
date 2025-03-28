@@ -144,12 +144,13 @@ vim.schedule(function()
 		{ noremap = true, silent = true, desc = "[R]esty show favorites" }
 	)
 	km(
-"n",
+		"n",
 		"<leader>apm",
 		"<cmd>Resty favorite my favorite<CR>",
 		{ noremap = true, silent = true, desc = "[R]esty run favorite 'my favorite'" }
 	)
 	km("n", "<leader>aplgs", "<cmd>Resty logs<CR>", { noremap = true, silent = true, desc = "[R]esty edit logs file" })
+	km("n", "<leader>apil", "<cmd>Resty logs<CR>", { noremap = true, silent = true, desc = "[R]esty edit logs file" })
 	km(
 		"n",
 		"<leader>aprc",
@@ -171,7 +172,7 @@ vim.schedule(function()
 	km(
 		"n",
 		"<leader>aprt",
-		"<cmd>Resty env set ",
+		"<cmd>Resty env set<CR>",
 		{ noremap = true, silent = true, desc = "[R]esty set env file (append path)" }
 	)
 end)
