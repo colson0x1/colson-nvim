@@ -1,8 +1,360 @@
+###
+# API Testing Suite
+# Environment: Development
+# Version: 2.4.0
+# Last Updated: 2025-03-28 07:08:05
+# Engineer: COLSON
+###
+
+###
+# User Management API
+###
+
+# Create a new user
 POST http://localhost:3000/api/v1/users
 Content-Type: application/json
+X-Request-ID: 7b8f9e2a-1c3d-4a5b-9e8f-7c6d5a4b3e2d
+X-API-Version: 1.0
 
 {
   "name": "Colson",
-  "currentYear": "2024",
-  "age": "25"
+  "email": "colson@typemuse.com",
+  "currentYear": "2025",
+  "age": 26,
+  "preferences": {
+    "theme": "dark",
+    "notifications": true,
+    "timezone": "UTC-7"
+  },
+  "roles": ["user", "beta-tester"]
+}
+
+###
+# Get user by ID
+GET http://localhost:3000/api/v1/users/12345
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+Accept: application/json
+X-Correlation-ID: 550e8400-e29b-41d4-a716-446655440000
+
+###
+# Update user
+PATCH http://localhost:3000/api/v1/users/12345
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Idempotency-Key: 2025-03-28-07-08-05-update-user
+
+{
+  "preferences": {
+    "theme": "light",
+    "notifications": false
+  },
+  "metadata": {
+    "lastUpdated": "2025-03-28T07:08:05Z",
+    "updatedBy": "colson0x1"
+  }
+}
+
+###
+# Delete user
+DELETE http://localhost:3000/api/v1/users/12345
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Request-Source: admin-portal
+
+###
+# Authentication API
+###
+
+# Login
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "colson@typemuse.com",
+  "password": "stillhome",
+  "mfaToken": "587493",
+  "deviceInfo": {
+    "os": "Linux",
+    "browser": "Neovim/REST-Client",
+    "ipAddress": "192.168.1.100"
+  }
+}
+
+###
+# Refresh token
+POST http://localhost:3000/api/v1/auth/refresh
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0",
+  "deviceId": "device-id-colson-laptop-2025"
+}
+
+###
+# Products API
+###
+
+# List products with pagination and filtering
+GET http://localhost:3000/api/v1/products?page=1&limit=25&category=electronics&minPrice=100&sort=price:desc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+Accept: application/json
+Cache-Control: max-age=60
+
+###
+# Create product
+POST http://localhost:3000/api/v1/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Tenant-ID: tenant-12345
+
+{
+  "name": "High-Performance SSD",
+  "sku": "SSD-4872",
+  "price": 149.99,
+  "inventory": {
+    "quantity": 500,
+    "warehouseLocation": "WEST-05",
+    "reservedCount": 0
+  },
+  "category": "electronics",
+  "attributes": {
+    "capacity": "1TB",
+    "interface": "NVMe",
+    "readSpeed": "7000MB/s",
+    "writeSpeed": "5000MB/s"
+  },
+  "metadata": {
+    "createdAt": "2025-03-28T07:08:05Z",
+    "createdBy": "colson0x1",
+    "githubLink": "https://github.com/colson0x1/colson-nvim"
+  }
+}
+
+###
+# Analytics API
+###
+
+# Get user engagement metrics
+POST http://localhost:3000/api/v1/analytics/engagement
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Data-Partition: user-behavior
+
+{
+  "timeRange": {
+    "start": "2025-01-01T00:00:00Z",
+    "end": "2025-03-28T07:08:05Z"
+  },
+  "dimensions": ["device", "country", "userType"],
+  "metrics": ["sessionDuration", "pageViews", "conversionRate"],
+  "filters": [
+    {
+      "dimension": "userType",
+      "operator": "IN",
+      "values": ["new", "returning"]
+    }
+  ],
+  "sampling": {
+    "enabled": true,
+    "rate": 0.1
+  }
+}
+
+###
+# Feature Flags API
+###
+
+# Get feature flags for current user
+GET http://localhost:3000/api/v1/features/flags
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-User-Context: {"userID": "12345", "groups": ["beta-testers", "premium"], "region": "us-west"}
+
+###
+# Upload file with multipart form data
+POST http://localhost:3000/api/v1/uploads/profile-image
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="metadata"
+Content-Type: application/json
+
+{
+  "filename": "profile.jpg",
+  "contentType": "image/jpeg",
+  "userId": "12345",
+  "tags": ["profile", "avatar"],
+  "uploadedBy": "colson0x1",
+  "uploadDate": "2025-03-28T07:08:05Z"
+}
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="profile.jpg"
+Content-Type: image/jpeg
+
+< ./uploads/profile.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+# GraphQL API
+POST http://localhost:3000/api/v1/graphql
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Operation-Name: GetUserWithOrders
+
+{
+  "query": "query GetUserWithOrders($userId: ID!, $orderLimit: Int!) { user(id: $userId) { id name email orders(limit: $orderLimit) { id orderNumber status items { productId quantity price } totalAmount currency } } }",
+  "variables": {
+    "userId": "12345",
+    "orderLimit": 5
+  },
+  "operationName": "GetUserWithOrders"
+}
+
+###
+# Health Check and System Status
+GET http://localhost:3000/api/v1/system/health
+X-API-Key: api-key-1a2b3c4d5e
+
+###
+# Test error handling - Resource not found
+GET http://localhost:3000/api/v1/products/99999
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+Accept: application/json
+
+###
+# Performance test - Batch operation
+POST http://localhost:3000/api/v1/users/batch
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Rate-Limit-Group: batch-operations
+
+{
+  "operations": [
+    {
+      "operation": "CREATE",
+      "data": {
+        "name": "Stillhome",
+        "email": "stillhome@typemuse.com"
+      }
+    },
+    {
+      "operation": "UPDATE",
+      "id": "12345",
+      "data": {
+        "preferences": {
+          "theme": "system"
+        }
+      }
+    },
+    {
+      "operation": "DELETE",
+      "id": "54321"
+    }
+  ],
+  "options": {
+    "continueOnError": true,
+    "returnResults": true,
+    "transactional": true
+  },
+  "metadata": {
+    "requestId": "batch-12345",
+    "initiatedBy": "colson0x1",
+    "initiatedAt": "2025-03-28T07:08:05Z"
+  }
+}
+
+###
+# Testing with environment-specific endpoints
+GET http://localhost:3000/api/v1/config?environment=development&version=1.2.3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+
+###
+# A/B Testing API
+POST http://localhost:3000/api/v1/experiments/allocate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+
+{
+  "userId": "12345",
+  "experiments": ["checkout-flow-redesign", "pricing-model-v2"],
+  "context": {
+    "deviceType": "desktop",
+    "userSegment": "premium",
+    "countryCode": "US"
+  },
+  "overrides": {
+    "forceVariant": false
+  },
+  "requestMetadata": {
+    "timestamp": "2025-03-28T07:08:05Z",
+    "requestedBy": "colson0x1"
+  }
+}
+
+###
+# Generate documentation - Enterprise Feature
+POST http://localhost:3000/api/v1/system/generate-documentation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Request-Timestamp: 2025-03-28T07:08:05Z
+
+{
+  "format": "openapi",
+  "version": "3.0",
+  "includePaths": ["/users", "/products", "/auth"],
+  "excludePaths": ["/internal", "/experimental"],
+  "outputPreferences": {
+    "includeExamples": true,
+    "includeAuthentication": true,
+    "markdownFormat": true
+  },
+  "requestedBy": "colson0x1"
+}
+
+###
+# Deploy to production - CI/CD integration
+POST http://localhost:3000/api/v1/system/deployments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Deploy-Token: deploy-token-1a2b3c4d5e6f
+
+{
+  "version": "2.4.1",
+  "environment": "production",
+  "gitRef": "main",
+  "commitHash": "7a9b8c7d6e5f4a3b2c1d",
+  "rollbackPlan": {
+    "automatic": true,
+    "threshold": 0.05,
+    "metrics": ["error_rate", "latency_p95"]
+  },
+  "deploymentMetadata": {
+    "initiatedBy": "colson0x1",
+    "timestamp": "2025-03-28T07:08:05Z",
+    "approvedBy": ["tech-lead", "product-owner"],
+    "changelogUrl": "https://github.com/company/repo/releases/tag/v2.4.1"
+  }
+}
+
+###
+# Database migration - Internal Admin API
+POST http://localhost:3000/api/v1/admin/database/migrate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImNvbHNvbjB4MSIsImlhdCI6MTUxNjIzOTAyMn0
+X-Admin-Key: admin-key-9z8y7x6w5v
+
+{
+  "migration": "v2.4.1-add-user-audit-fields",
+  "direction": "up",
+  "options": {
+    "dryRun": false,
+    "timeout": 1800,
+    "backupFirst": true
+  },
+  "metadata": {
+    "requestedBy": "colson0x1",
+    "timestamp": "2025-03-28T07:08:05Z",
+    "ticketNumber": "INFRA-12345",
+    "priority": "high"
+  }
 }
