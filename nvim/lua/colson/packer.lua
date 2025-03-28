@@ -231,18 +231,18 @@ return require("packer").startup(function(use)
 	-- Augment
 	use({
 		"augmentcode/augment.vim",
-		config = function()
+		--[[ config = function()
 			-- Load our dedicated Augment configuration
 			require("after.plugin.augment")
-		end,
+		end, ]]
 	})
 
 	-- Copilot
 	use({
 		"github/copilot.vim",
-		config = function()
+		--[[ config = function()
 			require("after.plugin.copilot")
-		end,
+		end, ]]
 	})
 
 	-- Lualine
