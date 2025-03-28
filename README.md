@@ -360,14 +360,14 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [HTTP File Syntax Overview](#http-file-syntax-overview)
   - [**Commands \& Key Mappings Table**](#commands--key-mappings-table)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-    - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-    - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
-    - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
-    - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-    - [**@ MoonFly Theme**](#-moonfly-theme)
-    - [**@ One Dark Theme** - Has flavors](#-one-dark-theme---has-flavors)
-    - [**@ Nord Theme** - Has flavors](#-nord-theme---has-flavors)
-    - [**@ Tokyo Night Theme** - Has flavors 💎](#-tokyo-night-theme---has-flavors-)
+  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
+  - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
+  - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
+  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
+  - [**@ MoonFly Theme**](#-moonfly-theme)
+  - [**@ One Dark Theme** - Has flavors](#-one-dark-theme---has-flavors)
+  - [**@ Nord Theme** - Has flavors](#-nord-theme---has-flavors)
+  - [**@ Tokyo Night Theme** - Has flavors 💎](#-tokyo-night-theme---has-flavors-)
 
 ## Introduction<a name="introduction"></a>
 
@@ -1187,6 +1187,10 @@ Preconfigured themes:
 #### **@ Tokyo Night Theme** - Has flavors 💎
 
 ![colson nvim](https://i.imgur.com/rAAkACt.png)
+
+![colson nvim](https://i.imgur.com/a6fYwaE.png)
+
+![colson nvim](https://i.imgur.com/pPxAM5P.png)
 
 END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
