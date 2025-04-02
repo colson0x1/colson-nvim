@@ -4,6 +4,7 @@
 <h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
 <h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
 <h2>🎯 Blazingly Fast as compared to VSCode and WebStorm 🔥</h2>
+<h2>Worldclass Neovim Experience for Engineers 💎</h2>
 
 [![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
 
