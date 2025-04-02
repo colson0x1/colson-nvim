@@ -196,6 +196,15 @@ return require("packer").startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Modern Discord Presence with VSCODE Icons
+	--[[
+	use({
+		"vyfor/cord.nvim",
+		run = ":Cord update",
+		-- config = function()
+		-- 	require("after.plugin.rpcDope")
+		-- end,
+	})
+  ]]
 	use("IogaMaster/neocord")
 	-- use("andweeb/presence.nvim")
 

@@ -25,7 +25,8 @@ require("presence").setup({
 	file_explorer_text = "Browsing %s",
 
 	git_commit_text = function(filename)
-		return string.format("Committing changes in %s", filename)
+		-- return string.format("Committing changes in %s", filename)
+		return string.format("%s", filename)
 	end,
 
 	plugin_manager_text = "Managing plugins",
