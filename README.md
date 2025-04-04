@@ -32,7 +32,31 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 ## Installation through NPM
 
-Ensure `Neovim (v >= 0.9.0)` and `Node` are installed on your machine!
+Ensure `Neovim (v >= 0.9.x or v < 0.11.x)` and `Node` are installed on your machine!
+
+### **🚨 RED ZONE**!
+
+Neovim **`v0.11.x`** nd higher intoduces breaking changes so it breaks the entire
+LSP configuration. Therefore, its mandatory to use Neovim **`v0.9.x`** or **`v0.10.x`**
+but not **`v0.11.x`**.
+
+Check Neovim version of your machine:
+
+```shell
+nvim --version
+```
+
+If it has version, **`v0.11.x`**, then you need to downgrade to **`v0.10.x`**!
+
+```shell
+$ yay -S downgrade
+$ sudo downgrade neovim
+# Select v0.10.4
+# Recheck neovim version:
+$ nvim --version
+```
+
+Now `leader+pac` on `nvim/colson/packer.lua` works so reload plugins with `leader+pac`!
 
 `NOTE`: Leader key for Neovim -> **SPACE**
 
@@ -42,7 +66,7 @@ $ cd ~/.config/nvim
 $ nvim .
 ```
 
-Navigate to `lua/colson/packer.lua`  
+Navigate to `lua/colson/packer.lua`
 Execute this command in normal mode!
 
 ```
@@ -1069,22 +1093,22 @@ I've integrated a high-performance, enterprise-grade HTTP REST client plugin for
 
 ### Features
 
-- **Dynamic Environment Integration:**  
+- **Dynamic Environment Integration:**
   Automatically retrieves dynamic variables (such as service endpoints, auth tokens, and database URLs) from environment variables, shell commands (with caching), or input prompts.
 
-- **Inline Configuration Overrides:**  
+- **Inline Configuration Overrides:**
   Customize behavior on a per-request basis using inline `@cfg` directives in your HTTP files.
 
-- **Rich Response Views:**  
+- **Rich Response Views:**
   Display HTTP response details (body, headers, and additional HTTP info) with dedicated result pane settings.
 
-- **Advanced Scripting:**  
+- **Advanced Scripting:**
   Execute inline Lua scripts as post-request hooks to process responses and set global variables.
 
-- **Extensive Logging:**  
+- **Extensive Logging:**
   Enterprise-grade debugging with verbose log levels for comprehensive troubleshooting.
 
-- **Telescope Integration:**  
+- **Telescope Integration:**
   Use Telescope to easily select and register dotenv files.
 
 **Supported Neovim Versions:**
@@ -1110,13 +1134,13 @@ When writing your HTTP request definitions (saved as `.http` or `.resty` files),
     - `@hostname = {{> ./myscript.sh}}` (non-cached)
     - `@hostname = {{>> ./myscript.sh}}` (cached)
     - `@hostname = {{:prompt}}`
-- **Configuration Variables:**  
-  Override defaults with:  
-  `@cfg.timeout = 2000`  
+- **Configuration Variables:**
+  Override defaults with:
+  `@cfg.timeout = 2000`
   `@cfg.check_json_body = true`
-- **Request Definition:**  
+- **Request Definition:**
   Specify HTTP method, URL (e.g., using dynamic `{{hostname}}`), headers, and body.
-- **Inline Lua Scripting Hooks:**  
+- **Inline Lua Scripting Hooks:**
   Use `# @lang=lua` above Lua script blocks to process responses.
   ```http
   # @lang=lua
@@ -1127,7 +1151,7 @@ When writing your HTTP request definitions (saved as `.http` or `.resty` files),
     end
   --%}
   ```
-- **Favorites:**  
+- **Favorites:**
   Mark requests with delimiters (e.g., `### #my favorite`) to easily recall them via Telescope.
 
 ### **Commands & Key Mappings Table**
@@ -1197,3 +1221,7 @@ END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
 
 Peace! 🕊
+
+```
+
+```
