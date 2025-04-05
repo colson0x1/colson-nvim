@@ -6,8 +6,8 @@
 <h2>🎯 Blazingly Fast as compared to VSCode and WebStorm 🔥</h2>
 <h2>Worldclass Neovim Experience for Engineers 💎</h2>
 
-[![](https://img.shields.io/badge/Neovim-0.9+-blueviolet.svg?style=for-the-badge&color=000F10&logo=Neovim&logoColor=green&labelColor=302D41)](https://github.com/colson0x1/nvim)
-
+<!-- <img src='https://i.imgur.com/nls1N1W.png' alt='colson nvim discord presence' /> -->
+<img src='https://i.imgur.com/kpAiwYn.png' alt='colson nvim discord presence' />
 </div>
 
 Step into the realm of excellence with my world-class Neovim (nvim) configuration! This comprehensive guide unveils a meticulously crafted zenful setup, meticulously designed for unparalleled efficiency, productivity, and visual splendor within Neovim.
@@ -273,7 +273,9 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 
 ## 🔥 COOL NEW Discord Presence for Neovim (April, 2025)
 
-![colson nvim](https://i.imgur.com/ivdeYJt.png)
+![colson nvim](https://i.imgur.com/kpAiwYn.png)
+
+![colson nvim](https://i.imgur.com/nls1N1W.png)
 
 ## ❕ Keeping Your Configuration Up-to-Date
 
