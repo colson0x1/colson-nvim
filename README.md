@@ -56,7 +56,7 @@ $ sudo downgrade neovim
 $ nvim --version
 ```
 
-Now `leader+pac` on `nvim/colson/packer.lua` works so reload plugins with `leader+pac`!
+Now `leader+pac` on `nvim/lua/colson/packer.lua` works so reload plugins with `leader+pac`!
 
 `NOTE`: Leader key for Neovim -> **SPACE**
 
@@ -271,9 +271,9 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 
 ![colson nvim](https://i.imgur.com/cpzqjmT.png)
 
-## 🔥 Discord Presence for Neovim
+## 🔥 COOL NEW Discord Presence for Neovim (April, 2025)
 
-![colson nvim](https://i.imgur.com/2vCNJ0w.png)
+![colson nvim](https://i.imgur.com/ivdeYJt.png)
 
 ## ❕ Keeping Your Configuration Up-to-Date
 
