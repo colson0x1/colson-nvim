@@ -35,7 +35,7 @@ keymap("n", "<leader>cs", ":Copilot status<CR>", opts)
 -------------------------------------------------
 
 -- Accept the current Copilot suggestion (mapped to both <leader>j and Ctrl+j).
-keymap("i", "<leader>j", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+-- keymap("i", "<leader>j", 'copilot#Accept("<CR>")', { expr = true, silent = true })
 keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- Cycle to the next suggestion.
