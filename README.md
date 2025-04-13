@@ -301,6 +301,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
 ## Table of Contents
 
 - [Installation through NPM](#installation-through-npm)
+  - [**🚨 RED ZONE**!](#-red-zone)
   - [Important Dependency!](#important-dependency)
     - [FOR the latest installation pull, do:](#for-the-latest-installation-pull-do)
     - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
@@ -313,7 +314,7 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
 - [@ Neovim on macOS](#-neovim-on-macos)
   - [2023/Early 2024 Look](#2023early-2024-look)
-- [🔥 Discord Presence for Neovim](#-discord-presence-for-neovim)
+- [🔥 COOL NEW Discord Presence for Neovim (April, 2025)](#-cool-new-discord-presence-for-neovim-april-2025)
 - [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
 - [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
 - [Table of Contents](#table-of-contents)
@@ -386,6 +387,8 @@ Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding ex
   - [Dependencies:](#dependencies)
   - [HTTP File Syntax Overview](#http-file-syntax-overview)
   - [**Commands \& Key Mappings Table**](#commands--key-mappings-table)
+- [📘 Markdown Preview ✨](#-markdown-preview-)
+  - [Commands \& Key Mappings](#commands--key-mappings)
 - [Cool Pre-Configured Themes](#cool-pre-configured-themes)
   - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
   - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
@@ -1170,6 +1173,26 @@ When writing your HTTP request definitions (saved as `.http` or `.resty` files),
 | **Show Environment File**   | `<leader>apre` → `:Resty env show`                | Displays the dotenv file currently registered with the active HTTP file.                                 |
 | **Select Environment File** | `<leader>aprs` → `:Resty env select`              | Launches a Telescope view to select and register a dotenv file.                                          |
 | **Set Environment File**    | `<leader>aprt` → `:Resty env set {path}`          | Registers a specific dotenv file for the current HTTP file by appending the file path after the command. |
+
+---
+
+## 📘 Markdown Preview ✨
+
+**Markdown preview** transforms your **plain markdown text** into **beautifully rendered
+documents** in **real time**. It offers live updates as you type, supports syntax
+highlighting for code blocks, and allows customization with themes and styles.
+This feature enhances your writing **experience** by providing **immediate visual
+feedback**, making it easier to create well-formatted content.
+
+### Commands & Key Mappings
+
+| Key Mapping  | Command                  | Command                            |
+| ------------ | ------------------------ | ---------------------------------- |
+| `<leader>mp` | `:MarkdownPreview`       | Start the Markdown preview         |
+| `<leader>ms` | `:MarkdownPreviewStop`   | Stop the Markdown preview          |
+| `<leader>mt` | `:MarkdownPreviewToggle` | Toggle the Markdown preview on/off |
+
+---
 
 ---
 
