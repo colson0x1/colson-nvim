@@ -120,3 +120,11 @@ vim.api.nvim_set_keymap("n", "<leader>c0", "<cmd>GitConflictChooseNone<CR>", { n
 vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>GitConflictNextConflict<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>GitConflictPrevConflict<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>cs", "<cmd>GitConflictListQf<CR>", { noremap = true, silent = true })
+
+-- @ Markdown Preview
+-- Map <leader>mp to start the Markdown preview.
+vim.api.nvim_set_keymap("n", "<leader>mp", ":MarkdownPreview<CR>", { noremap = true, silent = true })
+-- Map <leader>ms to stop the Markdown preview.
+vim.api.nvim_set_keymap("n", "<leader>ms", ":MarkdownPreviewStop<CR>", { noremap = true, silent = true })
+-- Map <leader>mt to toggle the Markdown preview.
+vim.api.nvim_set_keymap("n", "<leader>mt", ":MarkdownPreviewToggle<CR>", { noremap = true, silent = true })

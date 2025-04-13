@@ -265,6 +265,14 @@ return require("packer").startup(function(use)
 		"Yggdroot/indentLine",
 	})
 
+	-- Markdown Preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		ft = { "markdown" }, -- lazy-load on markdown files
+		cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
+	})
+
 	-- /* IDE Theme (Enable Only One) : THREE Themes at the Moment! */
 
 	-- @ Github Themes
