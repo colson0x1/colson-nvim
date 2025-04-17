@@ -34,10 +34,20 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 Ensure `Neovim (v >= 0.9.x or v < 0.11.x)` and `Node` are installed on your machine!
 
-### **🚨 RED ZONE**!
+🌎 [Neovim Packages - Arch Linux Archive](https://archive.archlinux.org/packages/n/neovim/)
 
-Neovim **`v0.11.x`** nd higher intoduces breaking changes so it breaks the entire
-LSP configuration. Therefore, its mandatory to use Neovim **`v0.9.x`** or **`v0.10.x`**
+```shell
+// Install Neovim
+$ sudo pacman -S neovim
+
+// Install NODE (Dependency)
+$ sudo pacman -S nodejs
+```
+
+### **🚨 IMPORTANT - RED ZONE**
+
+Neovim **`v0.11.x`** and higher intoduces breaking changes so it breaks the entire
+LSP system. Therefore, its mandatory to use Neovim **`v0.9.x`** or **`v0.10.x`**
 but not **`v0.11.x`**.
 
 Check Neovim version of your machine:
