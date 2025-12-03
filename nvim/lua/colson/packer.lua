@@ -3,9 +3,10 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	-- Telescope - UPDATED for 0.11.x compatibility
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
+		branch = "master", -- Use latest instead of old 0.1.4
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -45,11 +46,19 @@ return require("packer").startup(function(use)
 			require("after.plugin.http-rest-client")
 		end, ]]
 	})
-	-- RESTY Dependency
+	-- RESTY Dependency (DISABLED - Missing dependencies)
+	-- rest.nvim requires: fidget.nvim, xml2lua, mimetypes, nvim-nio, tree-sitter-http
+	-- Use resty.nvim (above) instead for HTTP REST client functionality
+	--[[
 	use({
 		"NTBBloodbath/rest.nvim",
-		requires = { "nvim-telescope/telescope.nvim" },
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-neotest/nvim-nio",
+			"j-hui/fidget.nvim",
+		},
 	})
+	--]]
 
 	-- Auto Save
 	use("0x00-ketsu/autosave.nvim")
@@ -143,9 +152,9 @@ return require("packer").startup(function(use)
 		fs = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 	})
 
-	-- Formatting and Linting
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
+	-- Formatting and Linting - FIXED for 0.11.x (null-ls archived, using none-ls)
+	use("nvimtools/none-ls.nvim") -- Maintained fork of null-ls
+	use("jay-babu/mason-null-ls.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
@@ -182,6 +191,52 @@ return require("packer").startup(function(use)
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
+		},
+	})
+
+	-- Java Development - Enterprise Grade Setup
+	use({
+		"nvim-java/nvim-java",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			{ "nvim-java/lua-async-await" },
+			{ "nvim-java/nvim-java-core" },
+			{ "nvim-java/nvim-java-test" },
+			{ "nvim-java/nvim-java-dap" },
+			{ "nvim-java/nvim-java-refactor" },
+			{ "MunifTanjim/nui.nvim" },
+		},
+	})
+
+	-- Java Debugging (DAP)
+	use({
+		"mfussenegger/nvim-dap",
+		requires = {
+			"rcarriga/nvim-dap-ui",
+			"theHamsta/nvim-dap-virtual-text",
+			"nvim-neotest/nvim-nio",
+		},
+	})
+
+	-- Advanced Java Testing with Neotest
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"rcasia/neotest-java",
+		},
+	})
+
+	-- Spring Boot Project Generator
+	use({
+		"javiorfo/nvim-springtime",
+		requires = {
+			"javiorfo/nvim-popcorn",
+			"javiorfo/nvim-spinetta",
+			"hrsh7th/nvim-cmp",
 		},
 	})
 

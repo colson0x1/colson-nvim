@@ -70,7 +70,23 @@ vim.g.indentLine_fileTypeExclude = { "help", "dashboard", "packer", "NvimTree" }
 vim.g.indentLine_showFirstIndentLevel = 1
 vim.g.indentLine_setColors = 1
 
-local cb = require("diffview.config").diffview_callback
+-- ============================================================================
+-- @ Diff -> Diffview Configuration (Enterprise-Grade Error Handling)
+-- ============================================================================
+-- Note: diffview_callback API has changed in recent versions
+-- Using pcall for safe loading and modern Diffview actions
+local diffview_ok, diffview_actions = pcall(require, "diffview.actions")
+local cb = nil
+
+if diffview_ok then
+	cb = diffview_actions
+else
+	-- Fallback for older API or when diffview is not installed yet
+	local status, diffview_config = pcall(require, "diffview.config")
+	if status and diffview_config.diffview_callback then
+		cb = diffview_config.diffview_callback
+	end
+end
 
 -- @ Diff -> General Diffview keymaps
 vim.api.nvim_set_keymap("n", "<leader>do", ":DiffviewOpen<CR>", { noremap = true, silent = true })

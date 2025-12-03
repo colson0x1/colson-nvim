@@ -1,0 +1,115 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    JAVA DEVELOPMENT KEYBINDINGS CHEAT SHEET                   ║
+║                           Leader Key = <Space>                                ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🎯 TOP 10 - MEMORIZE THESE FIRST!                                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jr  │ Run main class        │ <Space>jb  │ Build project           │
+│ <Space>jt  │ Run all tests         │ <Space>jm  │ Run single test         │
+│ gd         │ Go to definition      │ K          │ Show documentation      │
+│ <Space>vca │ Code actions          │ <Space>db  │ Toggle breakpoint       │
+│ <F5>       │ Start/Continue debug  │ <Space>jn  │ New Spring project      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 📦 BUILD & RUN                                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jb  │ Build workspace           │ <Space>jr  │ Run main class       │
+│ <Space>jc  │ Clean workspace           │ <Space>jR  │ Run with arguments   │
+│ <Space>js  │ Stop application          │ <Space>jl  │ Toggle logs          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🧪 TESTING                                                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jt  │ Run test class            │ <Space>jm  │ Run test method      │
+│ <Space>jT  │ View test report          │ <Space>jtn │ Test nearest         │
+│ <Space>jtf │ Test file                 │ <Space>jts │ Test summary         │
+│ <Space>jto │ Test output               │ <Space>jtw │ Test watch mode      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🐛 DEBUGGING                                                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jdc │ Debug test class          │ <Space>jdm │ Debug test method    │
+│ <Space>jdd │ Configure DAP             │ <Space>db  │ Toggle breakpoint    │
+│ <Space>dB  │ Conditional breakpoint    │ <Space>dlp │ Log point            │
+│ <F5>       │ Continue                  │ <F10>      │ Step over            │
+│ <F11>      │ Step into                 │ <F12>      │ Step out             │
+│ <Space>dr  │ Debug REPL                │ <Space>dl  │ Run last config      │
+│ <Space>du  │ Toggle debug UI           │ <Space>de  │ Evaluate expression  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🔧 REFACTORING (Visual mode - select code first!)                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jrv │ Extract variable          │ <Space>jra │ Extract all          │
+│ <Space>jrc │ Extract constant          │ <Space>jrm │ Extract method       │
+│ <Space>jrf │ Extract field             │            │                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🔍 LSP FEATURES                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ gd         │ Go to definition          │ K          │ Hover documentation  │
+│ <Space>vws │ Workspace symbols         │ <Space>vd  │ View diagnostic      │
+│ <Space>vca │ Code actions              │ <Space>vrr │ Show references      │
+│ <Space>vrn │ Rename symbol             │ <Ctrl-h>   │ Signature help (ins) │
+│ [d         │ Next diagnostic           │ ]d         │ Previous diagnostic  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🌱 SPRING BOOT & JDK                                                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ <Space>jn  │ New Spring Boot project   │ <Space>ju  │ Update Spring vers   │
+│ <Space>jv  │ Change JDK version        │            │                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 💡 QUICK TIPS                                                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ • Type 'sysout' + Tab → System.out.println()                               │
+│ • Type 'psvm' + Tab → public static void main(String[] args)               │
+│ • <Space>jtw enables watch mode - tests run on save!                       │
+│ • <Space>vca shows code actions - generate getters, constructors, etc.     │
+│ • <Space>db on a line, then <Space>jdm to debug test                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ⚡ WORKFLOW EXAMPLES                                                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ RUN CODE:        <Space>jb → <Space>jr                                     │
+│ TEST CODE:       <Space>jt (all tests) or <Space>jm (one test)             │
+│ DEBUG:           <Space>db (set breakpoint) → <Space>jdm → <F11> (step)    │
+│ REFACTOR:        Visual select → <Space>jrm (extract method)               │
+│ NEW PROJECT:     <Space>jn (Spring Initializr)                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 📝 VIM COMMANDS                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ :JavaRestart              Restart JDTLS language server                    │
+│ :Mason                    Manage LSP packages                              │
+│ :LspInfo                  Show LSP status                                  │
+│ :checkhealth java         Run Java health check                           │
+│ :JavaProjectInfo          Show project information                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🎓 LEARNING PATH                                                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Week 1:  <Space>jr, <Space>jb, gd, K                                       │
+│ Week 2:  <Space>jt, <Space>jm, <Space>vca, <Space>vrn                      │
+│ Week 3:  <Space>db, <F5>, <Space>jrm, <Space>jn                            │
+│ Month 1: Master everything - it becomes muscle memory!                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║ 📍 Config Location: ~/.config/nvim/after/plugin/java.lua                     ║
+║ 📚 Full Docs: ~/.config/nvim/JAVA_KEYBINDINGS.md                             ║
+║ 🚀 Test Project: /tmp/java-test-project                                      ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+                          Print this and keep it handy! 📋

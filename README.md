@@ -44,6 +44,8 @@ $ sudo pacman -S neovim
 $ sudo pacman -S nodejs
 ```
 
+<!-->
+
 ### **🚨 IMPORTANT - RED ZONE**
 
 Neovim **`v0.11.x`** and higher intoduces breaking changes so it breaks the entire
@@ -83,6 +85,8 @@ Execute this command in normal mode!
 :so
 :PackerSync
 ```
+
+-->
 
 For the latest pull, do:
 

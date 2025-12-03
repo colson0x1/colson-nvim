@@ -11,15 +11,34 @@ vim.keymap.set("n", "<leader>ps", function()
 end)
 ]]
 
--- @ Telescope
+-- ============================================================================
+-- @ Telescope - Enterprise-Grade Configuration
+-- Author: Colson (@colson0x1)
+-- Description: Production-stable Telescope with zero errors
+-- ============================================================================
+
+-- Safe loading with proper error handling
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
 	return
 end
 
-local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")
-local themes = require("telescope.themes")
+local actions_ok, actions = pcall(require, "telescope.actions")
+if not actions_ok then
+	vim.notify("Telescope actions not available", vim.log.levels.WARN)
+	return
+end
+
+local builtin_ok, builtin = pcall(require, "telescope.builtin")
+if not builtin_ok then
+	vim.notify("Telescope builtin not available", vim.log.levels.WARN)
+	return
+end
+
+local themes_ok, themes = pcall(require, "telescope.themes")
+if not themes_ok then
+	themes = {} -- Fallback to empty table
+end
 
 telescope.setup({
 	defaults = {
@@ -39,15 +58,38 @@ telescope.setup({
 		-- File ignore patterns
 		file_ignore_patterns = { "node_modules", ".git", "target", "build" },
 
-		-- Basic mappings
+		-- Basic mappings (both insert and normal mode)
 		mappings = {
 			i = {
+				-- Insert mode mappings
 				["<C-n>"] = actions.move_selection_next,
 				["<C-p>"] = actions.move_selection_previous,
-				["<C-c>"] = actions.close,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
 				["<CR>"] = actions.select_default,
 				["<C-x>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
+				["<C-c>"] = actions.close,
+				-- <Esc> switches to normal mode (default behavior)
+				-- Press <Esc> twice or use <C-c> to close
+			},
+			n = {
+				-- Normal mode mappings
+				["<CR>"] = actions.select_default,
+				["<C-x>"] = actions.select_horizontal,
+				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
+				["j"] = actions.move_selection_next,
+				["k"] = actions.move_selection_previous,
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
+				["gg"] = actions.move_to_top,
+				["G"] = actions.move_to_bottom,
+				["q"] = actions.close,
+				["<Esc>"] = actions.close, -- In normal mode, Esc closes
 			},
 		},
 	},
@@ -74,8 +116,14 @@ telescope.setup({
 	},
 })
 
--- Load Telescope extensions
-pcall(telescope.load_extension, "fzf")
+-- ============================================================================
+-- Load Telescope Extensions (Silent - No Errors)
+-- ============================================================================
+-- Try to load fzf extension silently (optional dependency)
+local fzf_ok = pcall(telescope.load_extension, "fzf")
+if not fzf_ok then
+	-- fzf not installed - not a problem, Telescope still works
+end
 
 -- Keymaps for Telescope with <leader> prefix
 local keymap = vim.keymap.set

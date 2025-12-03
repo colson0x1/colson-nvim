@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(su - colson -c \"cd /tmp && nvim --headless -c ''''lua local ok, startup = pcall(require, \"\"colson.startup\"\"); print(\"\"Startup loaded:\"\", ok)'''' +quitall\")",
+      "Bash(su:*)",
+      "Bash(tree:*)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(nvim:*)",
+      "Bash(java:*)",
+      "Bash(timeout 20 nvim:*)",
+      "Bash(chmod:*)",
+      "Bash(/tmp/test-java-setup.sh)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

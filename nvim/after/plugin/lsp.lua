@@ -97,10 +97,11 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
 	if client.name == "jdtls" then
-		vim.api.nvim_buf_set_option(bufnr, "formatprg", "eclipse_jdtls")
-		vim.api.nvim_buf_set_option(bufnr, "formatoptions", "tcqrn1")
-		vim.api.nvim_buf_set_option(bufnr, "tabstop", 4)
-		vim.api.nvim_buf_set_option(bufnr, "shiftwidth", 4)
+		-- FIXED for 0.11.x: use vim.bo instead of nvim_buf_set_option
+		vim.bo[bufnr].formatprg = "eclipse_jdtls"
+		vim.bo[bufnr].formatoptions = "tcqrn1"
+		vim.bo[bufnr].tabstop = 4
+		vim.bo[bufnr].shiftwidth = 4
 	end
 end)
 
@@ -334,10 +335,11 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
 	if client.name == "jdtls" then
-		vim.api.nvim_buf_set_option(bufnr, "formatprg", "eclipse_jdtls")
-		vim.api.nvim_buf_set_option(bufnr, "formatoptions", "tcqrn1")
-		vim.api.nvim_buf_set_option(bufnr, "tabstop", 4)
-		vim.api.nvim_buf_set_option(bufnr, "shiftwidth", 4)
+		-- FIXED for 0.11.x: use vim.bo instead of nvim_buf_set_option
+		vim.bo[bufnr].formatprg = "eclipse_jdtls"
+		vim.bo[bufnr].formatoptions = "tcqrn1"
+		vim.bo[bufnr].tabstop = 4
+		vim.bo[bufnr].shiftwidth = 4
 	end
 end)
 
@@ -455,10 +457,11 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
 	if client.name == "jdtls" then
-		vim.api.nvim_buf_set_option(bufnr, "formatprg", "eclipse_jdtls")
-		vim.api.nvim_buf_set_option(bufnr, "formatoptions", "tcqrn1")
-		vim.api.nvim_buf_set_option(bufnr, "tabstop", 4)
-		vim.api.nvim_buf_set_option(bufnr, "shiftwidth", 4)
+		-- FIXED for 0.11.x: use vim.bo instead of nvim_buf_set_option
+		vim.bo[bufnr].formatprg = "eclipse_jdtls"
+		vim.bo[bufnr].formatoptions = "tcqrn1"
+		vim.bo[bufnr].tabstop = 4
+		vim.bo[bufnr].shiftwidth = 4
 	end
 end)
 
