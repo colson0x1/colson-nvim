@@ -13,6 +13,13 @@ vim.cmd([[
 ]])
 
 nvimtree.setup({
+	-- ADDED (2026-07-06): don't take over the window when Neovim is launched
+	-- on a directory (`nvim .`) - the dashboard (doom) owns that startup path
+	-- now (see after/plugin/dashboard.lua). <leader>e toggling is unaffected.
+	hijack_directories = {
+		enable = false,
+		auto_open = false,
+	},
 	view = {
 		side = "right", -- Set nvim-tree to the left side
 		width = 30,

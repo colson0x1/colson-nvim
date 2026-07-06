@@ -12,7 +12,8 @@
       "Bash(timeout 20 nvim:*)",
       "Bash(chmod:*)",
       "Bash(/tmp/test-java-setup.sh)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Read(//home/colson/prod/colson-nvim/**)"
     ],
     "deny": [],
     "ask": []

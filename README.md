@@ -110,8 +110,17 @@ pre-configured:
 **HYPER layout** — shortcut pills + recent projects + MRU files with hotkeys,
 plus live startup time and plugin stats.
 
-Opening a file directly (`nvim file.ts`) skips the dashboard entirely — it
-never gets between you and your code.
+Every launch path does the right thing:
+
+| You type            | You get                                                        |
+| ------------------- | -------------------------------------------------------------- |
+| `nvim`              | The DOOM dashboard                                             |
+| `nvim .` / `nvim ~/project` | Straight into the project: session rooted there (`:cd`), netrw listing in the background, Telescope Find Files floating on top — zero keystrokes to your code, dismiss the picker and you're browsing |
+| `nvim file.ts`      | The file, instantly — nothing in between                       |
+
+The palette is a neon hacker set on true black: matrix-green banner
+(`#00ff9f`), cyan icons, magenta hotkeys — reapplied automatically on every
+`:colorscheme` change so it never washes out.
 
 > 💡 Prefer the classic auto-Telescope-on-startup behavior? It's preserved
 > behind a flag: set `vim.g.colson_startup_telescope = true` in

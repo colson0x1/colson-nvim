@@ -56,6 +56,17 @@ return {
 	--
 	{
 		"barrett-ruth/live-server.nvim",
+		-- UPDATED (2026-07-06): live-server v0.2.0 removed setup(); options
+		-- now go through vim.g.live_server BEFORE the plugin loads (hence
+		-- `init`, not `config`). `index`/`htmllint` have no v0.2 equivalent.
+		init = function()
+			vim.g.live_server = {
+				port = 3000,
+				browser = false, -- Automatically open the browser when starting the server
+				debug = false,
+			}
+		end,
+		--[[ Legacy (pre-v0.2.0) configuration, kept for reference:
 		config = function()
 			require("live-server").setup({
 				port = 3000,
@@ -64,7 +75,7 @@ return {
 				htmllint = false,
 				open_browser = false, -- Automatically open the browser when starting the server
 			})
-		end,
+		end, ]]
 	},
 
 	-- Markdown Preview

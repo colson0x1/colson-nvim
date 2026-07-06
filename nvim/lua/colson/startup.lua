@@ -17,6 +17,61 @@ if vim.g.colson_startup_telescope == nil then
 	vim.g.colson_startup_telescope = false
 end
 
+-- ============================================================================
+-- Directory launches: `nvim .` / `nvim ~/project` - straight into the project
+-- ============================================================================
+-- The dashboard is deliberately SKIPPED here: launching on a directory means
+-- "open this project". The session is rooted in it (:cd), netrw renders the
+-- project listing in the background, and Telescope find_files floats on top
+-- - the classic colson-nvim project-entry flow. Dismiss Telescope (<Esc><Esc>
+-- or <C-c>) and you land on netrw, ready to browse.
+-- A bare `nvim` (no arguments) still gets the dashboard.
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = vim.api.nvim_create_augroup("colson-startup-dir", { clear = true }),
+	once = true,
+	callback = function()
+		if vim.fn.argc() ~= 1 or vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
+			return
+		end
+
+		-- Root the session in the project directory.
+		pcall(vim.cmd.cd, vim.fn.fnameescape(vim.fn.argv(0)))
+
+		-- Render netrw explicitly (:Ex - same engine as <leader>pv) so the
+		-- project listing sits behind the Telescope float. nvim-tree's netrw
+		-- hijack suppresses the AUTOMATIC directory takeover, so an explicit
+		-- Explore is the reliable cross-setup way to get the listing.
+		-- (hijack_directories is disabled in after/plugin/nvim-tree.lua so
+		-- the tree doesn't grab this window either.)
+		pcall(vim.cmd, "silent! Explore")
+
+		-- Wipe the original directory-argument buffer so :bnext never lands
+		-- on a dead "directory" buffer.
+		for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+			if
+				buf ~= vim.api.nvim_get_current_buf()
+				and vim.fn.isdirectory(vim.api.nvim_buf_get_name(buf)) == 1
+			then
+				pcall(vim.api.nvim_buf_delete, buf, { force = true })
+			end
+		end
+
+		-- Open the project picker once plugins are settled and netrw has
+		-- rendered underneath.
+		vim.defer_fn(function()
+			local telescope_ok, telescope_builtin = pcall(require, "telescope.builtin")
+			if not telescope_ok then
+				return -- no Telescope yet (fresh install): netrw alone is fine
+			end
+			pcall(telescope_builtin.find_files, {
+				prompt_title = "Find Files",
+				cwd = vim.fn.getcwd(),
+				hidden = true,
+			})
+		end, 80)
+	end,
+})
+
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	callback = function()
