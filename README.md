@@ -22,6 +22,18 @@ Step into the realm of excellence with my world-class Neovim (nvim) configuratio
 
 Embark on a journey through a domain enriched with powerful features, plugins, and finely tuned key bindings, addressing a diverse range of coding/text-editing requirements. Welcome to a sublime Neovim experience tailored to elevate your coding endeavors to new heights! 🔥
 
+## July, 2026 Preview 😆
+
+![colson nvim npm](https://i.imgur.com/kxWDHFA.png)
+
+![colson nvim npm](https://i.imgur.com/IqE3Iz6.png)
+
+![colson nvim npm](https://i.imgur.com/CbRLoeu.png)
+
+![colson nvim npm](https://i.imgur.com/xSLOIEc.png)
+
+## 2025 Preview
+
 ![colson nvim npm](https://i.imgur.com/rAAkACt.png)
 
 ![colson nvim npm](https://i.imgur.com/RcETNS3.png)
@@ -52,6 +64,10 @@ every machine, every time. Your previous config (if any) is automatically
 backed up to `~/.config/nvim.backup-<timestamp>` first.
 
 ## 🚀 What's New (July 2026) — The Future-Proof Release
+
+![colson nvim npm](https://i.imgur.com/kxWDHFA.png)
+
+![colson nvim npm](https://i.imgur.com/xSLOIEc.png)
 
 This release is a ground-up modernization of the plugin infrastructure while
 keeping every keybinding and workflow you know exactly the same:
@@ -87,36 +103,36 @@ Launching `nvim` with no arguments now opens a beautiful start screen with the
 COLSON banner, quick actions, and startup stats. Both official layouts ship
 pre-configured:
 
-| Command                  | What it does                                    |
-| ------------------------ | ----------------------------------------------- |
-| `:Dashboard`             | Open the dashboard (current theme)              |
-| `:DashboardDoom`         | Switch to the **DOOM** layout (default) 💀      |
-| `:DashboardHyper`        | Switch to the **HYPER** layout ⚡               |
-| `:DashboardToggleTheme`  | Toggle DOOM ↔ HYPER                             |
+| Command                 | What it does                               |
+| ----------------------- | ------------------------------------------ |
+| `:Dashboard`            | Open the dashboard (current theme)         |
+| `:DashboardDoom`        | Switch to the **DOOM** layout (default) 💀 |
+| `:DashboardHyper`       | Switch to the **HYPER** layout ⚡          |
+| `:DashboardToggleTheme` | Toggle DOOM ↔ HYPER                       |
 
 **DOOM layout (default)** — a focused vertical menu:
 
-| Key | Action                          |
-| --- | ------------------------------- |
-| `f` | Find File (Telescope)           |
-| `r` | Recent Files                    |
-| `g` | Live Grep                       |
-| `e` | File Explorer (NvimTree)        |
-| `n` | New File                        |
-| `c` | Browse this Neovim config       |
-| `u` | Sync Plugins (`:Lazy sync`)     |
-| `q` | Quit                            |
+| Key | Action                      |
+| --- | --------------------------- |
+| `f` | Find File (Telescope)       |
+| `r` | Recent Files                |
+| `g` | Live Grep                   |
+| `e` | File Explorer (NvimTree)    |
+| `n` | New File                    |
+| `c` | Browse this Neovim config   |
+| `u` | Sync Plugins (`:Lazy sync`) |
+| `q` | Quit                        |
 
 **HYPER layout** — shortcut pills + recent projects + MRU files with hotkeys,
 plus live startup time and plugin stats.
 
 Every launch path does the right thing:
 
-| You type            | You get                                                        |
-| ------------------- | -------------------------------------------------------------- |
-| `nvim`              | The DOOM dashboard                                             |
+| You type                    | You get                                                                                                                                                                                               |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nvim`                      | The DOOM dashboard                                                                                                                                                                                    |
 | `nvim .` / `nvim ~/project` | Straight into the project: session rooted there (`:cd`), netrw listing in the background, Telescope Find Files floating on top — zero keystrokes to your code, dismiss the picker and you're browsing |
-| `nvim file.ts`      | The file, instantly — nothing in between                       |
+| `nvim file.ts`              | The file, instantly — nothing in between                                                                                                                                                              |
 
 The palette is a neon hacker set on true black: matrix-green banner
 (`#00ff9f`), cyan icons, magenta hotkeys — reapplied automatically on every
@@ -137,18 +153,18 @@ npx colson-nvim@latest
 
 ### Requirements
 
-| Dependency          | Why                                              | Required |
-| ------------------- | ------------------------------------------------ | -------- |
-| Neovim ≥ 0.11       | Core editor (0.12 recommended)                   | ✅       |
-| git                 | Plugin manager + plugin installs                 | ✅       |
-| Node.js ≥ 18        | LSP servers, markdown preview, Copilot           | ✅       |
-| C compiler + make   | Treesitter parsers, telescope-fzf-native         | ✅       |
-| tree-sitter CLI     | Parser builds (treesitter `main` branch)         | ✅       |
-| ripgrep             | Telescope live grep                              | ✅       |
-| python + pynvim     | UltiSnips (React snippets)                       | ✅       |
-| JetBrainsMono Nerd Font | Icons & glyphs                               | ✅       |
-| xclip / wl-clipboard (Linux) | System clipboard integration            | ⭕       |
-| jq, curl            | HTTP REST client niceties                        | ⭕       |
+| Dependency                   | Why                                      | Required |
+| ---------------------------- | ---------------------------------------- | -------- |
+| Neovim ≥ 0.11                | Core editor (0.12 recommended)           | ✅       |
+| git                          | Plugin manager + plugin installs         | ✅       |
+| Node.js ≥ 18                 | LSP servers, markdown preview, Copilot   | ✅       |
+| C compiler + make            | Treesitter parsers, telescope-fzf-native | ✅       |
+| tree-sitter CLI              | Parser builds (treesitter `main` branch) | ✅       |
+| ripgrep                      | Telescope live grep                      | ✅       |
+| python + pynvim              | UltiSnips (React snippets)               | ✅       |
+| JetBrainsMono Nerd Font      | Icons & glyphs                           | ✅       |
+| xclip / wl-clipboard (Linux) | System clipboard integration             | ⭕       |
+| jq, curl                     | HTTP REST client niceties                | ⭕       |
 
 <details>
 <summary><b>🐧 Arch Linux</b> (click to expand)</summary>
@@ -999,13 +1015,13 @@ deletions at a glance, tuned with a 40k-line guard so huge generated files
 never lag. No new keymaps were added (all your `<leader>g*` bindings are
 untouched); drive it with commands:
 
-| Command                                    | Action                          |
-| ------------------------------------------ | ------------------------------- |
-| `:Gitsigns preview_hunk`                   | Preview the hunk under cursor   |
-| `:Gitsigns reset_hunk`                     | Revert the hunk under cursor    |
-| `:Gitsigns blame_line`                     | Blame the current line          |
-| `:Gitsigns toggle_current_line_blame`      | Toggle inline blame virtual text|
-| `:Gitsigns diffthis`                       | Diff buffer against the index   |
+| Command                               | Action                           |
+| ------------------------------------- | -------------------------------- |
+| `:Gitsigns preview_hunk`              | Preview the hunk under cursor    |
+| `:Gitsigns reset_hunk`                | Revert the hunk under cursor     |
+| `:Gitsigns blame_line`                | Blame the current line           |
+| `:Gitsigns toggle_current_line_blame` | Toggle inline blame virtual text |
+| `:Gitsigns diffthis`                  | Diff buffer against the index    |
 
 ---
 
@@ -1112,18 +1128,18 @@ Use the extension **`.http`** to run HTTP API Requests!
 Plugin management now runs on **lazy.nvim** — with full backwards
 compatibility for the old Packer muscle memory:
 
-| Command / Keymap        | Action                                                        |
-| ----------------------- | ------------------------------------------------------------- |
-| `:Lazy`                 | Open the lazy.nvim UI                                         |
-| `:Lazy restore`         | Check out every plugin at the pinned commit (lazy-lock.json)  |
-| `:Lazy sync`            | Install missing + update all + clean unused                   |
-| `:Lazy update`          | Update plugins and refresh the lockfile                       |
-| `:Lazy profile`         | Startup time profiling per plugin                             |
-| `<leader>po`            | Muscle-memory shim → `:Lazy sync` (was `:PackerSync`)         |
-| `<leader>pac`           | Source current file + sync (works exactly like before)        |
-| `:PackerSync`           | Compat shim → `:Lazy sync`                                    |
-| `:PackerInstall`        | Compat shim → `:Lazy install`                                 |
-| `:PackerStatus`         | Compat shim → `:Lazy home`                                    |
+| Command / Keymap | Action                                                       |
+| ---------------- | ------------------------------------------------------------ |
+| `:Lazy`          | Open the lazy.nvim UI                                        |
+| `:Lazy restore`  | Check out every plugin at the pinned commit (lazy-lock.json) |
+| `:Lazy sync`     | Install missing + update all + clean unused                  |
+| `:Lazy update`   | Update plugins and refresh the lockfile                      |
+| `:Lazy profile`  | Startup time profiling per plugin                            |
+| `<leader>po`     | Muscle-memory shim → `:Lazy sync` (was `:PackerSync`)        |
+| `<leader>pac`    | Source current file + sync (works exactly like before)       |
+| `:PackerSync`    | Compat shim → `:Lazy sync`                                   |
+| `:PackerInstall` | Compat shim → `:Lazy install`                                |
+| `:PackerStatus`  | Compat shim → `:Lazy home`                                   |
 
 > 🔒 **Golden rule:** `:Lazy restore` = deterministic (the tested, pinned
 > state). `:Lazy sync`/`update` = bleeding edge (rewrites the lockfile).
