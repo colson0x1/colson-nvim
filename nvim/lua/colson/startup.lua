@@ -1,17 +1,29 @@
 -- ============================================================================
--- Auto-open Telescope on Neovim startup (Production-Stable)
+-- Startup Behavior (Production-Stable)
 -- Author: Colson (@colson0x1)
--- Description: Opens Telescope automatically when starting nvim
+-- Description: Controls what appears when Neovim starts.
+--
+-- Since 2026-07-06 the dashboard (dashboard-nvim, DOOM layout by default)
+-- owns the empty-argument startup screen - see after/plugin/dashboard.lua.
+--
+-- The previous behavior - auto-opening Telescope find_files on startup - is
+-- fully preserved below behind an opt-in flag. To bring it back, set:
+--   vim.g.colson_startup_telescope = true
+-- (e.g. in lua/colson/set.lua). With the flag on, Telescope opens on top of
+-- the dashboard exactly as it did before the dashboard existed.
 -- ============================================================================
 
--- DEBUG: Confirm this file is being loaded
-vim.notify("Startup.lua loaded", vim.log.levels.INFO)
+if vim.g.colson_startup_telescope == nil then
+	vim.g.colson_startup_telescope = false
+end
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	callback = function()
-		-- DEBUG: Confirm autocmd is firing
-		vim.notify("VimEnter autocmd fired!", vim.log.levels.INFO)
+		-- Dashboard is the default start screen; Telescope auto-open is opt-in.
+		if not vim.g.colson_startup_telescope then
+			return
+		end
 
 		-- Check what was opened
 		local args = vim.fn.argv()
@@ -20,38 +32,24 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		-- Determine if we should open Telescope
 		local should_open = false
 
-		-- DEBUG: Show what we're checking
-		vim.notify(string.format("argc=%d, args=%s", argc, vim.inspect(args)), vim.log.levels.INFO)
-
 		if argc == 0 then
 			-- No arguments (just 'nvim')
 			should_open = true
-			vim.notify("No args - will open Telescope", vim.log.levels.INFO)
 		elseif argc == 1 then
 			-- One argument - check if it's a directory
 			local arg = args[1]
 			if vim.fn.isdirectory(arg) == 1 then
 				should_open = true
-				vim.notify("Directory arg - will open Telescope", vim.log.levels.INFO)
-			else
-				vim.notify("File arg - will NOT open Telescope", vim.log.levels.INFO)
 			end
 		end
 
 		if should_open then
-			vim.notify("Opening Telescope in 500ms...", vim.log.levels.INFO)
 			-- Delay to ensure all plugins loaded
 			vim.defer_fn(function()
 				-- Check if Telescope is available
 				local telescope_ok, telescope_builtin = pcall(require, "telescope.builtin")
 
-				vim.notify(
-					string.format("Telescope available: %s", tostring(telescope_ok)),
-					vim.log.levels.INFO
-				)
-
 				if telescope_ok then
-					vim.notify("Calling telescope.find_files...", vim.log.levels.INFO)
 					-- Additional schedule to ensure UI is ready
 					vim.schedule(function()
 						-- Final delay before opening

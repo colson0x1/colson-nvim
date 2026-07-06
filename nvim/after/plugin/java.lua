@@ -29,31 +29,37 @@ java.setup({
 	},
 
 	-- JDTLS Configuration
+	-- FIXED (2026-07-06): versions are intentionally NOT pinned here anymore.
+	-- nvim-java ships a curated jdtls<->component version map that tracks
+	-- what is actually downloadable; hardcoded pins went stale when Eclipse
+	-- pruned old snapshot tarballs (1.43.0 became a 404 and broke startup).
+	-- Determinism is preserved because nvim-java itself is commit-pinned in
+	-- lazy-lock.json. Old pins kept below for reference:
 	jdtls = {
-		version = "1.43.0", -- Latest stable version
+		-- version = "1.43.0", -- Latest stable version
 	},
 
 	-- Lombok support (annotation processing)
 	lombok = {
-		version = "nightly", -- Always use latest for best compatibility
+		-- version = "nightly", -- Always use latest for best compatibility
 	},
 
 	-- Java Test Runner (JUnit & TestNG)
 	java_test = {
 		enable = true,
-		version = "0.40.1",
+		-- version = "0.40.1",
 	},
 
 	-- Java Debug Adapter (DAP)
 	java_debug_adapter = {
 		enable = true,
-		version = "0.58.1",
+		-- version = "0.58.1",
 	},
 
 	-- Spring Boot Tools
 	spring_boot_tools = {
 		enable = true,
-		version = "1.55.1",
+		-- version = "1.55.1",
 	},
 
 	-- JDK Auto-installation (disabled - using system JDK)
@@ -78,7 +84,12 @@ if not status_lspconfig then
 	return
 end
 
-lspconfig.jdtls.setup({
+-- MODERNIZED (2026-07-06): was `lspconfig.jdtls.setup({...})`. The lspconfig
+-- "framework" API is deprecated (removal in nvim-lspconfig v3) and printed a
+-- blocking traceback at startup. vim.lsp.config() is the supported API on
+-- Neovim 0.11+; it deep-merges with the defaults nvim-java registers for
+-- jdtls, and vim.lsp.enable() below activates the server per filetype.
+vim.lsp.config("jdtls", {
 	-- JVM arguments optimized for large-scale projects
 	cmd = {
 		"jdtls",
@@ -312,6 +323,10 @@ lspconfig.jdtls.setup({
 	-- ================================================================
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
+
+-- Activate jdtls for Java filetypes (modern replacement for the implicit
+-- activation lspconfig's setup() used to perform).
+vim.lsp.enable("jdtls")
 
 -- ============================================================================
 -- DAP (DEBUG ADAPTER PROTOCOL) CONFIGURATION

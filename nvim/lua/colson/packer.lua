@@ -1,3 +1,13 @@
+-- ============================================================================
+-- ⚠ LEGACY REFERENCE ONLY - NOT LOADED (since 2026-07-06)
+-- ============================================================================
+-- This was the Packer-era plugin spec. The config migrated to lazy.nvim
+-- (packer.nvim was archived upstream in Aug 2023). The live plugin specs now
+-- live in lua/colson/plugins/*.lua - every entry below, including commented
+-- ones, was ported there 1:1. This file is kept for history/reference and is
+-- no longer require()'d from init.lua.
+-- ============================================================================
+
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
@@ -231,6 +241,11 @@ return require("packer").startup(function(use)
 	})
 
 	-- Spring Boot Project Generator
+	-- DISABLED (2026-07-06): The `javiorfo` GitHub account was deleted (404) -
+	-- nvim-springtime, nvim-popcorn, and nvim-spinetta can no longer be cloned.
+	-- Keeping the spec commented so PackerSync stays deterministic on fresh
+	-- machines. Re-enable only if the plugin resurfaces under a new owner/fork.
+	--[[
 	use({
 		"javiorfo/nvim-springtime",
 		requires = {
@@ -239,6 +254,7 @@ return require("packer").startup(function(use)
 			"hrsh7th/nvim-cmp",
 		},
 	})
+	--]]
 
 	-- Blazing fast TypeScript Engine
 	use({
@@ -318,6 +334,15 @@ return require("packer").startup(function(use)
 	-- Indent line
 	use({
 		"Yggdroot/indentLine",
+	})
+
+	-- @ Dashboard (Start Screen) - nvimdev/dashboard-nvim
+	-- Ships BOTH layouts: `doom` (default here) and `hyper`.
+	-- Runtime switch: :DashboardDoom / :DashboardHyper / :DashboardToggleTheme
+	-- Configuration lives in after/plugin/dashboard.lua (per repo convention)
+	use({
+		"nvimdev/dashboard-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 
 	-- Markdown Preview

@@ -16,6 +16,10 @@ local suppress_patterns = {
 	"eslint_d",
 	"Augment Server quit",
 	"Client Augment Server",
+	-- Deprecation notices from commit-pinned plugins (benign on 0.11/0.12;
+	-- will disappear when the pinned plugins are next updated)
+	"vim.tbl_flatten is deprecated",
+	"vim.validate is deprecated",
 }
 
 -- Override vim.notify for startup to filter known warnings

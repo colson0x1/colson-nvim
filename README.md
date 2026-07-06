@@ -3,11 +3,19 @@
 <h2>FullStack Neovim IDE by COLSON! 🚀 </h2>
 <h2>Neovim IDE for TypeScript/JavaScript Software Engineers</h2>
 <h3>Supports dozen different programming languages and technologies + DevOps Workflows (Kubernetes, Docker, Terraform and more)</h3>
+<h3>Engineered for large-scale distributed systems: polyglot LSPs, Java/JVM tooling, gRPC/proto workflows, and monorepo-fast fuzzy finding</h3>
 <h2>🎯 Blazingly Fast as compared to VSCode and WebStorm 🔥</h2>
 <h2>Worldclass Neovim Experience for Engineers 💎</h2>
 
 <!-- <img src='https://i.imgur.com/nls1N1W.png' alt='colson nvim discord presence' /> -->
 <img src='https://i.imgur.com/kpAiwYn.png' alt='colson nvim discord presence' />
+
+<p>
+<a href="https://www.npmjs.com/package/colson-nvim"><img src="https://img.shields.io/npm/v/colson-nvim?style=for-the-badge&logo=npm&color=cb3837" alt="npm version"></a>
+<img src="https://img.shields.io/badge/Neovim-0.11%2B-57A143?style=for-the-badge&logo=neovim" alt="Neovim 0.11+">
+<img src="https://img.shields.io/badge/Plugin%20Manager-lazy.nvim-2e2e2e?style=for-the-badge" alt="lazy.nvim">
+<img src="https://img.shields.io/badge/Linux%20%7C%20macOS-supported-blue?style=for-the-badge" alt="Linux and macOS">
+</p>
 </div>
 
 Step into the realm of excellence with my world-class Neovim (nvim) configuration! This comprehensive guide unveils a meticulously crafted zenful setup, meticulously designed for unparalleled efficiency, productivity, and visual splendor within Neovim.
@@ -30,136 +38,340 @@ Embark on a journey through a domain enriched with powerful features, plugins, a
 
 ![colson nvim npm](https://i.imgur.com/38UFOp7.png)
 
+## ⚡ TL;DR — One Command
+
+```shell
+npx colson-nvim@latest
+```
+
+Then launch `nvim`. That's it. 🎉
+
+lazy.nvim bootstraps itself, and every plugin restores to an **exact, tested
+commit** from the committed `lazy-lock.json` — the same known-good setup on
+every machine, every time. Your previous config (if any) is automatically
+backed up to `~/.config/nvim.backup-<timestamp>` first.
+
+## 🚀 What's New (July 2026) — The Future-Proof Release
+
+This release is a ground-up modernization of the plugin infrastructure while
+keeping every keybinding and workflow you know exactly the same:
+
+- 🧩 **lazy.nvim plugin manager** — packer.nvim was archived upstream in 2023;
+  the config now runs on the actively maintained industry standard. Your
+  muscle memory survives: `:PackerSync`, `:PackerInstall`, `<leader>po`, and
+  `<leader>pac` all still work as compatibility shims that delegate to lazy.
+- 🔒 **Reproducible installs** — `lazy-lock.json` pins all ~64 plugins to
+  exact commits. Fresh machine = identical editor. `:Lazy restore` puts
+  everything back to the tested state at any time.
+- 🖥️ **Dashboard start screen** ([dashboard-nvim](https://github.com/nvimdev/dashboard-nvim))
+  with **BOTH layouts configured**: **DOOM** (default) and **HYPER** —
+  switchable at runtime. See [Dashboard](#%EF%B8%8F-dashboard--start-screen).
+- 🌲 **Treesitter `main` branch** — the only branch that supports Neovim 0.12+.
+  Highlighting and indentation now use Neovim's native `vim.treesitter` APIs.
+- 🔍 **telescope-fzf-native** — compiled C fuzzy matcher; instant fuzzy
+  finding even on giant monorepos.
+- 🩺 **fidget.nvim** — live LSP indexing progress (see tsserver/jdtls/gopls
+  warm up on large codebases instead of guessing).
+- 🧬 **gitsigns.nvim** — hunk-level change indicators in the gutter, tuned
+  with large-repo safety limits.
+- ☕ **Java stack repaired & modernized** — nvim-java 4.x with bundled
+  components, mason-curated jdtls versions (no more dead download URLs), and
+  the modern `vim.lsp.config()` API (no deprecated lspconfig framework calls).
+- 🧯 **Startup hardening** — zero blocking errors on boot, stale server names
+  fixed (`tsserver` → `ts_ls`), version-pin rot eliminated, undo directory
+  auto-created on fresh machines.
+
+## 🖥️ Dashboard — Start Screen
+
+Launching `nvim` with no arguments now opens a beautiful start screen with the
+COLSON banner, quick actions, and startup stats. Both official layouts ship
+pre-configured:
+
+| Command                  | What it does                                    |
+| ------------------------ | ----------------------------------------------- |
+| `:Dashboard`             | Open the dashboard (current theme)              |
+| `:DashboardDoom`         | Switch to the **DOOM** layout (default) 💀      |
+| `:DashboardHyper`        | Switch to the **HYPER** layout ⚡               |
+| `:DashboardToggleTheme`  | Toggle DOOM ↔ HYPER                             |
+
+**DOOM layout (default)** — a focused vertical menu:
+
+| Key | Action                          |
+| --- | ------------------------------- |
+| `f` | Find File (Telescope)           |
+| `r` | Recent Files                    |
+| `g` | Live Grep                       |
+| `e` | File Explorer (NvimTree)        |
+| `n` | New File                        |
+| `c` | Browse this Neovim config       |
+| `u` | Sync Plugins (`:Lazy sync`)     |
+| `q` | Quit                            |
+
+**HYPER layout** — shortcut pills + recent projects + MRU files with hotkeys,
+plus live startup time and plugin stats.
+
+Opening a file directly (`nvim file.ts`) skips the dashboard entirely — it
+never gets between you and your code.
+
+> 💡 Prefer the classic auto-Telescope-on-startup behavior? It's preserved
+> behind a flag: set `vim.g.colson_startup_telescope = true` in
+> `lua/colson/set.lua`.
+
 ## Installation through NPM
 
-Ensure `Neovim (v >= 0.9.x or v < 0.11.x)` and `Node` are installed on your machine!
-
-🌎 [Neovim Packages - Arch Linux Archive](https://archive.archlinux.org/packages/n/neovim/)
-
-```shell
-// Install Neovim
-$ sudo pacman -S neovim
-
-// Install NODE (Dependency)
-$ sudo pacman -S nodejs
-```
-
-<!-->
-
-### **🚨 IMPORTANT - RED ZONE**
-
-Neovim **`v0.11.x`** and higher intoduces breaking changes so it breaks the entire
-LSP system. Therefore, its mandatory to use Neovim **`v0.9.x`** or **`v0.10.x`**
-but not **`v0.11.x`**.
-
-Check Neovim version of your machine:
+Ensure **Neovim ≥ 0.11** (0.12 recommended) and **Node.js** are installed on
+your machine, then:
 
 ```shell
-nvim --version
+npx colson-nvim@latest
 ```
 
-If it has version, **`v0.11.x`**, then you need to downgrade to **`v0.10.x`**!
+### Requirements
+
+| Dependency          | Why                                              | Required |
+| ------------------- | ------------------------------------------------ | -------- |
+| Neovim ≥ 0.11       | Core editor (0.12 recommended)                   | ✅       |
+| git                 | Plugin manager + plugin installs                 | ✅       |
+| Node.js ≥ 18        | LSP servers, markdown preview, Copilot           | ✅       |
+| C compiler + make   | Treesitter parsers, telescope-fzf-native         | ✅       |
+| tree-sitter CLI     | Parser builds (treesitter `main` branch)         | ✅       |
+| ripgrep             | Telescope live grep                              | ✅       |
+| python + pynvim     | UltiSnips (React snippets)                       | ✅       |
+| JetBrainsMono Nerd Font | Icons & glyphs                               | ✅       |
+| xclip / wl-clipboard (Linux) | System clipboard integration            | ⭕       |
+| jq, curl            | HTTP REST client niceties                        | ⭕       |
+
+<details>
+<summary><b>🐧 Arch Linux</b> (click to expand)</summary>
 
 ```shell
-$ yay -S downgrade
-$ sudo downgrade neovim
-# Select v0.10.4
-# Recheck neovim version:
-$ nvim --version
+sudo pacman -S neovim nodejs npm git base-devel cmake unzip ripgrep python-pynvim xclip
+npm install -g tree-sitter-cli
 ```
 
-Now `leader+pac` on `nvim/lua/colson/packer.lua` works so reload plugins with `leader+pac`!
+</details>
+
+<details>
+<summary><b>🐧 Debian / Ubuntu</b> (click to expand)</summary>
+
+```shell
+# Neovim from apt is often outdated - prefer the official release:
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+echo 'export PATH="$PATH:/opt/nvim-linux-x86_64/bin"' >> ~/.bashrc
+
+sudo apt install nodejs npm git build-essential cmake unzip ripgrep python3-pynvim xclip
+npm install -g tree-sitter-cli
+```
+
+</details>
+
+<details>
+<summary><b>🐧 Fedora / RHEL</b> (click to expand)</summary>
+
+```shell
+sudo dnf install neovim nodejs git gcc gcc-c++ make cmake unzip ripgrep python3-neovim xclip
+npm install -g tree-sitter-cli
+```
+
+</details>
+
+<details>
+<summary><b>🐧 openSUSE</b> (click to expand)</summary>
+
+```shell
+sudo zypper install neovim nodejs git gcc gcc-c++ make cmake unzip ripgrep python3-pynvim xclip
+npm install -g tree-sitter-cli
+```
+
+</details>
+
+<details>
+<summary><b>🍎 macOS</b> (click to expand)</summary>
+
+```shell
+xcode-select --install        # C toolchain (clang + make)
+brew install neovim node git ripgrep
+pip3 install pynvim
+npm install -g tree-sitter-cli
+```
+
+Clipboard integration works out of the box via `pbcopy`/`pbpaste` — no extra
+package needed.
+
+</details>
+
+<details>
+<summary><b>🔤 JetBrainsMono Nerd Font</b> (click to expand)</summary>
+
+Install the JetBrains Mono Nerd Font to render icons and language glyphs:
+
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+
+On Arch: `sudo pacman -S ttf-jetbrains-mono-nerd` · on macOS:
+`brew install --cask font-jetbrains-mono-nerd-font`
+
+</details>
+
+### First Launch
+
+```shell
+nvim
+```
+
+- lazy.nvim bootstraps automatically (if the installer didn't pre-clone it)
+- All plugins restore to their **pinned commits** from `lazy-lock.json`
+- Treesitter parsers compile in the background
+- Mason installs language servers for the toolchains it detects on your machine
+
+Give the first launch a couple of minutes, restart Neovim, and you're home. 🏡
+
+### For the latest pull, do:
+
+```shell
+npx colson-nvim@latest
+```
+
+If it's not the first time, then after each pull open Neovim and run:
+
+```
+:Lazy restore
+```
+
+That checks out every plugin at the exact commits shipped with the release —
+the tested, known-good state. (The old `<leader>pac` flow still works too —
+it now syncs through lazy.nvim under the hood.)
 
 `NOTE`: Leader key for Neovim -> **SPACE**
 
-```shell
-$ npx colson-nvim
-$ cd ~/.config/nvim
-$ nvim .
-```
+## 🏗️ Architecture
 
-Navigate to `lua/colson/packer.lua`
-Execute this command in normal mode!
+Distinguished-engineer discipline: declarations, configuration, and boot
+orchestration live in separate, single-purpose layers.
 
 ```
-:so
-:PackerSync
+~/.config/nvim/
+├── init.lua                     # Entry point (banner + delegation only)
+├── lazy-lock.json               # Exact commit pins - reproducible installs
+├── lua/colson/
+│   ├── init.lua                 # Staged boot orchestrator (4 stages)
+│   ├── remap.lua                # Leader + all keymaps (loads FIRST)
+│   ├── set.lua                  # Editor options
+│   ├── startup.lua              # Startup behavior (dashboard-aware)
+│   ├── lazy.lua                 # lazy.nvim bootstrap + Packer shims
+│   ├── packer.lua               # LEGACY reference (not loaded)
+│   └── plugins/                 # Plugin DECLARATIONS by domain
+│       ├── editor.lua           #   telescope, harpoon, snippets, ...
+│       ├── git.lua              #   fugitive, diffview, gitsigns, ...
+│       ├── lsp.lua              #   lsp-zero, treesitter, typescript-tools
+│       ├── java.lua             #   nvim-java, DAP, neotest
+│       ├── tools.lua            #   HTTP clients, markdown, AI assistants
+│       └── ui.lua               #   dashboard, lualine, themes
+└── after/plugin/*.lua           # Plugin CONFIGURATIONS (one file each)
 ```
 
--->
+Every plugin spec that was ever commented out in the Packer era is preserved
+in the new domain modules — translated to lazy.nvim syntax so re-enabling
+anything is a pure uncomment.
 
-For the latest pull, do:
+## 🏢 Built for Large-Scale Distributed Systems
 
-```
-$ npx colson-nvim@latest
-```
+This config is daily-driven against a ~95-microservice polyglot monorepo.
+What that means for you:
 
-If its not the first time, then each time you do the latest pull, go to:
+- **Polyglot LSP auto-detection** — mason inspects the toolchains on your
+  machine (Go, Rust, Java, Python, Elixir, Scala, TS/JS, Terraform, Docker,
+  YAML, proto/gRPC via `pbls`, and more) and installs only the matching
+  language servers. No dead weight.
+- **JVM tuned for monorepos** — jdtls runs with a 2g→8g G1GC heap profile,
+  multi-JDK runtimes, Gradle/Maven root markers, and full DAP + neotest
+  integration.
+- **tsserver at scale** — typescript-tools.nvim with separate diagnostic
+  server and configurable memory ceiling.
+- **Monorepo-fast search** — telescope + ripgrep + compiled fzf native sorter.
+- **Feedback under load** — fidget.nvim shows indexing progress; gitsigns has
+  a 40k-line file guard so giant generated files never lag the gutter.
 
-```shell
-$ cd ~/.config/nvim
-$ nvim .
-```
+## ❕ Keeping Your Configuration Up-to-Date
 
-Navigate to `lua/colson/packer.lua`
+I'm committed to consistently enhancing this Neovim setup with new features, optimizations, and additional plugins. To ensure you're making the most out of this dynamic configuration, I recommend checking for updates monthly!
 
-Then, in normal mode, do:
+As the configuration evolves, it's a good practice to sync your local repository with the latest changes. To do this, navigate to your Neovim configuration directory and run the following command:
 
-```
-<leader>pac
-```
-
-### Important Dependency!
-
-For this to work properly, many packages depends upon this dependency `Ultisnips`
-which requires `pynvim` installed on your machine.
-
-Here's detailed guide:
-
-- [Ultisnips Dependency Installation](#ultisnips-dependency-installation)
-
-Here's quick guide!!
-
-```shell
-$ sudo pacman -S base-devel cmake unzip
-$ sudo pacman -S python-pynvim
+```bash
+cd ~/.config/nvim
+git pull origin main
+nvim +"Lazy restore" +q     # align plugins with the shipped lockfile
 ```
 
-Now, make sure you're synced with my latest configuration!
+Or simply re-run the installer: `npx colson-nvim@latest` (your existing config
+is backed up automatically first).
 
-```shell
-$ cd ~/.config/nvim
-$ nvim .
+## **Prerequisites: Neovim 0.11.0 or Higher**
+
+Ensure a seamless experience by confirming your Neovim version meets the requirements. Execute the following command to check your Neovim version:
+
+```bash
+nvim --version
 ```
 
-Open `lua/colson/packer.lua`
+Upgrade to Neovim 0.11.0 or higher if needed (0.12.x is what this config is
+verified against), and dive into an enhanced coding experience with this
+dynamic configuration! 🚀
 
-```
-<leader>pac
-```
+## Table of Contents
 
-DONE!!
-This resolves the error when opening NVIM!
-
-COOL!
-
-Now, Restart **Neovim** in your desired workspace!
-
-```
-nvim .
-```
-
-#### FOR the latest installation pull, do:
-
-```
-$ npx colson-nvim@latest
-```
-
-#### `NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!
-
-That's the beginning of the new world. A beginning of new experience, journey packed with challenges, integrated with tools used in daily lives, boosting productivity, enhancing engineers performance!
-
-## [goto: TABLE OF CONTENTS 🚀 ](#table-of-contents)
+- [⚡ TL;DR — One Command](#-tldr--one-command)
+- [🚀 What's New (July 2026)](#-whats-new-july-2026--the-future-proof-release)
+- [🖥️ Dashboard — Start Screen](#%EF%B8%8F-dashboard--start-screen)
+- [Installation through NPM](#installation-through-npm)
+  - [Requirements](#requirements)
+  - [First Launch](#first-launch)
+  - [For the latest pull, do:](#for-the-latest-pull-do)
+- [🏗️ Architecture](#%EF%B8%8F-architecture)
+- [🏢 Built for Large-Scale Distributed Systems](#-built-for-large-scale-distributed-systems)
+- [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
+- [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
+- [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
+  - [💎 NEW ZEN LOOK (Colson NVIM, March 19th, 2025)](#-new-zen-look-colson-nvim-march-19th-2025)
+  - [💎 NEW LOOK (Colson NVIM, December 5th, 2024)](#-new-look-colson-nvim-december-5th-2024)
+  - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
+  - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
+- [@ Neovim on macOS](#-neovim-on-macos)
+  - [2023/Early 2024 Look](#2023early-2024-look)
+- [🔥 COOL NEW Discord Presence for Neovim (April, 2025)](#-cool-new-discord-presence-for-neovim-april-2025)
+- [Introduction](#introduction)
+  - [💎 Old Look (COLSON NVIM)](#-old-look-colson-nvim)
+- [Installation (Manual, without npm)](#installation-manual-without-npm)
+- [Features](#features)
+  - [Global Key Bindings](#global-key-bindings)
+  - [Normal Mode Key Bindings](#normal-mode-key-bindings)
+  - [**Telescope** Integration](#telescope-integration)
+  - [TELESCOPE GREP Search](#telescope-grep-search)
+- [🔥 NEW UPDATES](#-new-updates)
+  - [**Bufferline**](#bufferline)
+  - [**JSX/TSX \& Other Languages Commenting**](#jsxtsx--other-languages-commenting)
+  - [**Discord Presence**](#discord-presence)
+  - [Emmet (For HTML/JSX Autocompletion)](#emmet-for-htmljsx-autocompletion)
+  - [Tailwind CSS IntelliSense](#tailwind-css-intellisense)
+  - [Gen Lorem Ipsum](#gen-lorem-ipsum)
+  - [Code Fold](#code-fold)
+  - [Live Server](#live-server)
+  - [System Clipboard Copy](#system-clipboard-copy)
+- [🎆 React Snippets Autocompletion](#-react-snippets-autocompletion)
+- [Git Diff View 😆](#git-diff-view-)
+- [🧬 Git Hunk Signs (gitsigns)](#-git-hunk-signs-gitsigns)
+- [🛰️ HTTP REST Client](#️-http-rest-client)
+- [🪐 HTTP Client](#-http-client)
+- [🔄 Syncing Plugin Updates (lazy.nvim)](#-syncing-plugin-updates-lazynvim)
+- [✅ Git Merge Conflicts Resolver](#-git-merge-conflicts-resolver)
+- [🔭 Telescope 🔥](#-telescope-)
+- [🤖 Augment Code – Enterprise Grade Configuration](#-augment-code--enterprise-grade-configuration)
+- [🤖 Github Copilot Integration](#-github-copilot-integration)
+- [🚀 **HTTP REST Client for Engineers**](#-http-rest-client-for-engineers)
+- [📘 Markdown Preview ✨](#-markdown-preview-)
+- [🩺 Troubleshooting](#-troubleshooting)
+- [Cool Pre-Configured Themes](#cool-pre-configured-themes)
 
 **DEMO Screenshot**
 
@@ -291,128 +503,6 @@ That's the beginning of the new world. A beginning of new experience, journey pa
 
 ![colson nvim](https://i.imgur.com/nls1N1W.png)
 
-## ❕ Keeping Your Configuration Up-to-Date
-
-I'm committed to consistently enhancing this Neovim setup with new features, optimizations, and additional plugins. To ensure you're making the most out of this dynamic configuration, I recommend checking for updates monthly!
-
-As the configuration evolves, it's a good practice to sync your local repository with the latest changes. To do this, navigate to your Neovim configuration directory and run the following command:
-
-```bash
-cd ~/.config/nvim
-git pull origin main
-```
-
-## **Prerequisites: Neovim 0.9.0 or Higher**
-
-Ensure a seamless experience by confirming your Neovim version meets the requirements. Execute the following command to check your Neovim version:
-
-```bash
-nvim --version
-```
-
-Upgrade to Neovim 0.9.0 or higher if needed, and dive into an enhanced coding experience with this dynamic configuration! 🚀
-
-## Table of Contents
-
-- [Installation through NPM](#installation-through-npm)
-  - [**🚨 RED ZONE**!](#-red-zone)
-  - [Important Dependency!](#important-dependency)
-    - [FOR the latest installation pull, do:](#for-the-latest-installation-pull-do)
-    - [`NOTE`: Read the documentation below for indepth wisdom on proper installation and uses!](#note-read-the-documentation-below-for-indepth-wisdom-on-proper-installation-and-uses)
-- [goto: TABLE OF CONTENTS 🚀 ](#goto-table-of-contents--)
-- [✨ New Updated Zenful Look (COLSON NVIM)](#-new-updated-zenful-look-colson-nvim)
-- [@ Neovim on Arch Linux](#-neovim-on-arch-linux)
-  - [💎 NEW ZEN LOOK (Colson NVIM, March 19th, 2025)](#-new-zen-look-colson-nvim-march-19th-2025)
-  - [💎 NEW LOOK (Colson NVIM, December 5th, 2024)](#-new-look-colson-nvim-december-5th-2024)
-  - [New Modern Look, September 2024 💎](#new-modern-look-september-2024-)
-  - [Latest Fresh Look, July 2024 :)](#latest-fresh-look-july-2024-)
-- [@ Neovim on macOS](#-neovim-on-macos)
-  - [2023/Early 2024 Look](#2023early-2024-look)
-- [🔥 COOL NEW Discord Presence for Neovim (April, 2025)](#-cool-new-discord-presence-for-neovim-april-2025)
-- [❕ Keeping Your Configuration Up-to-Date](#-keeping-your-configuration-up-to-date)
-- [**Prerequisites: Neovim 0.9.0 or Higher**](#prerequisites-neovim-090-or-higher)
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-  - [💎 Old Look (COLSON NVIM)](#-old-look-colson-nvim)
-- [Installation](#installation)
-- [Features](#features)
-  - [Global Key Bindings](#global-key-bindings)
-    - [Leader Key](#leader-key)
-    - [Netrw: File Explorer](#netrw-file-explorer)
-    - [NvimTree (Right window pane file explorer)](#nvimtree-right-window-pane-file-explorer)
-      - [Save Files](#save-files)
-      - [Save and Exit Nvim](#save-and-exit-nvim)
-    - [Collaborative Editing](#collaborative-editing)
-    - [Text Manipulation](#text-manipulation)
-    - [Code Formatting](#code-formatting)
-    - [Navigation](#navigation)
-    - [Search and Replace](#search-and-replace)
-  - [Normal Mode Key Bindings](#normal-mode-key-bindings)
-    - [Line Manipulation](#line-manipulation)
-    - [Scrolling](#scrolling)
-    - [Code Navigation](#code-navigation)
-    - [Ex Mode](#ex-mode)
-    - [Git Integration](#git-integration)
-    - [Harpoon Integration](#harpoon-integration)
-    - [LSP Integration](#lsp-integration)
-  - [**Telescope** Integration](#telescope-integration)
-  - [TELESCOPE GREP Search](#telescope-grep-search)
-- [🔥 NEW UPDATES](#-new-updates)
-  - [**Bufferline**](#bufferline)
-  - [**JSX/TSX \& Other Languages Commenting**](#jsxtsx--other-languages-commenting)
-    - [**@ Commenting in Normal Mode**](#-commenting-in-normal-mode)
-    - [**@ Commenting in Visual Mode**](#-commenting-in-visual-mode)
-  - [**Discord Presence**](#discord-presence)
-  - [Emmet (For HTML/JSX Autocompletion)](#emmet-for-htmljsx-autocompletion)
-    - [Normal Mode Tag Manipulation: tsx/jsx/html](#normal-mode-tag-manipulation-tsxjsxhtml)
-  - [Tailwind CSS IntelliSense](#tailwind-css-intellisense)
-  - [Gen Lorem Ipsum](#gen-lorem-ipsum)
-  - [Code Fold](#code-fold)
-  - [Live Server](#live-server)
-  - [System Clipboard Copy](#system-clipboard-copy)
-- [🎆 React Snippets Autocompletion](#-react-snippets-autocompletion)
-  - [Ultisnips Dependency Installation](#ultisnips-dependency-installation)
-  - [🔥 React Snippets Guide](#-react-snippets-guide)
-    - [Functional Components](#functional-components)
-    - [Class Components](#class-components)
-    - [General Redux + Redux Toolkit](#general-redux--redux-toolkit)
-  - [🎯 TypeScript/JavaScript Engine: Cool Features](#-typescriptjavascript-engine-cool-features)
-- [Git Diff View 😆](#git-diff-view-)
-- [🛰️ HTTP REST Client](#️-http-rest-client)
-  - [Keymaps](#keymaps)
-  - [Key Mapping Explanation](#key-mapping-explanation)
-- [Usage Example](#usage-example)
-- [🪐 HTTP Client](#-http-client)
-  - [pynvim Bindings:](#pynvim-bindings)
-  - [requests Library:](#requests-library)
-  - [⚡ Execute Network Request](#-execute-network-request)
-- [🔄 Syncing Packer Updates](#-syncing-packer-updates)
-- [✅ Git Merge Conflicts Resolver](#-git-merge-conflicts-resolver)
-- [🔭 Telescope 🔥](#-telescope-)
-  - [Telescope Normal Mode Commands](#telescope-normal-mode-commands)
-  - [Telescope Insert Mode Commands](#telescope-insert-mode-commands)
-- [🤖 Augment Code – Enterprise Grade Configuration](#-augment-code--enterprise-grade-configuration)
-  - [Key Mappings](#key-mappings)
-  - [User Command Aliases](#user-command-aliases)
-  - [Workspace Configuration \& Auto-Update](#workspace-configuration--auto-update)
-- [🤖 Github Copilot Integration](#-github-copilot-integration)
-- [🚀 **HTTP REST Client for Engineers**](#-http-rest-client-for-engineers)
-  - [Features](#features-1)
-  - [Dependencies:](#dependencies)
-  - [HTTP File Syntax Overview](#http-file-syntax-overview)
-  - [**Commands \& Key Mappings Table**](#commands--key-mappings-table)
-- [📘 Markdown Preview ✨](#-markdown-preview-)
-  - [Commands \& Key Mappings](#commands--key-mappings)
-- [Cool Pre-Configured Themes](#cool-pre-configured-themes)
-  - [**@ Github Themes** - Has flavors](#-github-themes---has-flavors)
-  - [**@ Catppuccin Theme** - Has flavors](#-catppuccin-theme---has-flavors)
-  - [**@ Rose Pine Theme** - Has flavors](#-rose-pine-theme---has-flavors)
-  - [**@ Jetbrains IDE Theme**](#-jetbrains-ide-theme)
-  - [**@ MoonFly Theme**](#-moonfly-theme)
-  - [**@ One Dark Theme** - Has flavors](#-one-dark-theme---has-flavors)
-  - [**@ Nord Theme** - Has flavors](#-nord-theme---has-flavors)
-  - [**@ Tokyo Night Theme** - Has flavors 💎](#-tokyo-night-theme---has-flavors-)
-
 ## Introduction<a name="introduction"></a>
 
 This Neovim configuration is a powerhouse of productivity enhancements and aesthetics. I've curated a selection of plugins, key bindings, and themes to provide a versatile and delightful text-editing experience. Whether you're a developer, writer, or anyone in need of a robust text editor, this setup has got you covered.
@@ -435,26 +525,28 @@ This Neovim configuration is a powerhouse of productivity enhancements and aesth
 
 ![colson nvim](https://i.imgur.com/O9IpfyV.png)
 
-## Installation<a name="installation"></a>
+## Installation (Manual, without npm)<a name="installation"></a>
 
 To embark on this Neovim journey, follow these steps:
 
-1. Clone this repository to your Neovim configuration directory:
+1. Clone this repository's `nvim` folder to your Neovim configuration directory
+   (back up any existing `~/.config/nvim` first!):
 
    ```shell
-   git clone https://github.com/colson0x1/colson-nvim ~/.config/nvim
+   git clone https://github.com/colson0x1/colson-nvim /tmp/colson-nvim
+   cp -r /tmp/colson-nvim/nvim ~/.config/nvim
    ```
 
-2. Install Packer.nvim for managing plugins:
+2. Launch Neovim:
 
    ```shell
-   git clone https://github.com/wbthomason/packer.nvim \
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+   nvim
    ```
 
-3. Launch Neovim and run `:PackerSync` to install and update plugins.
+   lazy.nvim bootstraps itself and restores all plugins from `lazy-lock.json`
+   automatically — no manual plugin-manager installation step anymore. 🎉
 
-4. Install JetBrainsMono Nerd Font:
+3. Install JetBrainsMono Nerd Font:
    - Install the regular JetBrains Mono version to support Unicode and Programming Languages Icons in the Neovim IDE!
      <br />
      https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
@@ -503,17 +595,20 @@ Now, you're all set to unleash the power of this Neovim configuration!
 
 ![colson nvim nvimtree](https://i.imgur.com/zPUZ8lo.png)
 
-#### Collaborative Editing
+#### Collaborative Editing (optional)
 
 - **`<leader>vwm`**: Start a Vim-With-Me collaborative editing session.
 - **`<leader>svwm`**: Stop a Vim-With-Me collaborative editing session.
 
+> Requires the optional [vim-with-me](https://github.com/ThePrimeagen/vim-with-me)
+> plugin — add it in `lua/colson/plugins/editor.lua` if you want this workflow.
+
 #### Text Manipulation
 
-- **``**: Delete selected text in visual mode.
-- **``**: Yank text to the system clipboard.
-- **`Ctrl+y`**: Yank the entire line to the system clipboard.
-- **``**: Delete text without clobbering the register.
+- **`<leader>y`**: Yank to the system clipboard (normal & visual mode).
+- **`<leader>Y`**: Yank from cursor to the end of the line.
+- **`<leader>d`**: Delete without clobbering the yank register (normal & visual mode).
+- **`<leader>p`**: Paste over a selection without losing the yanked text (visual mode).
 - **`Ctrl+c`**: Exit insert mode.
 
 #### Code Formatting
@@ -528,45 +623,45 @@ Now, you're all set to unleash the power of this Neovim configuration!
 
 #### Search and Replace
 
-Search and Replace
-
-- **`<leader>sr`**: Perform a search and replace using Telescope.
+- **`<leader>s`**: Search & replace the word under the cursor across the file
+  (pre-fills a `:%s//gI` command — just edit the replacement and hit Enter).
+- **`<leader>fs`**: Interactive string grep across the project (Telescope).
 
 ### Normal Mode Key Bindings<a name="normal-mode-key-bindings"></a>
 
 #### Line Manipulation
 
-- **`<leader>k`** and **`<leader>j`**: Move the current line up or down.
-- **`<leader>K`** and **`<leader>J`**: Copy the current line up or down.
-- **`<leader>dd`**: Delete the current line.
-- **`<leader>cc`**: Duplicate the current line.
+- **`J`** and **`K`** (visual mode): Move the selected lines down / up —
+  reindenting as they go.
+- **`J`** (normal mode): Join the line below without moving the cursor.
 
 #### Scrolling
 
-- **``** and **``**: Scroll down or up.
+- **`<C-d>`** and **`<C-u>`**: Half-page down / up — cursor stays centered.
+- **`n`** and **`N`**: Next / previous search result — centered on screen.
 
 #### Code Navigation
 
 - **`ds`** or **`gd`**: Go to definition (Normal Mode).
-- **`gf`**: Go to file.
-- **`gy`**: Go to type definition.
-- **`gi`**: Go to implementation.
-- **`gr`**: Show references.
-- **``**: Rename symbol.
+- **`gf`**: Go to file under cursor.
+- **`<leader>vca`**: Code actions.
+- **`<leader>vrr`**: Show references.
+- **`<leader>vrn`**: Rename symbol.
+- **`<C-h>`** (insert mode): Signature help.
 
-#### Ex Mode
+#### Saving & Quitting
 
-- **`:W`**: Write the current file.
-- **`:Wq`**: Write and quit.
-- **`:WQ`**: Write and quit (forceful).
-- **`:Wqa`**: Write all and quit.
+- **`<leader>w`**: Write all open files (`:wall`).
+- **`<leader>q`**: Write all and quit Neovim (`:wqa`).
+- **`<leader>x`**: Make the current file executable (`chmod +x`).
 
 #### Git Integration
 
-- **`<leader>gs`**: Git status.
-- **`<leader>gc`**: Git commit.
-- **`<leader>gp`**: Git push.
-- **`<leader>gl`**: Git log.
+- **`<leader>gs`**: Git status (Telescope).
+- **`<leader>gc`**: Browse Git commits (Telescope).
+- **`<leader>gb`**: Switch Git branches (Telescope).
+- **`<leader>gf`**: Find Git-tracked files (Telescope).
+- **`:Git <anything>`**: Full Git via Fugitive (`:Git commit`, `:Git push`, `:Git log`, ...).
 
 #### Harpoon Integration
 
@@ -606,6 +701,9 @@ Search by keyword in files!
 
 - **`<leader>ps`**: Live grep files.
 
+> ⚡ Telescope now runs with **telescope-fzf-native** — a compiled C fuzzy
+> sorter. Fuzzy matching stays instant even on monorepo-scale file counts.
+
 ## 🔥 NEW UPDATES
 
 ### **Bufferline**
@@ -615,8 +713,8 @@ Search by keyword in files!
 To enable bufferline (Tab based file buffer like VSCode), Go to:
 `$ ~/.config/nvim`
 Open nvim: `$ nvim .`
-Navigate to `packer.lua` and uncomment `Bufferline Plugin`
-After that, write `:w` and source it: `:so` and run packer sync: `:PackerSync`
+Navigate to `lua/colson/plugins/ui.lua` and uncomment the `Bufferline` spec.
+After that, write `:w` and run `:Lazy sync`.
 Now you're good to go!
 
 - **`<leader>h`**: Goes to next tab.
@@ -688,10 +786,14 @@ Now you're good to go!
 - Use **`<Ctrl+n`** to go to next in the occurrence.
 - Use **`<Ctrl+p`** to go to prev in occurrence.
 
-### Gen Lorem Ipsum
+### Gen Lorem Ipsum (optional)
 
 - To generate lorem ipsum paragraph: In normal mode, type `:Lorem`
 - To generate specified constraint of words: `:Lorem 10` which generates 10 words.
+
+> The `lorem.nvim` spec ships disabled — uncomment it in
+> `lua/colson/plugins/tools.lua`, run `:Lazy sync`, and the pre-wired config
+> in `after/plugin/loremipsum.lua` picks it up automatically.
 
 ### Code Fold
 
@@ -708,10 +810,13 @@ Now you're good to go!
 
 ### System Clipboard Copy
 
-First install `xclip` on your machine in order for the configurations to work:
+First install `xclip` on your machine in order for the configurations to work
+(Linux only — macOS works out of the box):
 
 ```
-$ sudo pacman -S xclip
+$ sudo pacman -S xclip        # Arch
+$ sudo apt install xclip      # Debian/Ubuntu
+$ sudo dnf install xclip      # Fedora
 ```
 
 Then open any workspace with `nvim .` in `Tmux` environment. Now you're ready to go!
@@ -735,7 +840,7 @@ cd ~/.config/nvim
 nvim .
 ```
 
-Open `packer.lua` and in normal mode: Type
+In normal mode, type:
 
 ```
 :echo has('python3')
@@ -769,11 +874,11 @@ $ sudo pacman -S python-pynvim
 
 ```bash
 brew install python3
-brew install pynvim
+pip3 install pynvim
 ```
 
-Now, again open that `packer.lua` file and verify if we've got access to the `python3` inside `neovim` environment.
-This time, it should return `1` aka OKAY!
+Now, again open Neovim and verify we've got access to `python3` inside the
+`neovim` environment. This time, it should return `1` aka OKAY!
 
 Now, make sure you're synced with my latest configuration!
 
@@ -785,12 +890,10 @@ $ cd ~/.config/nvim
 nvim .
 ```
 
-Open `packer.lua`
+Then run:
 
 ```
-:so
-
-:PackerSync
+:Lazy restore
 ```
 
 Yay, finally now we should be able to use `React Snippets`!
@@ -880,6 +983,23 @@ These keymaps facilitate easy navigation and management of diffs in your codebas
 
 ---
 
+## 🧬 Git Hunk Signs (gitsigns)
+
+Line-level change indicators live in the gutter — additions, changes, and
+deletions at a glance, tuned with a 40k-line guard so huge generated files
+never lag. No new keymaps were added (all your `<leader>g*` bindings are
+untouched); drive it with commands:
+
+| Command                                    | Action                          |
+| ------------------------------------------ | ------------------------------- |
+| `:Gitsigns preview_hunk`                   | Preview the hunk under cursor   |
+| `:Gitsigns reset_hunk`                     | Revert the hunk under cursor    |
+| `:Gitsigns blame_line`                     | Blame the current line          |
+| `:Gitsigns toggle_current_line_blame`      | Toggle inline blame virtual text|
+| `:Gitsigns diffthis`                       | Diff buffer against the index   |
+
+---
+
 ## 🛰️ HTTP REST Client
 
 ### Keymaps
@@ -913,7 +1033,7 @@ Content-Type: application/json
 
 {
  "name": "Colson",
- "currentYear": "2024",
+ "currentYear": "2026",
  "age": "25"
 }
 ```
@@ -971,17 +1091,34 @@ This requires two dependencies: `pynvim` and `requests` library. Make sure these
 Use the extension **`.http`** to run HTTP API Requests!
 
 1. Go to the `.http` file.
-2. To initiate a network request, execute: **`<leader>api`**
+2. To initiate a network request, execute: **`:Http`**
+3. To terminate the current request, execute: **`:HttpStop`**
 
-3. To terminate the current request, execute: **`<leader>ter`**
+> Note: **`<leader>api`** is bound to the Resty client (see
+> [HTTP REST Client for Engineers](#-http-rest-client-for-engineers)) — the
+> recommended day-to-day request runner.
 
-## 🔄 Syncing Packer Updates
+## 🔄 Syncing Plugin Updates (lazy.nvim)
 
-1. Go to: `cd ~/.config/nvim`
-2. Open with nvim: `nvim .`
-3. Navigate to `lua/colson/packer.lua`
-4. Execute this to source + sync packer plugins: **`<leader>pac`**
-5. DONE :)
+Plugin management now runs on **lazy.nvim** — with full backwards
+compatibility for the old Packer muscle memory:
+
+| Command / Keymap        | Action                                                        |
+| ----------------------- | ------------------------------------------------------------- |
+| `:Lazy`                 | Open the lazy.nvim UI                                         |
+| `:Lazy restore`         | Check out every plugin at the pinned commit (lazy-lock.json)  |
+| `:Lazy sync`            | Install missing + update all + clean unused                   |
+| `:Lazy update`          | Update plugins and refresh the lockfile                       |
+| `:Lazy profile`         | Startup time profiling per plugin                             |
+| `<leader>po`            | Muscle-memory shim → `:Lazy sync` (was `:PackerSync`)         |
+| `<leader>pac`           | Source current file + sync (works exactly like before)        |
+| `:PackerSync`           | Compat shim → `:Lazy sync`                                    |
+| `:PackerInstall`        | Compat shim → `:Lazy install`                                 |
+| `:PackerStatus`         | Compat shim → `:Lazy home`                                    |
+
+> 🔒 **Golden rule:** `:Lazy restore` = deterministic (the tested, pinned
+> state). `:Lazy sync`/`update` = bleeding edge (rewrites the lockfile).
+> When in doubt, restore.
 
 ## ✅ Git Merge Conflicts Resolver
 
@@ -1132,8 +1269,8 @@ I've integrated a high-performance, enterprise-grade HTTP REST client plugin for
 
 **Supported Neovim Versions:**
 
-- Latest nightly
-- 0.10.x
+- Latest stable (0.12.x — what this config is verified against)
+- 0.11.x
 
 ### Dependencies:
 
@@ -1208,11 +1345,77 @@ feedback**, making it easier to create well-formatted content.
 
 ---
 
+## 🩺 Troubleshooting
+
+<details>
+<summary><b>Health check first</b></summary>
+
+```
+:checkhealth
+:Lazy
+:Mason
+:messages
+:LspInfo
+```
+
+`:checkhealth lazy` validates the plugin manager; `:Lazy profile` shows
+per-plugin startup cost.
+
+</details>
+
+<details>
+<summary><b>Plugins in a weird state</b></summary>
+
+```
+:Lazy restore
+```
+
+restores every plugin to the exact pinned commit from `lazy-lock.json`.
+Nuclear option:
+
+```bash
+rm -rf ~/.local/share/nvim/lazy
+nvim    # bootstraps and restores everything fresh
+```
+
+</details>
+
+<details>
+<summary><b>Treesitter parser errors</b></summary>
+
+The treesitter `main` branch builds parsers with the `tree-sitter` CLI:
+
+```bash
+npm install -g tree-sitter-cli
+```
+
+then inside Neovim: `:TSUpdate`
+
+</details>
+
+<details>
+<summary><b>LSP server missing</b></summary>
+
+`:Mason` and install what you need. Servers are auto-detected from the
+toolchains present on your machine — install the toolchain (e.g. `go`,
+`rustc`, `rebar3`) and restart Neovim to get its LSP automatically.
+
+</details>
+
+<details>
+<summary><b>Telescope grep returns nothing</b></summary>
+
+Install ripgrep (`rg`) — see the Requirements table above.
+
+</details>
+
 ---
 
 ## Cool Pre-Configured Themes<a name="cool-themes"></a>
 
-The themes are configured already but I've commented out rest. Feel free to explore these themes and uncomment the one that resonates with your taste!
+The themes are configured already but I've commented out rest. Feel free to
+explore these themes in `lua/colson/plugins/ui.lua` and uncomment the one
+that resonates with your taste!
 
 Preconfigured themes:
 
@@ -1260,7 +1463,3 @@ END:
 May your coding journey with Neovim be nothing short of stellar! 🚀
 
 Peace! 🕊
-
-```
-
-```

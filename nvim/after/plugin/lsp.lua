@@ -28,7 +28,10 @@ local lsp_detectors = {
 	eslint = { "eslint", "eslint" },
 	elixir = { "elixir", "elixirls" },
 	emmet = { "node", "emmet_language_server" },
-	erlang = { "erl", "erlangls" },
+	-- FIXED (2026-07-06): keyed on rebar3 (not erl) - erlang-ls builds from
+	-- source WITH rebar3; machines that only have erl as an Elixir runtime
+	-- dependency were hitting a failing install at every startup.
+	erlang = { "rebar3", "erlangls" },
 	golangci = { "golangci-lint", "golangci_lint_ls" },
 	go = { "go", "gopls" },
 	gradle = { "gradle", "gradle_ls" },
@@ -40,7 +43,11 @@ local lsp_detectors = {
 	java = { "java", "jdtls" },
 	javaserver = { "java", "java_language_server" },
 	javascript = { "node", "quick_lint_js" },
-	typescript = { "tsc", "tsserver" },
+	-- FIXED (2026-07-06): lspconfig renamed "tsserver" -> "ts_ls"; the old
+	-- name made mason-lspconfig raise a blocking warning at startup.
+	-- (typescript-tools.nvim remains the actual TS engine - see
+	-- typescript-engine.lua; ts_ls here only ensures the mason install.)
+	typescript = { "tsc", "ts_ls" },
 	lua = { "lua", "lua_ls" },
 	markdown = { "node", "marksman" },
 	astgrep = { "ast-grep", "ast_grep" },
@@ -264,7 +271,10 @@ local lsp_detectors = {
 	eslint = { "eslint", "eslint" },
 	elixir = { "elixir", "elixirls" },
 	emmet = { "node", "emmet_language_server" },
-	erlang = { "erl", "erlangls" },
+	-- FIXED (2026-07-06): keyed on rebar3 (not erl) - erlang-ls builds from
+	-- source WITH rebar3; machines that only have erl as an Elixir runtime
+	-- dependency were hitting a failing install at every startup.
+	erlang = { "rebar3", "erlangls" },
 	golangci = { "golangci-lint", "golangci_lint_ls" },
 	go = { "go", "gopls" },
 	gradle = { "gradle", "gradle_ls" },
@@ -276,7 +286,11 @@ local lsp_detectors = {
 	java = { "java", "jdtls" },
 	javaserver = { "java", "java_language_server" },
 	javascript = { "node", "quick_lint_js" },
-	typescript = { "tsc", "tsserver" },
+	-- FIXED (2026-07-06): lspconfig renamed "tsserver" -> "ts_ls"; the old
+	-- name made mason-lspconfig raise a blocking warning at startup.
+	-- (typescript-tools.nvim remains the actual TS engine - see
+	-- typescript-engine.lua; ts_ls here only ensures the mason install.)
+	typescript = { "tsc", "ts_ls" },
 	lua = { "lua", "lua_ls" },
 	markdown = { "node", "marksman" },
 	astgrep = { "ast-grep", "ast_grep" },

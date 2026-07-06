@@ -9,8 +9,27 @@ const NVIM_CONFIG_PATH = path.join(getHomeDirectory(), '.config', 'nvim');
 // const LOCAL_NVIM_CONFIG = path.join(__dirname, '..', 'nvim');
 // ESNext
 const LOCAL_NVIM_CONFIG = path.join(__dirname, '..', 'nvim');
+/**
+ * Backs up any pre-existing ~/.config/nvim before overwriting, so users can
+ * always roll back: an installer that silently clobbers a personal config is
+ * not production-grade. Backups are timestamped and never overwritten.
+ */
+const backupExistingConfig = async () => {
+    if (!(await fs.pathExists(NVIM_CONFIG_PATH))) {
+        return;
+    }
+    const stamp = new Date()
+        .toISOString()
+        .replace(/[:.]/g, '-')
+        .replace('T', '-')
+        .slice(0, 19);
+    const backupPath = `${NVIM_CONFIG_PATH}.backup-${stamp}`;
+    console.log(`Backing up existing Neovim config to ${backupPath}`);
+    await fs.copy(NVIM_CONFIG_PATH, backupPath, { overwrite: false });
+};
 export const installConfig = async () => {
     console.log('Installing Neovim configuration...');
+    await backupExistingConfig();
     // Ensure the config directory exists
     await fs.ensureDir(NVIM_CONFIG_PATH);
     // Copy the local nvim configuration files to ~/.config/nvim

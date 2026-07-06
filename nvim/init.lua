@@ -1,50 +1,31 @@
 -- ============================================================================
--- Colson's Neovim Configuration - Enterprise Grade (Packer Edition)
+-- Colson's Neovim Configuration - Enterprise Grade (lazy.nvim Edition)
 -- Author: Colson (@colson0x1)
 -- GitHub: https://github.com/colson0x1/colson-nvim
--- Version: 2.0 (Production Stable for 0.11.x+ | Distinguished Engineer Architecture)
+-- Version: 3.0 (Production Stable for 0.11.x+ | Distinguished Engineer Architecture)
+-- ============================================================================
+--
+-- BOOT ARCHITECTURE (single entry point, staged in lua/colson/init.lua):
+--
+--   init.lua                       -> this file (entry point only)
+--   lua/colson/init.lua            -> staged boot orchestrator
+--     STAGE 1  colson.remap        -> leader + keymaps (MUST precede plugins)
+--     STAGE 1  colson.set          -> editor options
+--     STAGE 2  colson.lazy         -> lazy.nvim bootstrap + plugin specs
+--     STAGE 3  LSP availability check (graceful degradation)
+--     STAGE 4  colson.startup      -> startup behavior (dashboard-aware)
+--   lua/colson/plugins/*.lua       -> plugin DECLARATIONS (domain modules)
+--   after/plugin/*.lua             -> plugin CONFIGURATIONS (auto-sourced)
+--   lazy-lock.json                 -> exact commit pins (reproducible installs)
+--
+-- FRESH MACHINE (any Linux distro / macOS): install Neovim >= 0.10 + git,
+-- clone this config, start nvim - lazy.nvim bootstraps itself and restores
+-- the pinned plugin set automatically. Node.js is needed for markdown-preview
+-- and Copilot; a C compiler for treesitter parsers; ripgrep for live grep.
+--
+-- HISTORY: Packer (v2.0) served until 2026-07-06. Packer was archived
+-- upstream in Aug 2023; migrated to lazy.nvim for long-term maintenance.
+-- The legacy spec is preserved at lua/colson/packer.lua for reference.
 -- ============================================================================
 
--- ============================================================================
--- Bootstrap Packer (Plugin Manager) - Load FIRST
--- ============================================================================
--- Ensure Packer is installed before loading any plugins
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
-	if fn.empty(fn.glob(install_path)) > 0 then
-		vim.notify("Installing Packer...", vim.log.levels.INFO)
-		fn.system({
-			"git",
-			"clone",
-			"--depth",
-			"1",
-			"https://github.com/wbthomason/packer.nvim",
-			install_path,
-		})
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
-end
-
-local packer_bootstrap = ensure_packer()
-
--- ============================================================================
--- Load Plugin Specifications (Must be loaded BEFORE other configs)
--- ============================================================================
-require("colson.packer")
-
--- ============================================================================
--- Load Core Configuration
--- ============================================================================
 require("colson")
-
--- ============================================================================
--- Auto-Sync Packer on First Install
--- ============================================================================
-if packer_bootstrap then
-	vim.notify("Running PackerSync for first-time setup...", vim.log.levels.INFO)
-	vim.cmd([[PackerSync]])
-end
